@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Notable');
+
+$clr-bg: #F2ECD8;
+$clr-title: #F85D3C;
+$clr-txt: #FBEE04;
+$clr-extra: #0F9FBF;
+
+$font-title: 2rem;
+$font-txt: .8rem;
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: $clr-bg;
+    font-family: 'Bangers', cursive;
+}
+
+nav {
+    width: 100%;
+    display: inline-block;
+    position: fixed;
+    background: url(../image/5-comic-burst-background-1.png) no-repeat;
+    background-size: cover;
+    background-position-y: center;
+
+    .logo {
+        width: 5em;
+        margin: 2rem;
+    }
+}
