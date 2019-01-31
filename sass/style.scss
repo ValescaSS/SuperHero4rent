@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers|Notable');
 
 $font-title: 'Bangers', cursive;
+$font-alt: 'Notable', sans-serif;
 
 $clr-bg: #F2ECD8;
 $clr-title: #F85D3C;
@@ -82,9 +83,10 @@ nav {
 }
 
 main {
-    // here goes all the styling for main
+    // min-height & flex setup to have the footer stick to the bottom
     min-height: 100%;
     flex: 1 0 auto;
+    // here below goes the rest of main
 
     .hero-img {
         background-image: url(../image/977333_free-marvel-superhero-wallpapers-high-quality-resolution-v3y-wallx_1920x1080_h.jpg);
@@ -128,6 +130,7 @@ main {
     }
 }
 
+// Don't mind this .hidden for now, it will come in handy later after adding in js
 .hidden {
     // display: none;
     transition: all 500ms ease-in;
@@ -151,3 +154,11 @@ footer {
         margin-top: 1rem;
     }
 }
+
+
+
+/* @media (min-width: 576px) {
+ }
+@media (min-width: 768px) {  }
+@media (min-width: 992px) {  }
+@media (min-width: 1200px) {  } */
