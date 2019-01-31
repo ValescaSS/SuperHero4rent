@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      .items ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+      }
+
+      .items ul  div {
+        list-style: none;
+        flex: 0 0 33.3333%;
+      }
+    </style>
+
+    <script>
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          let response = JSON.parse(xhttp.responseText);
+          let people = response.people;
+
+          let output = "";
+          for (let i = 0; i < people.length; i++) {
+            output += "<div class='items'>" + people[i].name+" "+people[i].age+ "</div>";
+          }
+          document.getElementById("people").innerHTML = output;
+        }
+      };
+      xhttp.open("GET", "people.json", true);
+      xhttp.send();
+    </script>
     <title>SuperHero4Rent</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>SuperHero4Rent</h1>
-</body>
+    <ul id="people"></ul>
+  </body>
 </html>
