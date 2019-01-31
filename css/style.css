@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css?family=Bangers|Notable");
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  background: #F2ECD8;
+  font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  background: url(../image/5-comic-burst-background-1.png) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em 3em;
+  -webkit-box-shadow: 0 2px 3px #756549;
+          box-shadow: 0 2px 3px #756549;
+}
+
+.header .logo {
+  width: 6rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #F85D3C;
+}
+
+nav {
+  position: fixed;
+  top: 5.5rem;
+  right: 1rem;
+  background: #F85D3C;
+  font-size: 1.2rem;
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #0F9FBF;
+}
+
+nav ul li a:hover {
+  color: #FBEE04;
+}
+
+nav .active {
+  color: #FBEE04;
+}
+
+main {
+  min-height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+main .hero-img {
+  background-image: url(../image/977333_free-marvel-superhero-wallpapers-high-quality-resolution-v3y-wallx_1920x1080_h.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50vmin;
+  width: 100%;
+  position: relative;
+  top: 7rem;
+  z-index: -10;
+}
+
+.scrollTop {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #f97155;
+  opacity: .85;
+  color: white;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.scrollTop:hover {
+  cursor: pointer;
+  opacity: 1;
+  background: #F85D3C;
+}
+
+.scrollTop i {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: white;
+}
+
+.hidden {
+  -webkit-transition: all 500ms ease-in;
+  transition: all 500ms ease-in;
+}
+
+footer {
+  background: url(../image/5-comic-burst-background-1.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 15vh;
+  color: #463d2c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+footer .socialMed {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+/*# sourceMappingURL=style.css.map */
