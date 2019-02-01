@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Notable');
+
+$font-title: 'Bangers', cursive;
+$font-alt: 'Notable', sans-serif;
+
+$clr-bg: #F2ECD8;
+$clr-title: #F85D3C;
+$clr-txt: #FBEE04;
+$clr-extra: #0F9FBF;
+$clr-dark: #362F22;
+
+$bar-width: 40px;
+$bar-height: 5px;
+$bar-spacing: 12px;
+$transition-time: .5s;
+
+html, body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    background: $clr-bg;
+    font-family: $font-title, Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    background: url(../image/5-comic-burst-background-1.png) no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1em 3em;
+    box-shadow: 0 2px 3px lighten($clr-dark, 20%);
+
+    .logo {
+        width: 6rem;
+    }
+    h1 {
+        font-size: 2rem;
+        color: $clr-title;
+        position: relative;
+        left: 20%;
+    }
+}
+
+nav {
+    position: fixed;
+    top: 3rem;
+    right: -10%;
+    background: $clr-title;
+    font-size: 1.2rem;
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+
+    .hamburger-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        width: $bar-width;
+        height: $bar-height + $bar-spacing * 2;
+        cursor: pointer;
+        transition: all $transition-time ease;
+
+        &.animate {
+          transform: rotate(360deg);
+        }
+    }
+
+    .bar, .bar:before, .bar:after {
+    width: $bar-width;
+    height: $bar-height;
+    }
+
+    .bar {
+    position: relative;
+    transform: translateY($bar-spacing);
+    background: $clr-title;
+    }
+
+    .bar:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: $bar-spacing;
+    background: $clr-title;
+    transition: all $transition-time ease;
+    }
+
+    .bar:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: $bar-spacing;
+    background: $clr-title;
+    transition: all $transition-time ease;
+    }
+
+    .bar.animate:after {
+    width: 25px;
+    transform: rotate(-45deg) translateX(6px);
+    }
+
+    .bar.animate:before {
+    width: 25px;
+    transform: rotate(45deg) translateX(6px);
+    }
+
+
+    .menu-list {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+
+        li {
+            margin: 0 2rem;
+
+            a {
+                text-decoration: none;
+                color: $clr-extra;
+            }
+            a:hover {
+                color: $clr-txt;
+            }
+        }
+    }
+    .active {
+        color: $clr-txt;
+    }
+}
+
+main {
+    // min-height & flex setup to have the footer stick to the bottom
+    min-height: 100%;
+    flex: 1 0 auto;
+    // here below goes the rest of main
+
+    .hero-img {
+        background-image: url(../image/977333_free-marvel-superhero-wallpapers-high-quality-resolution-v3y-wallx_1920x1080_h.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 50vmin;
+        width: 100%;
+        position: relative;
+        top: 7rem;
+        z-index: -10;
+    }
+}
+
+.scrollTop {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: lighten($clr-title, 5%);
+    opacity: .85;
+    color: white;
+    transition: all 200ms ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 1;
+        background:$clr-title;
+    }
+
+    i {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3em;
+        color: white;
+    }
+}
+
+// Don't mind this .hidden for now, it will come in handy later after adding in js
+.hidden {
+    // display: none;
+    transition: all 500ms ease-in;
+}
+
+footer {
+    background: url(../image/5-comic-burst-background-1.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 15vh;
+    color: lighten($clr-dark, 5%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    .socialMed {
+        font-size: 3rem;
+        margin-top: 1rem;
+    }
+}
+
+
+
+@media (min-width: 576px) {
+ }
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        align-items: center;
+    }
+    nav {
+        top: 5.5rem;
+        right: 1rem;
+    }
+ }
+@media (min-width: 992px) {  }
+@media (min-width: 1200px) {  }
