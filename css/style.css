@@ -50,28 +50,25 @@ body {
 
 .header h1 {
   font-size: 2rem;
+  letter-spacing: .1em;
   color: #F85D3C;
   position: relative;
-  left: 20%;
+  left: 2rem;
 }
 
 nav {
   position: fixed;
-  top: 3rem;
-  right: -10%;
-  background: #F85D3C;
   font-size: 1.2rem;
-  width: 50%;
+  width: 100%;
   height: auto;
-  border-radius: 10px;
 }
 
 nav .hamburger-menu {
   position: absolute;
-  top: 0;
+  top: 5rem;
   left: 0;
   bottom: 0;
-  right: 0;
+  right: -70%;
   margin: auto;
   width: 40px;
   height: 29px;
@@ -85,7 +82,9 @@ nav .hamburger-menu.animate {
           transform: rotate(360deg);
 }
 
-nav .bar, nav .bar:before, nav .bar:after {
+nav .bar,
+nav .bar:before,
+nav .bar:after {
   width: 40px;
   height: 5px;
 }
@@ -130,13 +129,19 @@ nav .bar.animate:before {
 }
 
 nav .menu-list {
-  display: none;
-}
-
-nav ul {
+  font-size: 2rem;
+  background: #F85D3C;
+  width: 100%;
+  height: 9rem;
+  position: absolute;
+  top: 8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -146,21 +151,33 @@ nav ul {
   list-style: none;
 }
 
-nav ul li {
-  margin: 0 2rem;
+nav .menu-list li {
+  text-align: center;
+  width: 120%;
+  height: 3rem;
+  border-bottom: 1px solid #FBEE04;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-nav ul li a {
+nav .menu-list li a {
   text-decoration: none;
   color: #0F9FBF;
 }
 
-nav ul li a:hover {
+nav .menu-list li a:hover {
   color: #FBEE04;
 }
 
 nav .active {
-  color: #FBEE04;
+  color: #FBEE04 !important;
 }
 
 main {
@@ -260,6 +277,29 @@ footer .socialMed {
   nav {
     top: 5.5rem;
     right: 1rem;
+    width: 50%;
+  }
+  nav .hamburger-menu {
+    display: none;
+  }
+  nav .menu-list {
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    top: -2rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1.2rem;
+  }
+  nav .menu-list li {
+    width: 100%;
+    border-bottom: initial;
   }
 }
 /*# sourceMappingURL=style.css.map */

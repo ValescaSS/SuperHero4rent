@@ -50,28 +50,25 @@ body {
     }
     h1 {
         font-size: 2rem;
+        letter-spacing: .1em;
         color: $clr-title;
         position: relative;
-        left: 20%;
+        left: 2rem;
     }
 }
 
 nav {
     position: fixed;
-    top: 3rem;
-    right: -10%;
-    background: $clr-title;
     font-size: 1.2rem;
-    width: 50%;
+    width: 100%;
     height: auto;
-    border-radius: 10px;
 
     .hamburger-menu {
         position: absolute;
-        top: 0;
+        top: 5rem;
         left: 0;
         bottom: 0;
-        right: 0;
+        right: -70%;
         margin: auto;
         width: $bar-width;
         height: $bar-height + $bar-spacing * 2;
@@ -81,73 +78,83 @@ nav {
         &.animate {
           transform: rotate(360deg);
         }
-    }
+      }
 
-    .bar, .bar:before, .bar:after {
-    width: $bar-width;
-    height: $bar-height;
-    }
+      .bar,
+      .bar:before,
+      .bar:after {
+        width: $bar-width;
+        height: $bar-height;
+      }
 
-    .bar {
-    position: relative;
-    transform: translateY($bar-spacing);
-    background: $clr-title;
-    }
+      .bar {
+        position: relative;
+        transform: translateY($bar-spacing);
+        background: $clr-title;
+      }
 
-    .bar:before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: $bar-spacing;
-    background: $clr-title;
-    transition: all $transition-time ease;
-    }
+      .bar:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: $bar-spacing;
+        background: $clr-title;
+        transition: all $transition-time ease;
+      }
 
-    .bar:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: $bar-spacing;
-    background: $clr-title;
-    transition: all $transition-time ease;
-    }
+      .bar:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: $bar-spacing;
+        background: $clr-title;
+        transition: all $transition-time ease;
+      }
 
-    .bar.animate:after {
-    width: 25px;
-    transform: rotate(-45deg) translateX(6px);
-    }
+      .bar.animate:after {
+        width: 25px;
+        transform: rotate(-45deg) translateX(6px);
+      }
 
-    .bar.animate:before {
-    width: 25px;
-    transform: rotate(45deg) translateX(6px);
-    }
+      .bar.animate:before {
+        width: 25px;
+        transform: rotate(45deg) translateX(6px);
+      }
 
+      .menu-list {
+          font-size: 2rem;
+          background: $clr-title;
+          width: 100%;
+          height: 9rem;
+          position: absolute;
+          top: 8rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          list-style: none;
 
-    .menu-list {
-        display: none;
-    }
+          li {
+              text-align: center;
+              width: 120%;
+              height: 3rem;
+              border-bottom: 1px solid $clr-txt;
+              display: flex;
+              justify-content: center;
+              align-items: center;
 
-    ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
-
-        li {
-            margin: 0 2rem;
-
-            a {
-                text-decoration: none;
-                color: $clr-extra;
-            }
-            a:hover {
-                color: $clr-txt;
-            }
-        }
-    }
-    .active {
-        color: $clr-txt;
-    }
+              a {
+                  text-decoration: none;
+                  color: $clr-extra;
+              }
+              a:hover {
+                  color: $clr-txt;
+              }
+          }
+      }
+      .active {
+          color: $clr-txt !important;
+      }
 }
 
 main {
@@ -225,8 +232,7 @@ footer {
 
 
 
-@media (min-width: 576px) {
- }
+@media (min-width: 576px) { }
 @media (min-width: 768px) {
     .header {
         flex-direction: row;
@@ -235,6 +241,27 @@ footer {
     nav {
         top: 5.5rem;
         right: 1rem;
+        width: 50%;
+
+        .hamburger-menu {
+            display: none;
+        }
+
+        .menu-list {
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            top: -2rem;
+            height: 4rem;
+            font-size: 1.5rem;
+            padding-left: 1rem;
+            padding-right: 1.2rem;
+
+            li {
+                width: 100%;
+                border-bottom: initial;
+            }
+        }
     }
  }
 @media (min-width: 992px) {  }
