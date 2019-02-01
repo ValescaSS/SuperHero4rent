@@ -162,3 +162,39 @@ footer {
 @media (min-width: 768px) {  }
 @media (min-width: 992px) {  }
 @media (min-width: 1200px) {  } */
+
+
+
+#md-blue{
+    width: 35%;
+    height: 10%;
+    font-size: 1.8em;
+    top: 13rem;
+    margin: auto;
+    display: flex;
+    position: relative;
+    background: url(../inspiration/super/blue.jpg) no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 40px;
+    color: #F85D3C;
+    z-index: -1;
+}
+
+
+
+.md-can-do{
+    position: relative;
+    top: 18rem;
+    margin: 8em;
+    color: #0F9FBF;
+
+}
+
+
+.md-h2{
+    color: #F85D3C;
+    
+    }
