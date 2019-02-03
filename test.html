@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+
+        let row = 1;
+        let column = 1;
+        window.onload = function() {
+            for (var i = 0; i < 10; i++) {
+                var div = document.createElement("div");
+                //div.className = "wrapper";
+                
+                
+                div.style.border = "1px solid black";
+                div.style.margin = "20px";
+                div.style.padding = "10px";
+
+                /* div.style.gridRow= row;
+                div.style.gridColumn=column;
+                column +=1;
+                if(column ==17){
+                    row+=1;
+                    column =0;
+                }
+                console.log("test"); */
+                
+                
+                document.body.appendChild(div);
+            }
+        };
+        </script>
+        <!-- <style>
+          .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: 100px;
+          }
+        </style> -->
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
