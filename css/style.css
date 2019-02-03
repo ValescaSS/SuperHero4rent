@@ -1,18 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Bangers|Notable");
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   scroll-behavior: smooth;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 body {
   padding: 0;
-  background: #F2ECD8;
+  background: #f2ecd8;
   font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,8 +53,8 @@ body {
 
 .header h1 {
   font-size: 2rem;
-  letter-spacing: .1em;
-  color: #F85D3C;
+  letter-spacing: 0.1em;
+  color: #f85d3c;
   position: relative;
   left: 2rem;
 }
@@ -93,7 +96,7 @@ nav .bar {
   position: relative;
   -webkit-transform: translateY(12px);
           transform: translateY(12px);
-  background: #F85D3C;
+  background: #f85d3c;
 }
 
 nav .bar:before {
@@ -101,7 +104,7 @@ nav .bar:before {
   position: absolute;
   right: 0;
   bottom: 12px;
-  background: #F85D3C;
+  background: #f85d3c;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -111,7 +114,7 @@ nav .bar:after {
   position: absolute;
   right: 0;
   top: 12px;
-  background: #F85D3C;
+  background: #f85d3c;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -130,7 +133,7 @@ nav .bar.animate:before {
 
 nav .menu-list {
   font-size: 2rem;
-  background: #F85D3C;
+  background: #f85d3c;
   width: 100%;
   height: 9rem;
   position: absolute;
@@ -155,7 +158,7 @@ nav .menu-list li {
   text-align: center;
   width: 120%;
   height: 3rem;
-  border-bottom: 1px solid #FBEE04;
+  border-bottom: 1px solid #fbee04;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -169,15 +172,15 @@ nav .menu-list li {
 
 nav .menu-list li a {
   text-decoration: none;
-  color: #0F9FBF;
+  color: #0f9fbf;
 }
 
 nav .menu-list li a:hover {
-  color: #FBEE04;
+  color: #fbee04;
 }
 
 nav .active {
-  color: #FBEE04 !important;
+  color: #fbee04 !important;
 }
 
 main {
@@ -207,7 +210,7 @@ main .hero-img {
   height: 4rem;
   border-radius: 50%;
   background: #f97155;
-  opacity: .85;
+  opacity: 0.85;
   color: white;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
@@ -216,7 +219,7 @@ main .hero-img {
 .scrollTop:hover {
   cursor: pointer;
   opacity: 1;
-  background: #F85D3C;
+  background: #f85d3c;
 }
 
 .scrollTop i {
@@ -262,6 +265,147 @@ footer {
 footer .socialMed {
   font-size: 3rem;
   margin-top: 1rem;
+}
+
+#md-blue {
+  width: 35%;
+  height: 8%;
+  font-size: 1.8em;
+  top: 13rem;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 40px;
+  color: #f85d3c;
+  z-index: -1;
+}
+
+.md-avatar {
+  /* To correctly align image, regardless of content height: */
+  vertical-align: top;
+  display: inline-block;
+  /* To horizontally center images and caption */
+  text-align: center;
+  /* The width of the container also implies margin around the images. */
+  width: 22%;
+  position: relative;
+  top: 300px;
+  z-index: -1;
+}
+
+.md-avatar-img {
+  width: 200px;
+  height: 200px;
+  background-color: #0f9fbf2a;
+  border-radius: 50%;
+}
+
+.md-avatar-tex {
+  /* Make the caption a block so it occupies its own line. */
+  display: block;
+  font-size: 1.2em;
+  color: #0f9fbf;
+}
+
+.md-h2 {
+  position: relative;
+  top: 400px;
+  color: #f85d3c;
+  z-index: -1;
+}
+
+.md-p {
+  position: relative;
+  top: 400px;
+  color: #0f9fbf;
+  z-index: -1;
+}
+
+#md-sec {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+#md-sec-av {
+  margin-left: 400px;
+}
+
+#md-blue-adress {
+  width: 35%;
+  height: 8%;
+  font-size: 1.8em;
+  top: 500px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 40px;
+  color: #f85d3c;
+  z-index: -1;
+}
+
+#md-adress-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  position: relative;
+  top: 600px;
+  z-index: -1;
+}
+
+.md-h2-services {
+  position: relative;
+  top: 280px;
+  color: #f85d3c;
+  z-index: -1;
+}
+
+.md-p-services {
+  position: relative;
+  top: 280px;
+  color: #0f9fbf;
+  z-index: -1;
+}
+
+#md-more {
+  color: #f85d3c;
+  position: relative;
+  top: 330px;
+  text-align: center;
+}
+
+.md-h2-faq {
+  position: relative;
+  top: 600px;
+  color: #f85d3c;
+  z-index: -1;
+}
+
+.md-p-faq {
+  position: relative;
+  top: 600px;
+  color: #0f9fbf;
+  z-index: -1;
 }
 
 @media (min-width: 768px) {
