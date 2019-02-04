@@ -9,22 +9,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class='header'>
-        <img class='logo' src="image/logo.svg" alt="">
-        <h1>Hire your best superhero</h1>
-    </div>
-
-    <nav>
-        <div class="hamburger-menu">
-            <div class="bar"></div>
+    <header class="header">
+        <div>
+            <a href="#" class="logo">
+                <img class='logo' src="image/logo.svg" alt="">
+            </a>
+            <h1>Hire your best superhero</h1>
         </div>
+
+        <input class="menu-btn" type="checkbox" id="menu-btn">
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 
         <ul class='menu-list'>
             <li class='home-section'><a href='#home' class='active'>Home</a></li>
             <li class='service-section'><a href='#service'>Services</a></li>
             <li class='about-section'><a href='#about'>About Us</a></li>
         </ul>
-    </nav>
+    </header>
 
     <main>
         <div class="hero-img"></div>
@@ -51,6 +52,6 @@
         <p>&copy; 2018 All Rights Reserved | SUPERHIRO 4 HIRE</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
 </body>
 </html>

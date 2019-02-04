@@ -40,10 +40,14 @@ body {
     background-size: cover;
     background-position-y: center;
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
     padding: 1em 3em;
     box-shadow: 0 2px 3px lighten($clr-dark, 20%);
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
 
     .logo {
         width: 6rem;
@@ -55,106 +59,112 @@ body {
         position: relative;
         left: 2rem;
     }
-}
 
-nav {
-    position: fixed;
-    font-size: 1.2rem;
-    width: 100%;
-    height: auto;
-
-    .hamburger-menu {
+    .menu-list {
+        font-size: 2rem;
+        background: $clr-title;
+        width: 100%;
+        height: 9rem;
         position: absolute;
-        top: 5rem;
-        left: 0;
-        bottom: 0;
-        right: -70%;
-        margin: auto;
-        width: $bar-width;
-        height: $bar-height + $bar-spacing * 2;
-        cursor: pointer;
-        transition: all $transition-time ease;
+        top: 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .2s ease-out;
 
-        &.animate {
-          transform: rotate(360deg);
+        li {
+            text-align: center;
+            width: 120%;
+            height: 3rem;
+            border-bottom: 1px solid $clr-txt;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                color: $clr-extra;
+            }
+            a:hover {
+                color: $clr-txt;
+            }
         }
-      }
 
-      .bar,
-      .bar:before,
-      .bar:after {
-        width: $bar-width;
-        height: $bar-height;
-      }
+        .active {
+            color: $clr-txt !important;
+        }
+    }
 
-      .bar {
+    .menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        padding: 28px 1em;
         position: relative;
-        transform: translateY($bar-spacing);
-        background: $clr-title;
-      }
+        user-select: none;
+    }
 
-      .bar:before {
-        content: "";
+    .navicon {
+        background: $clr-title;
+        display: block;
+        height: 3px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 2em;
+        right: -2rem;
+        border-radius: 3px;
+    }
+
+    .navicon:before,
+    .navicon:after {
+        background: $clr-title;
+        content: '';
+        display: block;
+        height: 100%;
         position: absolute;
-        right: 0;
-        bottom: $bar-spacing;
-        background: $clr-title;
-        transition: all $transition-time ease;
-      }
+        transition: all .2s ease-out;
+        width: 100%;
+        border-radius: 3px;
+    }
 
-      .bar:after {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: $bar-spacing;
-        background: $clr-title;
-        transition: all $transition-time ease;
-      }
+    .navicon:before {
+    top: 10px;
+    }
 
-      .bar.animate:after {
-        width: 25px;
-        transform: rotate(-45deg) translateX(6px);
-      }
+    .navicon:after {
+    top: -10px;
+    }
 
-      .bar.animate:before {
-        width: 25px;
-        transform: rotate(45deg) translateX(6px);
-      }
+    .menu-btn {
+        display: none;
+    }
 
-      .menu-list {
-          font-size: 2rem;
-          background: $clr-title;
-          width: 100%;
-          height: 9rem;
-          position: absolute;
-          top: 8rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          list-style: none;
+    .menu-btn:checked ~ .menu-list {
+        max-height: 9rem;
+    }
 
-          li {
-              text-align: center;
-              width: 120%;
-              height: 3rem;
-              border-bottom: 1px solid $clr-txt;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+    .menu-btn:checked ~ .menu-icon .navicon {
+        background: transparent;
+    }
 
-              a {
-                  text-decoration: none;
-                  color: $clr-extra;
-              }
-              a:hover {
-                  color: $clr-txt;
-              }
-          }
-      }
-      .active {
-          color: $clr-txt !important;
-      }
+    .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+    }
+
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+        top: 0;
+    }
+
 }
 
 main {
@@ -235,34 +245,33 @@ footer {
 @media (min-width: 576px) { }
 @media (min-width: 768px) {
     .header {
-        flex-direction: row;
-        align-items: center;
-    }
-    nav {
-        top: 5.5rem;
-        right: 1rem;
-        width: 50%;
-
-        .hamburger-menu {
-            display: none;
+        div {
+            flex-direction: row;
+            align-items: center;
         }
 
         .menu-list {
             border-radius: 10px;
             display: flex;
             flex-direction: row;
-            top: -2rem;
+            top: 5.5rem;
             height: 4rem;
             font-size: 1.5rem;
             padding-left: 1rem;
             padding-right: 1.2rem;
+            width: 50%;
+            right: 1rem;
+            max-height: 7rem;
 
             li {
-                width: 100%;
                 border-bottom: initial;
             }
         }
+
+        .menu-icon {
+            display: none;
+        }
     }
- }
+}
 @media (min-width: 992px) {  }
 @media (min-width: 1200px) {  }
