@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuperHero4Hire</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../SuperHero4rent/css/style.css" />
+    <style>
+      #rubrik1,
+      #rubrik2 {
+        position: relative;
+        text-align: center;
+        color: #f85d3c;
+      }
+      #rubrik1 {
+        top: 180px;
+      }
+      #rubrik2 {
+        top: 220px;
+      }
+      #form1,
+      #form2 {
+        position: relative;
+        width: 40%;
+        margin: auto;
+        height: auto;
+        padding: 10px;
+        display: grid;
+        gap: 10px;
+      }
+      #form1 {
+        top: 200px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+          "cell1 cell2"
+          "cell3 ."
+          "cell4 cell4"
+          "cell5 cell5"
+          "cell6 cell7"
+          "cell8 ."
+          "cell9 ."
+          "cell10 cell11";
+      }
+      #form2 {
+        top: 220px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+          "cell12"
+          "cell13"
+          "cell14"
+          "cell15"
+          "cell16";
+      }
+      #item1,
+      #item2,
+      #item3,
+      #item4,
+      #item5,
+      #item6,
+      #item7,
+      #item8,
+      #item9,
+      #item10,
+      #item11,
+      #item12,
+      #item13,
+      #item14,
+      #item15,
+      #item16 {
+        width: 100%;
+        padding: 5px;
+      }
+      #item1 {
+        grid-area: cell1;
+      }
+      #item2 {
+        grid-area: cell2;
+      }
+      #item3 {
+        grid-area: cell3;
+      }
+      #item4 {
+        grid-area: cell4;
+      }
+      #item5 {
+        grid-area: cell5;
+      }
+      #item6 {
+        grid-area: cell6;
+      }
+      #item7 {
+        grid-area: cell7;
+      }
+      #item8 {
+        grid-area: cell8;
+      }
+      #item9 {
+        grid-area: cell9;
+      }
+      #item10 {
+        grid-area: cell10;
+      }
+      #item11 {
+        grid-area: cell11;
+      }
+      #item12 {
+        grid-area: cell12;
+      }
+      #item13 {
+        grid-area: cell13;
+      }
+      #item14 {
+        grid-area: cell14;
+      }
+      #item15 {
+        grid-area: cell15;
+      }
+      #item16 {
+        grid-area: cell16;
+      }
+      input {
+        width: 100%;
+        padding: 7px;
+        /* border-radius: 5px; */
+        /* box-shadow: 0 2px 2px black; */
+      }
+      /* input #date,
+      input #time1,
+      input #time2 {
+        background-color: aliceblue;
+        color: orangered;
+      } */
+      label {
+        color: #0f9fbf;
+      }
+      #item15 #invoice {
+        width: auto;
+      }
+      #item16 #order {
+        width: 70px;
+        background-color: #269bbc;
+        color: white;
+        border-radius: 10px;
+        font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
+        font-size: 15px;
+      }
+      #text0 {
+        position: relative;
+        top: 230px;
+        width: 43%;
+        margin: auto;
+        padding: 10px;
+        overflow: hidden;
+        color: #269bbc;
+        line-height: 2em;
+      }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/combodate.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <img class="logo" src="../SuperHero4rent/image/logo.svg" alt="" />
+      <h1>Hire your best superhero</h1>
+    </div>
+
+    <nav>
+      <div class="hamburger menu-btn">
+        <div class="icon"></div>
+      </div>
+
+      <div class="menu-list">
+        <span class="arrow"></span>
+        <ul>
+          <li class="home-section"><a href="#home" class="active">Home</a></li>
+          <li class="service-section"><a href="#service">Services</a></li>
+          <li class="about-section"><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <h2 id="rubrik1">Booking Information</h2>
+      <div id="form1">
+        <div id="item1">
+          <label for="fname">First Name</label><br />
+          <input type="text" name="fname" id="fname" />
+        </div>
+        <div id="item2">
+          <label for="lname">Last Name</label><br />
+          <input type="text" name="lname" id="lname" />
+        </div>
+        <div id="item3">
+          <label for="tphone">Telephone</label><br />
+          <input type="text" name="tphone" id="tphone" />
+        </div>
+        <div id="item4">
+          <label for="email">Email Address</label><br />
+          <input type="text" name="email" id="email" />
+        </div>
+        <div id="item5">
+          <label for="address">Address</label><br />
+          <input type="text" name="address" id="address" />
+        </div>
+        <div id="item6">
+          <label for="pcode">Postal Code</label><br />
+          <input type="text" name="pcode" id="pcode" />
+        </div>
+        <div id="item7">
+          <label for="country">Country</label><br />
+          <input type="text" name="country" id="country" />
+        </div>
+        <div id="item8">
+          <label for="shero">Super Hero</label><br />
+          <input type="text" name="shero" id="shero" />
+        </div>
+        <div id="item9">
+          <label for="date">Date for booking</label><br />
+          <input
+            type="text"
+            id="date"
+            data-format="DD-MM-YYYY"
+            data-template="D MMM YYYY"
+            name="date"
+            value="09-01-2013"
+          />
+          <script>
+            $(function() {
+              $("#date").combodate({
+                minYear: 2019,
+                maxYear: 2020
+              });
+            });
+          </script>
+        </div>
+        <div id="item10">
+          <label for="datetime1">Start Time</label><br />
+          <input
+            type="text"
+            id="time1"
+            data-format="HH:mm"
+            data-template="HH : mm"
+            name="datetime1"
+          />
+          <script>
+            $(function() {
+              $("#time1").combodate({
+                firstItem: "name",
+                minuteStep: 1
+              });
+            });
+          </script>
+        </div>
+        <div id="item11">
+          <label for="datetime2">End Time</label><br />
+          <input
+            type="text"
+            id="time2"
+            data-format="HH:mm"
+            data-template="HH : mm"
+            name="datetime2"
+          />
+          <script>
+            $(function() {
+              $("#time2").combodate({
+                firstItem: "name",
+                minuteStep: 1
+              });
+            });
+          </script>
+        </div>
+      </div>
+
+      <h2 id="rubrik2">Card Information</h2>
+      <div id="form2">
+        <div id="item12">
+          <label for="name">Name</label><br />
+          <input type="text" name="name" id="name" />
+        </div>
+        <div id="item13">
+          <label for="cnumber">Card Number</label><br />
+          <input type="text" name="cnumber" id="cnumber" />
+        </div>
+        <div id="item14">
+          <label for="cveri">Card Verification (CVV)</label><br />
+          <input type="text" name="cveri" id="cveri" />
+        </div>
+        <div id="item15">
+          <input type="checkbox" name="invoice" id="invoice" />
+          <label for="invoice">Invoice</label>
+        </div>
+        <div id="item16">
+          <input type="submit" name="order" id="order" value="Order" />
+        </div>
+      </div>
+      <p id="text0">
+        Your booking form will be sent to our email. <br />
+        To ensure your date, time, and character(s) are available please book at
+        least 1 month in advance. <br />
+        Response to bookings can be instant but typically range from 24 - 72
+        business hours.
+      </p>
+    </main>
+
+    <footer>
+      <div class="socialMed">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter-square"></i>
+      </div>
+      <p>&copy; 2018 All Rights Reserved | SUPERHERO 4 HIRE</p>
+    </footer>
+    <div class="scrollTop hidden">
+      <a href="#">
+        <i class="fas fa-angle-up"></i>
+      </a>
+    </div>
+  </body>
+</html>

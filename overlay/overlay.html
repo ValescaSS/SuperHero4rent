@@ -10,7 +10,7 @@
       integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../SuperHero4rent/css/style.css" />
 
     <!-- flytta till sass -->
 
@@ -25,7 +25,7 @@
         right: 50%;
         bottom: 50%;
         /* background-color: rgba(0, 0, 0, 0.5); */
-        background-color: #269BBC; 
+        background-color: #269bbc;
         z-index: 2;
         cursor: pointer;
         transform: translate(-50%, -40%);
@@ -61,15 +61,112 @@
         position: absolute;
         top: 15%;
         left: 20%;
+        color: #362f22;
         transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
       }
+      #button0 {
+        position: relative;
+        top: 200px;
+        left: 42.5%;
+        padding: 20px;
+      }
+      .clasificacion {
+        direction: rtl;
+        unicode-bidi: bidi-override;
+      }
+      label {
+        color: whitesmoke;
+        position: relative;
+        top: 390px;
+        right: 625px;
+      }
+      label:hover {
+        color: orange;
+      }
+      label:hover ~ label {
+        color: orange;
+      }
+      input[type="radio"] {
+        display: none;
+      }
+      input[type="radio"]:checked ~ label {
+        color: orange;
+      }
+      #button1 {
+        position: relative;
+        top: -40px;
+        left: 800px;
+        background-color: #269bbc;
+        border: none;
+        font-size: 25px;
+        font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
+        color: #f2ecd8;
+      }
+      #rest,
+      #add,
+      #summa,
+      #tprice {
+        background-color: #f2ecd8;
+        width: 25px;
+        /* display: inline; */
+      }
+      #hour {
+        width: 25px;
+        height: 20px;
+        background-color: #f2ecd8;
+        border: 1px solid black;
+        display: inline;
+      }
+      #hours {
+        position: relative;
+        top: 70%;
+        left: 7%;
+        width: 180px;
+        padding: 10px;
+        background-color: #f2ecd8;
+        border-radius: 5px;
+        color: #362f22;
+      }
+      #price {
+        position: relative;
+        top: 62.7%;
+        left: 250px;
+        width: 160px;
+        padding: 10px;
+        background-color: #f2ecd8;
+        color: #362f22;
+        border-radius: 5px;
+      }
+      #tprice {
+        width: 60px;
+      }
+      #rest,
+      #tprice {
+        margin-left: 10px;
+      }
+      #hire {
+        position: relative;
+        top: 284px;
+        left: 620px;
+        width: 90px;
+        padding: 10px;
+        background-color: #fbee04;
+        border-radius: 5px;
+        font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        color: #362f22;
+      }
+      /* #hour {
+        background-color: aqua;
+        width: 1000px;
+        height: 500px;
+      } */
     </style>
-
   </head>
   <body>
     <div class="header">
-      <img class="logo" src="image/logo.svg" alt="" />
+      <img class="logo" src="../SuperHero4rent/image/logo.svg" alt="" />
       <h1>Hire your best superhero</h1>
     </div>
 
@@ -95,15 +192,42 @@
 
       <!-- start overlay  -->
 
-      <div id="overlay" onclick="off()">
-        
+      <div id="overlay">
         <!-- <div id="text">Overlay Text</div> -->
         <div id="title">GIRL POWER</div>
-        <img class="bild" src="img/woman.jpg" alt="Girl Power">
-      
+        <img class="bild" src="img/woman.jpg" alt="Girl Power" />
+
+        <form>
+          <p class="clasificacion">
+            <input id="radio1" type="radio" name="estrellas" value="5" />
+            <label for="radio1">★</label>
+            <input id="radio2" type="radio" name="estrellas" value="4" />
+            <label for="radio2">★</label>
+            <input id="radio3" type="radio" name="estrellas" value="3" />
+            <label for="radio3">★</label>
+            <input id="radio4" type="radio" name="estrellas" value="2" />
+            <label for="radio4">★</label>
+            <input id="radio5" type="radio" name="estrellas" value="1" />
+            <label for="radio5">★</label>
+          </p>
+        </form>
+
+        <button id="button1" onclick="off()">X</button>
+
+        <div id="hours">
+          Hours:
+          <input onclick="minusOne();" type="button" id="rest" value="-" />
+          <input type="button" id="summa" value="1" />
+          <input onclick="plusOne();" type="button" id="add" value="+" />
+        </div>
+        <div id="price">
+          Total Price:
+          <input type="button" id="tprice" value="$ 100" />
+        </div>
+        <input type="button" id="hire" value="Hire" />
       </div>
 
-      <div style="padding:20px">
+      <div id="button0">
         <button onclick="on()">Turn on overlay effect</button>
       </div>
 
@@ -111,19 +235,39 @@
         function on() {
           document.getElementById("overlay").style.display = "block";
         }
-
         function off() {
           document.getElementById("overlay").style.display = "none";
+        }
+        function plusOne(x = document.getElementById("summa").value) {
+          x = ++x;
+          if (x >= 1) {
+            document.getElementById("summa").value = x;
+            function totalPrice(x = document.getElementById("summa").value) {
+              let tprice = x * 100;
+              return tprice;
+            }
+            document.getElementById("tprice").value = "$ " + totalPrice(x);
+          }
+        }
+        function minusOne(x = document.getElementById("summa").value) {
+          x = --x;
+          if (x >= 1) {
+            document.getElementById("summa").value = x;
+            function totalPrice(x = document.getElementById("summa").value) {
+              let tprice = x * 100;
+              return tprice;
+            }
+            document.getElementById("tprice").value = "$ " + totalPrice(x);
+          }
+        }
+        function totalPrice(x = document.getElementById("summa").value) {
+          let tprice = x * 100;
+          document.getElementById("tprice").value = tprice;
         }
       </script>
 
       <!-- slut overlay -->
-
     </main>
-
-    <div class="scrollTop hidden">
-      <a href="#"> <i class="fas fa-angle-up"></i> </a>
-    </div>
 
     <footer>
       <div class="socialMed">
@@ -132,5 +276,8 @@
       </div>
       <p>&copy; 2018 All Rights Reserved | SUPERHIRO 4 HIRE</p>
     </footer>
+    <div class="scrollTop hidden">
+      <a href="#"> <i class="fas fa-angle-up"></i> </a>
+    </div>
   </body>
 </html>
