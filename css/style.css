@@ -208,6 +208,16 @@ main .hero-img {
   position: relative;
   top: 7rem;
   z-index: -10;
+  margin-bottom: 10rem;
+}
+
+main .gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
 }
 
 .scrollTop {
