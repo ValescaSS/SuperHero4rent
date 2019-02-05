@@ -260,6 +260,9 @@ footer {
           align-items: center;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  position: relative;
+  top: 100%;
+  z-index: -1;
 }
 
 footer .socialMed {
@@ -269,7 +272,7 @@ footer .socialMed {
 
 #md-blue {
   width: 35%;
-  height: 8%;
+  height: 4rem;
   font-size: 1.8em;
   top: 13rem;
   margin: auto;
@@ -293,7 +296,6 @@ footer .socialMed {
 .md-avatar {
   /* To correctly align image, regardless of content height: */
   vertical-align: top;
-  display: inline-block;
   /* To horizontally center images and caption */
   text-align: center;
   /* The width of the container also implies margin around the images. */
@@ -304,8 +306,8 @@ footer .socialMed {
 }
 
 .md-avatar-img {
-  width: 200px;
-  height: 200px;
+  width: 12rem;
+  height: 12rem;
   background-color: #0f9fbf2a;
   border-radius: 50%;
 }
@@ -337,12 +339,17 @@ footer .socialMed {
 }
 
 #md-sec-av {
-  margin-left: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #md-blue-adress {
   width: 35%;
-  height: 8%;
+  height: 4rem;
   font-size: 1.8em;
   top: 500px;
   margin: auto;
@@ -364,13 +371,22 @@ footer .socialMed {
 }
 
 #md-adress-img {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 300px;
   position: relative;
   top: 600px;
   z-index: -1;
+}
+
+#karta {
+  border-radius: 5%;
 }
 
 .md-h2-services {
@@ -392,18 +408,42 @@ footer .socialMed {
   position: relative;
   top: 330px;
   text-align: center;
+  z-index: -1;
+}
+
+#md-blue-faq {
+  width: 35%;
+  height: 4rem;
+  font-size: 1.8em;
+  top: 450px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 40px;
+  color: #f85d3c;
+  z-index: -1;
 }
 
 .md-h2-faq {
   position: relative;
-  top: 600px;
+  top: 500px;
   color: #f85d3c;
   z-index: -1;
 }
 
 .md-p-faq {
   position: relative;
-  top: 600px;
+  top: 500px;
   color: #0f9fbf;
   z-index: -1;
 }
