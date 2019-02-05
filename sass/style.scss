@@ -236,6 +236,13 @@ footer {
   }
 }
 
+// About us Desktop version
+// OBS!! Alla tager och klasser som jag har skapat börjar med "md-"
+// På detta sätt vi ska inte ha konflikter nar vi merge
+
+
+
+
 #md-blue {
   width: 35%;
   height: 4rem;
@@ -253,8 +260,9 @@ footer {
   border-radius: 40px;
   color: $clr-title;
   z-index: -1;
-}
 
+  
+}
 
 
 
@@ -262,31 +270,30 @@ footer {
 .md-avatar {
   /* To correctly align image, regardless of content height: */
   vertical-align: top;
-  
+
   /* To horizontally center images and caption */
   text-align: center;
   /* The width of the container also implies margin around the images. */
   width: 22%;
-  
+
   position: relative;
   top: 300px;
   z-index: -1;
 
-}
-
-
-.md-avatar-img {
-  width: 12rem;
-  height: 12rem;
-  background-color: #0f9fbf2a;
-  border-radius: 50%;
-}
-
-.md-avatar-tex {
-  /* Make the caption a block so it occupies its own line. */
-  display: block;
-  font-size: 1.2em;
-  color: $clr-extra;
+  
+  .md-avatar-img {
+    width: 12rem;
+    height: 12rem;
+    background-color: #0f9fbf2a;
+    border-radius: 50%;
+  }
+  
+  .md-avatar-tex {
+    /* Make the caption a block so it occupies its own line. */
+    display: block;
+    font-size: 1.2em;
+    color: $clr-extra;
+  }
 }
 
 .md-h2 {
@@ -304,55 +311,53 @@ footer {
 }
 
 #md-sec {
-    margin-left: 150px;
-    margin-right: 150px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 #md-sec-av {
-    
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #md-blue-adress {
-    width: 35%;
+  width: 35%;
   height: 4rem;
-    font-size: 1.8em;
-    top: 500px;
-    margin: auto;
-    display: flex;
-    position: relative;
-    background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg)
+  font-size: 1.8em;
+  top: 500px;
+  margin: auto;
+  display: flex;
+  position: relative;
+  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg)
     no-repeat;
-    background-size: cover;
-    background-position-y: center;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 40px;
-    color: $clr-title;
-    z-index: -1;
+  background-size: cover;
+  background-position-y: center;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 40px;
+  color: $clr-title;
+  z-index: -1;
 }
 
- #md-adress-img {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
-    position: relative;
-    top: 600px;
-    z-index: -1;
-    
-  }
+#md-adress-img {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  position: relative;
+  top: 600px;
+  z-index: -1;
+}
+
+#karta {
+  border-radius: 5%;
   
-  #karta{
-    border-radius: 5%;
-    //padding-bottom: 200px;
-
 }
 
-
-//Services
+// Services Desktop version
+// OBS!! Alla tager och klasser som jag har skapat börjar med "md-"
+// På detta sätt vi ska inte ha konflikter nar vi merge
 
 .md-h2-services {
   position: relative;
@@ -368,25 +373,24 @@ footer {
   z-index: -1;
 }
 
-
-#md-more{
-    color: $clr-title;
-    position: relative;
-    top: 330px;
-    text-align: center;
-    z-index: -1;
+#md-more {
+  color: $clr-title;
+  position: relative;
+  top: 330px;
+  text-align: center;
+  z-index: -1;
 }
 
 #md-blue-faq {
   width: 35%;
-height: 4rem;
+  height: 4rem;
   font-size: 1.8em;
   top: 450px;
   margin: auto;
   display: flex;
   position: relative;
   background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg)
-  no-repeat;
+    no-repeat;
   background-size: cover;
   background-position-y: center;
   justify-content: space-around;
@@ -395,7 +399,6 @@ height: 4rem;
   color: $clr-title;
   z-index: -1;
 }
-
 
 .md-h2-faq {
   position: relative;
@@ -414,13 +417,13 @@ height: 4rem;
 @media (min-width: 576px) {
 }
 @media (min-width: 768px) {
-    .header {
-        flex-direction: row;
-        align-items: center;
-    }
-    nav {
-        top: 5.5rem;
-        right: 1rem;
+  .header {
+    flex-direction: row;
+    align-items: center;
+  }
+  nav {
+    top: 5.5rem;
+    right: 1rem;
     width: 50%;
 
     .hamburger-menu {
@@ -443,8 +446,70 @@ height: 4rem;
       }
     }
   }
+
+  // About us Mobile version
+  // OBS!! Alla tager och klasser som jag har skapat börjar med "md-"
+  // På detta sätt vi ska inte ha konflikter nar vi merge
 }
 @media (min-width: 992px) {
 }
 @media (min-width: 1200px) {
 }
+
+
+
+/* @media (max-width: 768px) {
+    position: relative;
+    top: 20rem;
+  } */
+
+
+  @media (max-width: 768px) {
+
+    #md-blue{
+    position: relative;
+    top: 20rem;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+#md-sec-av{
+    position: relative;
+    top: 7rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.md-avatar{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 4rem;
+}
+.md-avatar-tex{
+    display: block;
+    
+    
+}
+
+  #md-sec-av{
+    text-align: center;
+  }
+
+  #md-sec {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+
+  #md-blue-adress{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+  }
+
+  }
