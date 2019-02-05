@@ -305,15 +305,14 @@ footer .socialMed {
   z-index: -1;
 }
 
-.md-avatar .md-avatar-img {
+.md-avatar-img {
   width: 12rem;
   height: 12rem;
   background-color: #0f9fbf2a;
   border-radius: 50%;
 }
 
-.md-avatar .md-avatar-tex {
-  /* Make the caption a block so it occupies its own line. */
+.md-avatar-tex {
   display: block;
   font-size: 1.2em;
   color: #0f9fbf;
@@ -331,6 +330,7 @@ footer .socialMed {
   top: 400px;
   color: #0f9fbf;
   z-index: -1;
+  min-width: 320px;
 }
 
 #md-sec {
@@ -495,13 +495,13 @@ footer .socialMed {
   #md-blue {
     position: relative;
     top: 20rem;
-    width: 60%;
+    width: 25rem;
+    margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
   }
   #md-sec-av {
     position: relative;
@@ -522,20 +522,59 @@ footer .socialMed {
     display: block;
   }
   #md-sec-av {
-    text-align: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
   }
   #md-sec {
     margin-left: 20px;
     margin-right: 20px;
   }
   #md-blue-adress {
-    width: 60%;
+    width: 25rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+  }
+  #md-blue-services {
+    position: relative;
+    top: 10rem;
+    width: 25rem;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+  }
+  #md-blue-faq {
+    position: relative;
+    /* top: 10rem; */
+    width: 25rem;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+  }
+  .md-h2-services {
+    position: relative;
+    top: 22rem;
+    color: #f85d3c;
+    z-index: -1;
+  }
+  .md-p-services {
+    position: relative;
+    top: 22rem;
+    color: #0f9fbf;
+    z-index: -1;
+  }
+  #md-more {
+    color: #f85d3c;
+    position: relative;
+    top: 22rem;
+    text-align: center;
+    z-index: -1;
   }
 }
 /*# sourceMappingURL=style.css.map */

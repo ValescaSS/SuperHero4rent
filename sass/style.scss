@@ -240,9 +240,6 @@ footer {
 // OBS!! Alla tager och klasser som jag har skapat börjar med "md-"
 // På detta sätt vi ska inte ha konflikter nar vi merge
 
-
-
-
 #md-blue {
   width: 35%;
   height: 4rem;
@@ -260,12 +257,7 @@ footer {
   border-radius: 40px;
   color: $clr-title;
   z-index: -1;
-
-  
 }
-
-
-
 
 .md-avatar {
   /* To correctly align image, regardless of content height: */
@@ -279,21 +271,18 @@ footer {
   position: relative;
   top: 300px;
   z-index: -1;
+}
+.md-avatar-img {
+  width: 12rem;
+  height: 12rem;
+  background-color: #0f9fbf2a;
+  border-radius: 50%;
+}
 
-  
-  .md-avatar-img {
-    width: 12rem;
-    height: 12rem;
-    background-color: #0f9fbf2a;
-    border-radius: 50%;
-  }
-  
-  .md-avatar-tex {
-    /* Make the caption a block so it occupies its own line. */
-    display: block;
-    font-size: 1.2em;
-    color: $clr-extra;
-  }
+.md-avatar-tex {
+  display: block;
+  font-size: 1.2em;
+  color: $clr-extra;
 }
 
 .md-h2 {
@@ -308,6 +297,7 @@ footer {
   top: 400px;
   color: $clr-extra;
   z-index: -1;
+  min-width: 320px;
 }
 
 #md-sec {
@@ -352,7 +342,6 @@ footer {
 
 #karta {
   border-radius: 5%;
-  
 }
 
 // Services Desktop version
@@ -456,48 +445,43 @@ footer {
 @media (min-width: 1200px) {
 }
 
-
-
 /* @media (max-width: 768px) {
     position: relative;
     top: 20rem;
   } */
 
-
-  @media (max-width: 768px) {
-
-    #md-blue{
+@media (max-width: 768px) {
+  #md-blue {
     position: relative;
     top: 20rem;
-    width: 60%;
+    width: 25rem;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-}
+    /* align-items: center; */
+    /* justify-content: center; */
+  }
 
-#md-sec-av{
+  #md-sec-av {
     position: relative;
     top: 7rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-
-}
-.md-avatar{
+  }
+  .md-avatar {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
     padding-bottom: 4rem;
-}
-.md-avatar-tex{
+  }
+  .md-avatar-tex {
     display: block;
-    
-    
-}
+  }
 
-  #md-sec-av{
-    text-align: center;
+  #md-sec-av {
+    align-content: center;
   }
 
   #md-sec {
@@ -505,11 +489,52 @@ footer {
     margin-right: 20px;
   }
 
-
-  #md-blue-adress{
-    width: 60%;
+  #md-blue-adress {
+    width: 25rem;
     display: flex;
-    justify-content: center;
   }
 
+  #md-blue-services {
+    position: relative;
+    top: 10rem;
+    width: 25rem;
+    margin: 0 auto;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    
   }
+
+  #md-blue-faq{
+    position: relative;
+    /* top: 10rem; */
+    width: 25rem;
+    margin: 0 auto;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+  }
+
+
+  .md-h2-services {
+    position: relative;
+    top: 22rem;
+    color: $clr-title;
+    z-index: -1;
+  }
+  
+  .md-p-services {
+    position: relative;
+    top: 22rem;
+    color: $clr-extra;
+    z-index: -1;
+  }
+  
+  #md-more {
+    color: $clr-title;
+    position: relative;
+    top: 22rem;
+    text-align: center;
+    z-index: -1;
+  }
+}
