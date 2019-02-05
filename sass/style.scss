@@ -215,9 +215,8 @@ main {
     }
 }
 
-// Don't mind this .hidden for now, it will come in handy later after adding in js
 .hidden {
-    // display: none;
+    display: none;
     transition: all 500ms ease-in;
 }
 
@@ -237,6 +236,10 @@ footer {
     .socialMed {
         font-size: 3rem;
         margin-top: 1rem;
+
+        i {
+            color: $clr-dark;
+        }
     }
 }
 

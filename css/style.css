@@ -242,6 +242,7 @@ main .hero-img {
 }
 
 .hidden {
+  display: none;
   -webkit-transition: all 500ms ease-in;
   transition: all 500ms ease-in;
 }
@@ -273,6 +274,10 @@ footer {
 footer .socialMed {
   font-size: 3rem;
   margin-top: 1rem;
+}
+
+footer .socialMed i {
+  color: #362F22;
 }
 
 @media (min-width: 768px) {
