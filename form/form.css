@@ -129,6 +129,7 @@ label {
 }
 #item15 #invoice {
   width: auto;
+  cursor: pointer;
 }
 #item16 #order {
   width: 70px;
@@ -137,6 +138,7 @@ label {
   border-radius: 10px;
   font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
   font-size: 15px;
+  cursor: pointer;
 }
 #text0 {
   position: relative;
