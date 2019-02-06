@@ -42,8 +42,9 @@
         if (this.readyState == 4 && this.status == 200) {
           let response = JSON.parse(xhttp.responseText);
           let people = response.people;
-
+            
           let output = "";
+          
           for (let i = 0; i < people.length; i++) {
             output +=
               "<div class='items'>" +
@@ -55,7 +56,7 @@
           document.getElementById("people").innerHTML = output;
         }
       };
-      xhttp.open("GET", "people.json", true);
+      xhttp.open("GET", "pasteries.json", true);
       xhttp.send(); 
       
       
@@ -77,8 +78,7 @@
     <h1>SuperHero4Rent</h1>
     <ul id="people"></ul>
     
-     <!--  <h1>Title</h1>
-      <p>This is a paragraph. Well, kind of.</p> -->
+    
       
     
   </body>
