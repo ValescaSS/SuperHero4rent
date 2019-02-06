@@ -16,8 +16,11 @@
     <script src="js/jquery.js"></script>
     <script src="js/moment.min.js"></script>
     <script src="js/combodate.js"></script>
+    <script src="form.js"></script>
   </head>
+
   <body>
+
     <header class="header">
       <div>
         <a href="#" class="logo">
@@ -83,32 +86,16 @@
             name="date"
             value="09-01-2013"
           />
-          <script>
-            $(function() {
-              $("#date").combodate({
-                minYear: 2019,
-                maxYear: 2020
-              });
-            });
-          </script>
         </div>
         <div id="item10">
           <label for="datetime1">Start Time</label><br />
           <input
-            type="text"
-            id="time1"
-            data-format="HH:mm"
-            data-template="HH : mm"
-            name="datetime1"
+          type="text"
+          id="time1"
+          data-format="HH:mm"
+          data-template="HH : mm"
+          name="datetime1"
           />
-          <script>
-            $(function() {
-              $("#time1").combodate({
-                firstItem: "name",
-                minuteStep: 1
-              });
-            });
-          </script>
         </div>
         <div id="item11">
           <label for="datetime2">End Time</label><br />
@@ -119,17 +106,9 @@
             data-template="HH : mm"
             name="datetime2"
           />
-          <script>
-            $(function() {
-              $("#time2").combodate({
-                firstItem: "name",
-                minuteStep: 1
-              });
-            });
-          </script>
         </div>
       </div>
-
+      
       <h2 id="rubrik2">Card Information</h2>
       <div id="form2">
         <div id="item12">
