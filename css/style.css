@@ -24,6 +24,7 @@ body {
 }
 
 .header {
+  z-index: 10;
   width: 100%;
   height: auto;
   position: fixed;
@@ -268,6 +269,8 @@ footer {
           align-items: center;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  position: relative;
+  top: 100%;
 }
 
 footer .socialMed {
