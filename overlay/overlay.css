@@ -66,6 +66,7 @@
     font-size: 25px;
     font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
     color: #f2ecd8;
+    cursor: pointer;
   }
   #myCanvas {
     position: absolute;
@@ -116,6 +117,11 @@
     position: absolute;
     top: 82%;
     left: 7%;
+  }
+  #rest,
+  #add,
+  #hire {
+    cursor: pointer;
   }
   #rest,
   #add,
