@@ -198,38 +198,168 @@ main {
             border-radius: 1em;
             width: 50%;
         }
+    }
 
-        .overlay {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: $clr-extra;
-            display: none;
-            z-index: 2;
-
-            &.open {
-                display: grid;
-                align-items: center;
-                justify-items: center;
-            }
-        }
-
-        .overlay-inner {
-            widows: 80%;
-            padding: 10px;
-
-            img {
-                width: 100%;
-            }
-        }
-
-        .close {
-            background: none;
-            color: $clr-bg;
-            border: 0;
-        }
+    // overlay style starts here
+    #button0 {
+        position: relative;
+        top: 200px;
+        left: 42.5%;
+        padding: 20px;
+    }
+    #overlay {
+        position: fixed;
+        top: 20%;
+        left: 20%;
+        width: 60%;
+        height: 70%;
+        background-color: #269bbc;
+        border-radius: 10px;
+        z-index: 11;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 5);
+        display: none;
+    }
+    #box1 {
+        position: absolute;
+        top: 7%;
+        left: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 30%;
+        height: 70%;
+        /* border: 1px solid black; */
+    }
+    #title {
+        font-size: 3rem;
+        color: #362f22;
+    }
+    #bild-overlay {
+        width: 90%;
+        height: 70%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 5);
+    }
+    #clasificacion {
+        direction: rtl;
+        unicode-bidi: bidi-override;
+    }
+    label {
+        color: whitesmoke;
+    }
+    label:hover {
+        color: orange;
+    }
+    label:hover ~ label {
+        color: orange;
+    }
+    input[type="radio"] {
+        display: none;
+    }
+    input[type="radio"]:checked ~ label {
+        color: orange;
+    }
+    #button1 {
+        position: absolute;
+        top: 2%;
+        left: 96%;
+        background-color: #269bbc;
+        border: none;
+        font-size: 25px;
+        font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
+        color: #f2ecd8;
+    }
+    #myCanvas {
+        position: absolute;
+        top: 30%;
+        left: 56.1%;
+        /* border: 1px solid black; */
+    }
+    .box2 {
+        display: flex;
+        /* border: 1px solid black; */
+        width: 40%;
+        height: auto;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 10%;
+        left: 47%;
+    }
+    #color-name {
+        position: absolute;
+        top: 20%;
+    }
+    .item {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+    #circle1 {
+        background-color: #3ed1ee;
+    }
+    #circle2 {
+        background-color: #bcd689;
+    }
+    #circle3 {
+        background-color: #824583;
+    }
+    #circle4 {
+        background-color: #ffd458;
+    }
+    #circle5 {
+        background-color: #ff9241;
+    }
+    #box3 {
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-between;
+        width: 86%;
+        position: absolute;
+        top: 82%;
+        left: 7%;
+    }
+    #rest,
+    #add,
+    #summa,
+    #tprice {
+        background-color: #f2ecd8;
+        width: auto;
+    }
+    #hours {
+        width: auto;
+        padding: 2%;
+        background-color: #f2ecd8;
+        border-radius: 5px;
+        color: #362f22;
+        font-size: 1rem;
+    }
+    #price {
+        width: auto;
+        padding: 2%;
+        background-color: #f2ecd8;
+        color: #362f22;
+        border-radius: 5px;
+        font-size: 1rem;
+        position: relative;
+        right: 20%;
+    }
+    #tprice {
+        width: auto;
+    }
+    #rest,
+    #tprice {
+        margin-left: 10px;
+    }
+    #hire {
+        width: 10%;
+        padding: 2%;
+        background-color: #fbee04;
+        border-radius: 5px;
+        font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        color: #362f22;
     }
 
     .gallery {
@@ -241,7 +371,7 @@ main {
         font-family: $font-alt;
         letter-spacing: .2em;
 
-        .item {
+        .items {
             // overflow: hidden;
             display: grid;
 
@@ -249,10 +379,11 @@ main {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                cursor: pointer;
+                cursor: pointer !important;
             }
 
             h4 {
+                z-index: -1;
                 text-align: center;
                 line-height: 3;
                 background: $clr-title;
@@ -261,7 +392,7 @@ main {
                 position: relative;
                 width: 100%;
                 height: 3rem;
-                top: -3rem;
+                top: -1.3rem;
             }
         }
 

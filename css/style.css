@@ -239,39 +239,213 @@ main .showcases h3 {
   width: 50%;
 }
 
-main .showcases .overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: #0F9FBF;
-  display: none;
-  z-index: 2;
+main #button0 {
+  position: relative;
+  top: 200px;
+  left: 42.5%;
+  padding: 20px;
 }
 
-main .showcases .overlay.open {
-  display: -ms-grid;
-  display: grid;
+main #overlay {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 70%;
+  background-color: #269bbc;
+  border-radius: 10px;
+  z-index: 11;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+  display: none;
+}
+
+main #box1 {
+  position: absolute;
+  top: 7%;
+  left: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  justify-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 30%;
+  height: 70%;
+  /* border: 1px solid black; */
 }
 
-main .showcases .overlay-inner {
-  widows: 80%;
-  padding: 10px;
+main #title {
+  font-size: 3rem;
+  color: #362f22;
 }
 
-main .showcases .overlay-inner img {
-  width: 100%;
+main #bild-overlay {
+  width: 90%;
+  height: 70%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
 }
 
-main .showcases .close {
-  background: none;
-  color: #F2ECD8;
-  border: 0;
+main #clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+main label {
+  color: whitesmoke;
+}
+
+main label:hover {
+  color: orange;
+}
+
+main label:hover ~ label {
+  color: orange;
+}
+
+main input[type="radio"] {
+  display: none;
+}
+
+main input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+main #button1 {
+  position: absolute;
+  top: 2%;
+  left: 96%;
+  background-color: #269bbc;
+  border: none;
+  font-size: 25px;
+  font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
+  color: #f2ecd8;
+}
+
+main #myCanvas {
+  position: absolute;
+  top: 30%;
+  left: 56.1%;
+  /* border: 1px solid black; */
+}
+
+main .box2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* border: 1px solid black; */
+  width: 40%;
+  height: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 10%;
+  left: 47%;
+}
+
+main #color-name {
+  position: absolute;
+  top: 20%;
+}
+
+main .item {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+main #circle1 {
+  background-color: #3ed1ee;
+}
+
+main #circle2 {
+  background-color: #bcd689;
+}
+
+main #circle3 {
+  background-color: #824583;
+}
+
+main #circle4 {
+  background-color: #ffd458;
+}
+
+main #circle5 {
+  background-color: #ff9241;
+}
+
+main #box3 {
+  /* border: 1px solid black; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 86%;
+  position: absolute;
+  top: 82%;
+  left: 7%;
+}
+
+main #rest,
+main #add,
+main #summa,
+main #tprice {
+  background-color: #f2ecd8;
+  width: auto;
+}
+
+main #hours {
+  width: auto;
+  padding: 2%;
+  background-color: #f2ecd8;
+  border-radius: 5px;
+  color: #362f22;
+  font-size: 1rem;
+}
+
+main #price {
+  width: auto;
+  padding: 2%;
+  background-color: #f2ecd8;
+  color: #362f22;
+  border-radius: 5px;
+  font-size: 1rem;
+  position: relative;
+  right: 20%;
+}
+
+main #tprice {
+  width: auto;
+}
+
+main #rest,
+main #tprice {
+  margin-left: 10px;
+}
+
+main #hire {
+  width: 10%;
+  padding: 2%;
+  background-color: #fbee04;
+  border-radius: 5px;
+  font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #362f22;
 }
 
 main .gallery {
@@ -286,20 +460,21 @@ main .gallery {
   letter-spacing: .2em;
 }
 
-main .gallery .item {
+main .gallery .items {
   display: -ms-grid;
   display: grid;
 }
 
-main .gallery .item img {
+main .gallery .items img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
-main .gallery .item h4 {
+main .gallery .items h4 {
+  z-index: -1;
   text-align: center;
   line-height: 3;
   background: #F85D3C;
@@ -308,7 +483,7 @@ main .gallery .item h4 {
   position: relative;
   width: 100%;
   height: 3rem;
-  top: -3rem;
+  top: -1.3rem;
 }
 
 .scrollTop {
