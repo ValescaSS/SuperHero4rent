@@ -211,13 +211,104 @@ main .hero-img {
   margin-bottom: 10rem;
 }
 
+main .showcases {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10% 0;
+}
+
+main .showcases h3 {
+  text-align: center;
+  font-size: 1.5em;
+  letter-spacing: .1em;
+  color: #F85D3C;
+  background: #0F9FBF;
+  padding: 1em;
+  border-radius: 1em;
+  width: 50%;
+}
+
+main .showcases .overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #0F9FBF;
+  display: none;
+  z-index: 2;
+}
+
+main .showcases .overlay.open {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+main .showcases .overlay-inner {
+  widows: 80%;
+  padding: 10px;
+}
+
+main .showcases .overlay-inner img {
+  width: 100%;
+}
+
+main .showcases .close {
+  background: none;
+  color: #F2ECD8;
+  border: 0;
+}
+
 main .gallery {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
+  -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 350px;
+  grid-gap: 10px;
+  width: 80%;
+  font-family: "Notable", sans-serif;
+  letter-spacing: .2em;
+}
+
+main .gallery .item {
+  display: -ms-grid;
+  display: grid;
+}
+
+main .gallery .item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+main .gallery .item h4 {
+  text-align: center;
+  line-height: 3;
+  background: #F85D3C;
+  color: #FBEE04;
+  font-size: 15px;
+  position: relative;
+  width: 100%;
+  height: 3rem;
+  top: -3rem;
 }
 
 .scrollTop {

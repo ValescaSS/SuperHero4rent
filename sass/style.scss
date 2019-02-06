@@ -9,11 +9,6 @@ $clr-txt: #FBEE04;
 $clr-extra: #0F9FBF;
 $clr-dark: #362F22;
 
-$bar-width: 40px;
-$bar-height: 5px;
-$bar-spacing: 12px;
-$transition-time: .5s;
-
 html, body {
     height: 100%;
     margin: 0;
@@ -186,10 +181,90 @@ main {
         margin-bottom: 10rem;;
     }
 
+    .showcases {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10% 0;
+
+        h3 {
+            text-align: center;
+            font-size: 1.5em;
+            letter-spacing: .1em;
+            color: $clr-title;
+            background: #0F9FBF;
+            padding: 1em;
+            border-radius: 1em;
+            width: 50%;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $clr-extra;
+            display: none;
+            z-index: 2;
+
+            &.open {
+                display: grid;
+                align-items: center;
+                justify-items: center;
+            }
+        }
+
+        .overlay-inner {
+            widows: 80%;
+            padding: 10px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .close {
+            background: none;
+            color: $clr-bg;
+            border: 0;
+        }
+    }
+
     .gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        grid-template-rows: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-auto-rows: 350px;
+        grid-gap: 10px;
+        width: 80%;
+        font-family: $font-alt;
+        letter-spacing: .2em;
+
+        .item {
+            // overflow: hidden;
+            display: grid;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+            h4 {
+                text-align: center;
+                line-height: 3;
+                background: $clr-title;
+                color: $clr-txt;
+                font-size: 15px;
+                position: relative;
+                width: 100%;
+                height: 3rem;
+                top: -3rem;
+            }
+        }
+
     }
 }
 
