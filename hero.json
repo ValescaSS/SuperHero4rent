@@ -1,50 +1,134 @@
  {"people" : [
 
-
      {"name": "Batman",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"},
+         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"},
          
 
     {"name": "Captin america",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"},
+     "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"},
          
          
     {"name": "Superman",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"}, 
+     "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"},
 
 
     {"name": "Superman",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"}, 
+     "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"},
 
 
     {"name": "Superman",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"}, 
+     "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"},
 
 
     {"name": "Superman",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"}, 
-    {"name": "Superman",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"}, 
+     "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"}, 
+
+
 
 
     {"name": "Superman",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"}, 
+         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"},
 
 
     {"name": "Superman",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"}, 
-    {"name": "Superman",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"}, 
+     "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"}, 
 
 
     {"name": "Superman",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"}, 
+     "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"},
+
 
 
     {"name": "Superman",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"}, 
+         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"},
 
 
     {"name": "Superman",
-         "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png"}]}
+     "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"},
+
+
+    {"name": "Superman",
+     "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"},
+
+
+    {"name": "Superman",
+     "image":"http://icongal.com/gallery/image/437007/avatar_hero_superhero_loki_avengers.png",
+     "Stringth": "Stringth 90%",
+     "Skills": "Skills 40%",
+     "Brain": "Brain 65%",
+     "Gadget": "Gadget 35%",
+     "overlay": "overlay",
+     "hire":"hire"}]}
 

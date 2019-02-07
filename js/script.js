@@ -1,4 +1,5 @@
 $(document).ready(function() {
+<<<<<<< HEAD
   $('.hamburger-menu').on('click', function() {
     $(this).toggleClass('animate');
     $('.bar').toggleClass('animate');
@@ -17,5 +18,7 @@ $(document).ready(function() {
   }else {
     console.log('greater than 768');
   }
+=======
+>>>>>>> cc813fca2f6f02afb86971c799a97642624d3143
 
 });

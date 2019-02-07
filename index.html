@@ -6,7 +6,18 @@
     <title>SuperHero4Hire</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <!-- <script>
     
+    
+    let button = document.createElement("button");
+            button.innerHTML = "Do Something";
+
+            button.addEventListener ("click", function() {
+            alert("did something");
+                });
+            
+            
+            </script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
             var xhttp = new XMLHttpRequest();
@@ -19,12 +30,28 @@
       
                 for (let i = 0; i < people.length; i++) {
                   output +=
-                    "<li >" +
-                    /* people[i].name +
-                    " " + */
+                    "<li class='list'>" +
                     "<IMG src=" +
                     people[i].image +
-                    ">";
+                    ">"+"<br>"+
+                    people[i].name 
+                    +"<br>"+
+                    " " +people[i].Stringth
+                    +"<br>"+
+                    " " +people[i].Skills
+                    +"<br>"+
+                    " " +people[i].Brain
+                    +"<br>"+
+                    
+                   "<button "+
+                  "type='button'"+ 
+                  "onclick=alert('Hello world!')"+
+                   ">Hire!"+
+                   "</button>"+
+
+                   
+                    
+                    
                   "</li>";
                 }
       
@@ -34,6 +61,7 @@
             xhttp.open("GET", "hero.json", true);
             xhttp.send();
           </script>
+          
 </head>
 <body>
     <div class='header'>
