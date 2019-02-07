@@ -1,0 +1,28 @@
+{"people" : [
+    
+    {
+        "name":"Tarek",
+        "age":30
+    },
+    {
+        "name":"Maher",
+        "age":22
+    },
+    {
+        "name":"Adam",
+        "age":15
+    },
+    {
+        "name":"Sara",
+        "age":45
+    },
+    {
+        "name":"Maia",
+        "age":10
+    },
+    {
+        "name":"Kale",
+        "age":66
+    }
+]
+}
