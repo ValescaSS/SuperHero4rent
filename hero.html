@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <script src="test.js"></script> -->
-    
+
     <!--  <style>
       /*  .items ul {
         display: flex;
@@ -34,56 +34,83 @@
         margin: 0 0 28px;
       }
     </style> -->
+    <style>
+      /* html {
+        box-sizing: border-box;
+        
+      } */
 
- 
+      /*
+      
+      border: 1px solid #000;
+      font-size: 1em;
+      color:red;
+      text-align: center; */
+      
+      .items{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;  
+        
+          } 
+
+
+         /*  .grid-wrapper {
+            width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto-fill, 120px);
+  grid-row-gap: .5em;
+  grid-column-gap: 1em;
+} */
+/* .grid-wrapper .item {
+  
+} */
+          
+          
+    </style>
+
     <script>
-       var xhttp = new XMLHttpRequest();
+      var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           let response = JSON.parse(xhttp.responseText);
           let people = response.people;
-            
+
           let output = "";
-          
+
           for (let i = 0; i < people.length; i++) {
             output +=
-              "<div class='items'>" +
-              people[i].name +
-              " " +
-              people[i].age +
-              "</div>";
+              "<li >" +
+              /* people[i].name +
+              " " + */
+              "<IMG src=" +
+              people[i].image +
+              ">";
+            "</li>";
           }
 
-          let image = function(output){
-            return 
-          }
-          document.getElementById("people").innerHTML = output;
+          document.getElementById("hero").innerHTML = output;
         }
       };
-      xhttp.open("GET", "pasteries.json", true);
-      xhttp.send(); 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      </script>
+      xhttp.open("GET", "hero.json", true);
+      xhttp.send();
+    </script>
 
-
-<!-- <script src="test.js"></script> -->
+    <!-- <script src="test.js"></script> -->
 
     <title>SuperHero4Rent</title>
   </head>
   <body>
     <h1>SuperHero4Rent</h1>
-    <ul id="people"></ul>
-    
-    
+
+
+    <!-- <div class="grid-wrapper"> -->
       
-    
+        <ul class="items" id="hero"></ul>
+      
+    <!-- </div> -->
+
+
   </body>
 </html>

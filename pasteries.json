@@ -1,8 +1,0 @@
- {"people" : [
-     {"name": "donut",
-         "age":"https://images-na.ssl-images-amazon.com/images/I/61qxTCzXx0L._SX425_.jpg"},
-    {"name": "cheesecake",
-         "age":"https://timeincsecure-a.akamaihd.net/rtmp_uds/429048911/201801/2066/429048911_5706013914001_5703341808001-vs.jpg?pubId=429048911&videoId=5703341808001"}, 
-    {"name": "carrotcake",
-         "age":"https://www.texanerin.com/content/uploads/2012/04/whole-wheat-carrot-cake-4-650x975.jpg"}, 
-    {"name": "cupcake", "age":"https://sugarspunrun.com/wp-content/uploads/2018/02/Pinata-cupcakes-recipe-1-of-1-4.jpg"}]}
