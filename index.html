@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperHero4Hire</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                let response = JSON.parse(xhttp.responseText);
+                let people = response.people;
+      
+                let output = "";
+      
+                for (let i = 0; i < people.length; i++) {
+                  output +=
+                    "<li >" +
+                    /* people[i].name +
+                    " " + */
+                    "<IMG src=" +
+                    people[i].image +
+                    ">";
+                  "</li>";
+                }
+      
+                document.getElementById("hero").innerHTML = output;
+              }
+            };
+            xhttp.open("GET", "hero.json", true);
+            xhttp.send();
+          </script>
+</head>
+<body>
+    <div class='header'>
+        <img class='logo' src="image/logo.svg" alt="">
+        <h1>Hire your best superhero</h1>
+    </div>
+
+    <nav>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+        </div>
+
+        <ul class='menu-list'>
+            <li class='home-section'><a href='./index.html' class='active'>Home</a></li>
+            <li class='service-section'><a href='./services.html'>Services</a></li>
+            <li class='about-section'><a href='./aboutUs.html'>About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="hero-img"></div>
+        <ul class="items" id="hero"></ul>
+        
+    </main>
+
+    <div class="scrollTop hidden">
+        <a href="#">
+            <i class="fas fa-angle-up"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="socialMed">
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter-square"></i>
+        </div>
+        <p>&copy; 2018 All Rights Reserved | SUPERHIRO 4 HIRE</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
