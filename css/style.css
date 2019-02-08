@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css?family=Bangers|Notable");
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  background: #F2ECD8;
+  font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header {
+  z-index: 10;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  background: url(../image/5-comic-burst-background-1.png) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1em 3em;
+  -webkit-box-shadow: 0 2px 3px #756549;
+          box-shadow: 0 2px 3px #756549;
+}
+
+.header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header .logo {
+  width: 6rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  letter-spacing: .1em;
+  color: #F85D3C;
+  position: relative;
+  left: 2rem;
+}
+
+.header .menu-list {
+  font-size: 2rem;
+  background: #F85D3C;
+  width: 100%;
+  height: 9rem;
+  position: absolute;
+  top: 12rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: max-height .2s ease-out;
+  transition: max-height .2s ease-out;
+}
+
+.header .menu-list li {
+  text-align: center;
+  width: 120%;
+  height: 3rem;
+  border-bottom: 1px solid #FBEE04;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .menu-list li a {
+  text-decoration: none;
+  color: #0F9FBF;
+}
+
+.header .menu-list li a:hover {
+  color: #FBEE04;
+}
+
+.header .menu-list .active {
+  color: #FBEE04 !important;
+}
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 28px 1em;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.header .navicon {
+  background: #F85D3C;
+  display: block;
+  height: 3px;
+  position: relative;
+  -webkit-transition: background .2s ease-out;
+  transition: background .2s ease-out;
+  width: 2em;
+  right: -2rem;
+  border-radius: 3px;
+}
+
+.header .navicon:before,
+.header .navicon:after {
+  background: #F85D3C;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.header .navicon:before {
+  top: 10px;
+}
+
+.header .navicon:after {
+  top: -10px;
+}
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu-list {
+  max-height: 9rem;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+main {
+  min-height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+main .hero-img {
+  background-image: url(../image/977333_free-marvel-superhero-wallpapers-high-quality-resolution-v3y-wallx_1920x1080_h.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50vmin;
+  width: 100%;
+  position: relative;
+  top: 7rem;
+  z-index: -10;
+}
+
+.scrollTop {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #f97155;
+  opacity: .85;
+  color: white;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.scrollTop:hover {
+  cursor: pointer;
+  opacity: 1;
+  background: #F85D3C;
+}
+
+.scrollTop i {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: white;
+}
+
+.hidden {
+  -webkit-transition: all 500ms ease-in;
+  transition: all 500ms ease-in;
+}
+
+footer {
+  background: url(../image/5-comic-burst-background-1.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 15vh;
+  color: #463d2c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: relative;
+  top: 100%;
+}
+
+footer .socialMed {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .header div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header .menu-list {
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    top: 5.5rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1.2rem;
+    width: 50%;
+    right: 1rem;
+    max-height: 7rem;
+  }
+  .header .menu-list li {
+    border-bottom: initial;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,166 @@
+#rubrik1,
+#rubrik2 {
+	position: relative;
+	text-align: center;
+	color: #f85d3c;
+}
+
+#rubrik1 {
+	top: 250px;
+}
+#form1,
+#form2 {
+	position: relative;
+	width: 96%;
+	margin: 0 2%;
+}
+
+label {
+	color: #0f9fbf;
+}
+#rubrik2 {
+	top: 300px;
+}
+#form1 {
+	top: 250px;
+}
+#form2 {
+	top: 300px;
+	}
+#item1,
+#item2,
+#item3,
+#item4,
+#item5,
+#item6,
+#item7,
+#item8,
+#item9,
+#item10,
+#item11,
+#item12,
+#item13,
+#item14,
+#item15,
+#item16 {
+	
+  padding: 5px;
+}
+#item16{
+  display: flex;
+}
+input {
+  width: 100%;
+  padding: 7px;
+
+}
+#item15 #invoice {
+  width: auto;
+  cursor: pointer;
+}
+#item16 #order {
+  margin-left: auto;
+  width: 70px;
+  background-color: #269bbc;
+  color: white;
+  border-radius: 10px;
+  font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+}
+#text0 {
+  position: relative;
+  top: 300px;
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  overflow: hidden;
+  color: #269bbc;
+  line-height: 2em;
+}
+
+@media (min-width: 768px) {
+	#form1,
+	#form2 {
+		width: 40%;
+		margin: auto;
+		height: auto;
+		padding: 10px;
+		display: grid;
+		gap: 10px;
+	}
+
+	#rubrik1 {
+		top: 180px;
+	}
+  #rubrik2 {
+    top: 200px;
+  }
+	#form1 {
+		top: 200px;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		grid-template-areas: "cell1 cell2" "cell3 ." "cell4 cell4" "cell5 cell5" "cell6 cell7" "cell8 ." "cell9 ."
+			"cell10 cell11";
+	}
+	#form2 {
+		top: 220px;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		grid-template-areas: "cell12" "cell13" "cell14" "cell15" "cell16";
+	}
+	#item1 {
+		grid-area: cell1;
+	}
+	#item2 {
+		grid-area: cell2;
+	}
+	#item3 {
+		grid-area: cell3;
+	}
+	#item4 {
+		grid-area: cell4;
+	}
+	#item5 {
+		grid-area: cell5;
+	}
+	#item6 {
+		grid-area: cell6;
+	}
+	#item7 {
+		grid-area: cell7;
+	}
+	#item8 {
+		grid-area: cell8;
+	}
+	#item9 {
+		grid-area: cell9;
+	}
+	#item10 {
+		grid-area: cell10;
+	}
+	#item11 {
+		grid-area: cell11;
+	}
+	#item12 {
+		grid-area: cell12;
+	}
+	#item13 {
+		grid-area: cell13;
+	}
+	#item14 {
+		grid-area: cell14;
+	}
+	#item15 {
+		grid-area: cell15;
+	}
+	#item16 {
+		grid-area: cell16;
+	}
+
+
+	#text0 {
+		width: 43%;
+	
+	}
+}
