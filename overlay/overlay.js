@@ -4,29 +4,29 @@ function on() {
   function off() {
     document.getElementById("overlay").style.display = "none";
   }
-  function plusOne(x = document.getElementById("summa").value) {
+  function plusOne(x = document.getElementById("hour").value) {
     x = ++x;
     if (x >= 1) {
-      document.getElementById("summa").value = x;
-      function totalPrice(x = document.getElementById("summa").value) {
+      document.getElementById("hour").value = x;
+      function totalPrice(x = document.getElementById("hour").value) {
         let tprice = x * 100;
         return tprice;
       }
       document.getElementById("tprice").value = "$ " + totalPrice(x);
     }
   }
-  function minusOne(x = document.getElementById("summa").value) {
+  function minusOne(x = document.getElementById("hour").value) {
     x = --x;
     if (x >= 1) {
-      document.getElementById("summa").value = x;
-      function totalPrice(x = document.getElementById("summa").value) {
+      document.getElementById("hour").value = x;
+      function totalPrice(x = document.getElementById("hour").value) {
         let tprice = x * 100;
         return tprice;
       }
       document.getElementById("tprice").value = "$ " + totalPrice(x);
     }
   }
-  function totalPrice(x = document.getElementById("summa").value) {
+  function totalPrice(x = document.getElementById("hour").value) {
     let tprice = x * 100;
     document.getElementById("tprice").value = tprice;
   }
@@ -82,7 +82,7 @@ drawPieSlice(
   "#269bbc"
 );
 
-va: superPw = {
+var superPw = {
   Strengts: 35,
   Skill: 25,
   Brains: 9,
