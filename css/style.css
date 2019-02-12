@@ -50,16 +50,21 @@ body {
           flex-direction: column;
 }
 
-.header .logo {
-  width: 6rem;
+.header div .logo {
+  width: 7rem;
+  margin-left: 0;
 }
 
-.header h1 {
+.header div .logo img {
+  width: 100%;
+}
+
+.header div h1 {
   font-size: 2rem;
   letter-spacing: .1em;
   color: #F85D3C;
   position: relative;
-  left: 2rem;
+  left: 12rem;
 }
 
 .header .menu-list {
@@ -565,6 +570,12 @@ footer .socialMed i {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .header div .logo {
+    margin-left: -12rem;
+  }
+  .header div h1 {
+    left: 12rem;
   }
   .header .menu-list {
     border-radius: 10px;
