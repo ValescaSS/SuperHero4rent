@@ -47,6 +47,7 @@ body {
   justify-content: space-around;
   padding: 1em 3em;
   box-shadow: 0 2px 3px lighten($clr-dark, 20%);
+  z-index: 10;
 
   div {
     display: flex;
@@ -191,7 +192,6 @@ main {
     width: 100%;
     position: relative;
     top: 7rem;
-    z-index: -10;
     margin-bottom: 10rem;
   }
 
@@ -215,6 +215,7 @@ main {
   }
 
   // overlay style starts here
+
   #button0 {
     position: relative;
     top: 200px;
@@ -373,6 +374,149 @@ main {
       }
     }
   }
+
+  /* services och about us */
+
+  #md-blue {
+    width: 70%;
+    height: 4rem;
+    font-size: 1.5em;
+    top: 17rem;
+    margin: auto;
+    display: flex;
+    position: relative;
+    background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg)
+      no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 40px;
+    color: $clr-title;
+  }
+  #md-sec-av {
+    width: 90%;
+    margin: 10% 5%;
+    position: relative;
+    top: 17rem;
+    .md-avatar {
+      width: 90%;
+      margin: 5% 5%;
+      position: relative;
+      top: 10px;
+      .md-avatar-img {
+        width: 60%;
+        margin: 0 20%;
+        height: 12rem;
+        background-color: #0f9fbf2a;
+        border-radius: 50%;
+      }
+      .md-avatar-tex {
+        display: block;
+        text-align: center;
+        font-size: 1.2em;
+        color: $clr-extra;
+        margin: 10px 10px;
+      }
+    }
+  }
+  #md-sec {
+    position: relative;
+    top: 300px;
+    width: 80%;
+    height: auto;
+    margin: 0 10%;
+    .md-h2 {
+      color: $clr-title;
+      text-align: center;
+    }
+    .md-p {
+      color: $clr-extra;
+      min-width: 320px;
+      text-align: justify;
+      line-height: 1.5em;
+    }
+  }
+  #md-blue-adress {
+    width: 70%;
+    height: 4rem;
+    font-size: 1.8em;
+    top: 330px;
+    margin: auto;
+    display: flex;
+    position: relative;
+    background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg)
+      no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 40px;
+    color: $clr-title;
+  }
+  #md-adress-img {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    position: relative;
+    top: 380px;
+    #karta {
+      width: 100%;
+      border-radius: 5%;
+    }
+  }
+
+  // Services Mobile version
+
+  .md-h2-services {
+    position: relative;
+    top: 10px;
+    color: $clr-title;
+  }
+  .md-p-services {
+    position: relative;
+    top: 10px;
+    color: $clr-extra;
+    text-align: justify;
+    line-height: 1.5em;
+  }
+  #md-more {
+    color: $clr-title;
+    position: relative;
+    top: 330px;
+    text-align: center;
+  }
+  #md-blue-faq {
+    width: 35%;
+    height: 4rem;
+    font-size: 1.8em;
+    top: 100px;
+    margin: auto;
+    display: flex;
+    position: relative;
+    background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg)
+      no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 40px;
+    color: $clr-title;
+  }
+  .md-h2-faq {
+    position: relative;
+    top: 170px;
+    color: $clr-title;
+  }
+  .md-p-faq {
+    position: relative;
+    top: 170px;
+    color: #0f9fbf;
+    text-align: justify;
+    line-height: 1.5em;
+  }
 }
 
 .gallery {
@@ -456,6 +600,8 @@ footer {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  position: relative;
+  top: 100%;
 
   .socialMed {
     font-size: 3rem;
@@ -507,6 +653,8 @@ footer {
   }
 
   main {
+    /* overlay */
+
     #overlay {
       position: fixed;
       top: 20%;
@@ -581,6 +729,45 @@ footer {
           font-size: 1.5vw;
         }
       }
+    }
+
+    #md-blue {
+      width: 35%;
+      top: 15rem;
+    }
+    #md-sec-av {
+      margin: 0 5%;
+
+      top: 18rem;
+      display: flex;
+      justify-content: center;
+      .md-avatar {
+        width: 100%;
+        top: 8px;
+        .md-avatar-img {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+    #md-blue-adress {
+      width: 35%;
+      top: 150px;
+    }
+    #md-sec {
+      margin: 0 auto;
+      .md-h2 {
+        position: relative;
+        top: 200px;
+      }
+      .md-p {
+        position: relative;
+        top: 200px;
+      }
+    }
+    #md-adress-img {
+      width: 50%;
+      top: 500px;
     }
   }
 }

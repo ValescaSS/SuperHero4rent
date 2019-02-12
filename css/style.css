@@ -31,6 +31,7 @@ body {
   justify-content: space-around;
   padding: 1em 3em;
   box-shadow: 0 2px 3px #756549;
+  z-index: 10;
 }
 .header div {
   display: flex;
@@ -144,6 +145,7 @@ body {
 main {
   min-height: 100%;
   flex: 1 0 auto;
+  /* services och about us */
 }
 main .hero-img {
   background-image: url(../image/977333_free-marvel-superhero-wallpapers-high-quality-resolution-v3y-wallx_1920x1080_h.jpg);
@@ -154,7 +156,6 @@ main .hero-img {
   width: 100%;
   position: relative;
   top: 7rem;
-  z-index: -10;
   margin-bottom: 10rem;
 }
 main .showcases {
@@ -332,6 +333,140 @@ main #overlay #box2 #hire {
   color: #362f22;
   margin-left: auto;
 }
+main #md-blue {
+  width: 70%;
+  height: 4rem;
+  font-size: 1.5em;
+  top: 17rem;
+  margin: auto;
+  display: flex;
+  position: relative;
+  background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 40px;
+  color: #f85d3c;
+}
+main #md-sec-av {
+  width: 90%;
+  margin: 10% 5%;
+  position: relative;
+  top: 17rem;
+}
+main #md-sec-av .md-avatar {
+  width: 90%;
+  margin: 5% 5%;
+  position: relative;
+  top: 10px;
+}
+main #md-sec-av .md-avatar .md-avatar-img {
+  width: 60%;
+  margin: 0 20%;
+  height: 12rem;
+  background-color: #0f9fbf2a;
+  border-radius: 50%;
+}
+main #md-sec-av .md-avatar .md-avatar-tex {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  color: #0f9fbf;
+  margin: 10px 10px;
+}
+main #md-sec {
+  position: relative;
+  top: 300px;
+  width: 80%;
+  height: auto;
+  margin: 0 10%;
+}
+main #md-sec .md-h2 {
+  color: #f85d3c;
+  text-align: center;
+}
+main #md-sec .md-p {
+  color: #0f9fbf;
+  min-width: 320px;
+  text-align: justify;
+  line-height: 1.5em;
+}
+main #md-blue-adress {
+  width: 70%;
+  height: 4rem;
+  font-size: 1.8em;
+  top: 330px;
+  margin: auto;
+  display: flex;
+  position: relative;
+  background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 40px;
+  color: #f85d3c;
+}
+main #md-adress-img {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  position: relative;
+  top: 380px;
+}
+main #md-adress-img #karta {
+  width: 100%;
+  border-radius: 5%;
+}
+main .md-h2-services {
+  position: relative;
+  top: 10px;
+  color: #f85d3c;
+}
+main .md-p-services {
+  position: relative;
+  top: 10px;
+  color: #0f9fbf;
+  text-align: justify;
+  line-height: 1.5em;
+}
+main #md-more {
+  color: #f85d3c;
+  position: relative;
+  top: 330px;
+  text-align: center;
+}
+main #md-blue-faq {
+  width: 35%;
+  height: 4rem;
+  font-size: 1.8em;
+  top: 100px;
+  margin: auto;
+  display: flex;
+  position: relative;
+  background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 40px;
+  color: #f85d3c;
+}
+main .md-h2-faq {
+  position: relative;
+  top: 170px;
+  color: #f85d3c;
+}
+main .md-p-faq {
+  position: relative;
+  top: 170px;
+  color: #0f9fbf;
+  text-align: justify;
+  line-height: 1.5em;
+}
 
 .gallery {
   display: grid;
@@ -408,6 +543,8 @@ footer {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  position: relative;
+  top: 100%;
 }
 footer .socialMed {
   font-size: 3rem;
@@ -448,6 +585,9 @@ footer .socialMed i {
     display: none;
   }
 
+  main {
+    /* overlay */
+  }
   main #overlay {
     position: fixed;
     top: 20%;
@@ -526,6 +666,43 @@ main #overlay #box2 #price #tprice {
   main #overlay #box2 #hire {
     width: 15%;
     font-size: 1.5vw;
+  }
+  main #md-blue {
+    width: 35%;
+    top: 15rem;
+  }
+  main #md-sec-av {
+    margin: 0 5%;
+    top: 18rem;
+    display: flex;
+    justify-content: center;
+  }
+  main #md-sec-av .md-avatar {
+    width: 100%;
+    top: 8px;
+  }
+  main #md-sec-av .md-avatar .md-avatar-img {
+    width: 100%;
+    margin: 0;
+  }
+  main #md-blue-adress {
+    width: 35%;
+    top: 150px;
+  }
+  main #md-sec {
+    margin: 0 auto;
+  }
+  main #md-sec .md-h2 {
+    position: relative;
+    top: 200px;
+  }
+  main #md-sec .md-p {
+    position: relative;
+    top: 200px;
+  }
+  main #md-adress-img {
+    width: 50%;
+    top: 500px;
   }
 }
 
