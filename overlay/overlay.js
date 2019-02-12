@@ -93,6 +93,7 @@ drawPieSlice(
   Gadget: 5,
   Heart: 5
 }; 
+
  /* let test;
  var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -192,12 +193,23 @@ drawPieSlice(
                         }
                       };
                     };
-                    var myDougnutChart = new Piechart({
-                      canvas: myCanvas,
-                      data: superPw,
-                      colors: ["#3ED1EE", "#BCD689", "#824583", "#FFD458", "#FF9241"],
-                      doughnutHoleSize: 0.5
-                    });
+                    
 
-                    myDougnutChart.draw();
+                    
+var setValues = function(Strengts, Skill, Brains, Gadget, Heart) {
+  this.superPw.Strengts = Strengts;
+  this.superPw.Skill = Skill;
+  this.superPw.Brains = Brains;
+  this.superPw.Gadget = Gadget;
+  this.superPw.Heart= Heart;
+  var myDougnutChart = new Piechart({
+    canvas: myCanvas,
+    data: superPw,
+    colors: ["#3ED1EE", "#BCD689", "#824583", "#FFD458", "#FF9241"],
+    doughnutHoleSize: 0.5
+  });
+  myDougnutChart.draw();
+  on();
+  };
+                    
                     

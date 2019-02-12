@@ -2,20 +2,20 @@
 
     {"name": "Batfem",
         "image":"https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/bat-fem.png?raw=true",
-    "stringth": "Stringth 80%",
-    "skills": "Skills 77%",
-    "brain": "Brain 100%",
-    "gadget": "Gadget 22%",
-    "heart": "Heart 1%"},
+    "stringth": 5,
+    "skills": 5,
+    "brain": 15,
+    "gadget": 10,
+    "heart": 15},
 
 
     {"name": "Batman",
         "image":"https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/batman.png?raw=true",
-    "stringth": "Stringth 43%",
-    "skills": "Skills 67%",
-    "brain": "Brain 7%",
-    "gadget": "Gadget 76%",
-    "heart": "Heart 15.5%"},
+        "stringth": 2,
+        "skills": 18,
+        "brain": 20,
+        "gadget": 5,
+        "heart": 5},
 
     
     {"name": "CaptainMarvel",
