@@ -10,46 +10,51 @@ $(document).ready(function() {
 
 });
 
-// stars on the profile overlay
-const overlayTrigger = document.querySelector('.thumbnail');
+// knappar i overlay
+
+// const overlayTrigger = document.querySelector('.thumbnail');
+const overlayTrigger = document.querySelectorAll('.thumbnail');
 
 function on() {
     document.getElementById("overlay").style.display = "block";
 }
 
-overlayTrigger.addEventListener('click', on);
+// overlayTrigger.addEventListener('click', on);
+overlayTrigger.forEach(function(trigger) {
+    trigger.addEventListener('click', on)
+});
 
 function off() {
     document.getElementById("overlay").style.display = "none";
 }
-function plusOne(x = document.getElementById("summa").value) {
+function plusOne(x = document.getElementById("hour").value) {
     x = ++x;
     if (x >= 1) {
-        document.getElementById("summa").value = x;
-        function totalPrice(x = document.getElementById("summa").value) {
+        document.getElementById("hour").value = x;
+        function totalPrice(x = document.getElementById("hour").value) {
             let tprice = x * 100;
             return tprice;
         }
         document.getElementById("tprice").value = "$ " + totalPrice(x);
     }
 }
-function minusOne(x = document.getElementById("summa").value) {
+function minusOne(x = document.getElementById("hour").value) {
     x = --x;
     if (x >= 1) {
-        document.getElementById("summa").value = x;
-        function totalPrice(x = document.getElementById("summa").value) {
+        document.getElementById("hour").value = x;
+        function totalPrice(x = document.getElementById("hour").value) {
             let tprice = x * 100;
             return tprice;
         }
         document.getElementById("tprice").value = "$ " + totalPrice(x);
     }
 }
-function totalPrice(x = document.getElementById("summa").value) {
+function totalPrice(x = document.getElementById("hour").value) {
     let tprice = x * 100;
     document.getElementById("tprice").value = tprice;
 }
 
-// overlay page js starts here
+// ovarlay chart
 var myCanvas = document.getElementById("myCanvas");
 myCanvas.width = 180;
 myCanvas.height = 180;
@@ -98,7 +103,7 @@ drawPieSlice(
     "#269bbc"
 );
 
-var myVinyls = {
+var myFeatures = {
     Strengts: 35,
     Skill: 25,
     Brains: 9,
@@ -156,7 +161,7 @@ var Piechart = function (options) {
 
 var myDougnutChart = new Piechart({
     canvas: myCanvas,
-    data: myVinyls,
+    data: myFeatures,
     colors: ["#3ED1EE", "#BCD689", "#824583", "#FFD458", "#FF9241"],
     doughnutHoleSize: 0.5
 });
