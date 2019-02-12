@@ -6,20 +6,30 @@
     <title>SuperHero4Hire</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <script>
-    
-    
-    let button = document.createElement("button");
-            button.innerHTML = "Do Something";
 
-            button.addEventListener ("click", function() {
-            alert("did something");
-                });
-            
-            
-            </script> -->
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./overlay/overlay.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }</script>
+
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
     <script>
+
+        
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
               if (this.readyState == 4 && this.status == 200) {
@@ -32,26 +42,25 @@
                   output +=
                     "<li class='list'>" +
                     "<IMG src=" +
-                    people[i].image +
+                    people[i].image+ 
                     ">"+"<br>"+
                     people[i].name 
+                    +"<br>"+"<br>"+
+                    " " +people[i].stringth
                     +"<br>"+
-                    " " +people[i].Stringth
+                    " " +people[i].skills
                     +"<br>"+
-                    " " +people[i].Skills
+                    " " +people[i].brain
                     +"<br>"+
-                    " " +people[i].Brain
+                    " " +people[i].gadget
+                    +"<br>"+
+                    " " +people[i].heart
                     +"<br>"+
                     
-                   "<button "+
-                  "type='button'"+ 
-                  "onclick=alert('Hello world!')"+
-                   ">Hire!"+
-                   "</button>"+
+                    "<button id='md-button' onclick=on()>Hire</button>"
+                
+                   "<br>"+
 
-                   
-                    
-                    
                   "</li>";
                 }
       
@@ -60,7 +69,11 @@
             };
             xhttp.open("GET", "hero.json", true);
             xhttp.send();
+
+            
           </script>
+
+
           
 </head>
 <body>
@@ -83,8 +96,90 @@
 
     <main>
         <div class="hero-img"></div>
+
+        <div id="md-blue">
+                <h2>Our heros</h2>
+              </div>
         <ul class="items" id="hero"></ul>
         
+        
+
+
+      <!-- start overlay  -->
+
+      <div id="overlay" >
+            <div id="box1">
+              <div class="item0" id="title">Order hero</div>
+              <img
+                class="item0"
+                id="bild-overlay"
+                src="image/logo.svg"
+                alt="logo"
+              />
+    
+              <!-- stars -->
+    
+              <p class="item0" id="clasificacion">
+                <input id="radio1" type="radio" name="estrellas" value="5" />
+                <label for="radio1">★</label>
+                <input id="radio2" type="radio" name="estrellas" value="4" />
+                <label for="radio2">★</label>
+                <input id="radio3" type="radio" name="estrellas" value="3" />
+                <label for="radio3">★</label>
+                <input id="radio4" type="radio" name="estrellas" value="2" />
+                <label for="radio4">★</label>
+                <input id="radio5" type="radio" name="estrellas" value="1" />
+                <label for="radio5">★</label>
+              </p>
+            </div>
+    
+            <button id="button1" onclick="off()">X</button>
+    
+            <!-- chart -->
+    
+            <canvas id="myCanvas"></canvas>
+    
+            <div class="box2">
+              <div class="item" id="circle1"></div>
+              <div class="item" id="circle2"></div>
+              <div class="item" id="circle3"></div>
+              <div class="item" id="circle4"></div>
+              <div class="item" id="circle5"></div>
+            </div>
+    
+            <div class="box2" id="color-name">
+              <div class="item">Strengts</div>
+              <div class="item">Skill</div>
+              <div class="item">Brains</div>
+              <div class="item">Gadget</div>
+              <div class="item">Heart</div>
+            </div>
+    
+            <div id="box3">
+              <div id="hours">
+                Hours:
+                <input onclick="minusOne();" type="button" id="rest" value="-" />
+                <input type="button" id="summa" value="1" />
+                <input onclick="plusOne();" type="button" id="add" value="+" />
+              </div>
+    
+              <div id="price">
+                Total Price:
+                <input type="button" id="tprice" value="$ 100" />
+              </div>
+    
+              <input type="button" action="./form.html" id="hire" value="Hire"  />
+            </div>
+    
+            
+          </div>
+
+
+         
+
+
+
+
     </main>
 
     <div class="scrollTop hidden">
@@ -92,6 +187,13 @@
             <i class="fas fa-angle-up"></i>
         </a>
     </div>
+
+
+
+
+    <script src="./overlay/overlay.js"></script>
+
+
 
     <footer>
         <div class="socialMed">

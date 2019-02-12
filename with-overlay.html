@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With overlay</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* This style is just for the overlay other styles are in the sass file */
+    
+    #button0 {
+    position: relative;
+    top: 200px;
+    left: 42.5%;
+    padding: 20px;
+  }
+  #overlay {
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 70%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: #269bbc;
+    border-radius: 10px;
+    z-index: 11;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 5);
+  }
+  #box1 {
+    position: absolute;
+    top: 7%;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    height: 70%;
+    /* border: 1px solid black; */
+  }
+  #title {
+    font-size: 3rem;
+    color: #362f22;
+  }
+  #bild-overlay {
+    width: 90%;
+    height: 70%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 5);
+  }
+  #clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+  label {
+    color: whitesmoke;
+  }
+  label:hover {
+    color: orange;
+  }
+  label:hover ~ label {
+    color: orange;
+  }
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"]:checked ~ label {
+    color: orange;
+  }
+  #button1 {
+    position: absolute;
+    top: 2%;
+    left: 96%;
+    background-color: #269bbc;
+    border: none;
+    font-size: 25px;
+    font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
+    color: #f2ecd8;
+    cursor: pointer;
+  }
+  #myCanvas {
+    position: absolute;
+    top: 30%;
+    left: 56.1%;
+    /* border: 1px solid black; */
+  }
+  .box2 {
+    display: flex;
+    /* border: 1px solid black; */
+    width: 40%;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 10%;
+    left: 47%;
+  }
+  #color-name {
+    position: absolute;
+    top: 20%;
+  }
+  .item {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  }
+  #circle1 {
+    background-color: #3ed1ee;
+  }
+  #circle2 {
+    background-color: #bcd689;
+  }
+  #circle3 {
+    background-color: #824583;
+  }
+  #circle4 {
+    background-color: #ffd458;
+  }
+  #circle5 {
+    background-color: #ff9241;
+  }
+  #box3 {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    width: 86%;
+    position: absolute;
+    top: 82%;
+    left: 7%;
+  }
+  #rest,
+  #add,
+  #hire {
+    cursor: pointer;
+  }
+  #rest,
+  #add,
+  #summa,
+  #tprice {
+    background-color: #f2ecd8;
+    width: auto;
+  }
+  #hours {
+    width: auto;
+    padding: 2%;
+    background-color: #f2ecd8;
+    border-radius: 5px;
+    color: #362f22;
+    font-size: 1rem;
+  }
+  #price {
+    width: auto;
+    padding: 2%;
+    background-color: #f2ecd8;
+    color: #362f22;
+    border-radius: 5px;
+    font-size: 1rem;
+    position: relative;
+    right: 20%;
+  }
+  #tprice {
+    width: auto;
+  }
+  #rest,
+  #tprice {
+    margin-left: 10px;
+  }
+  #hire {
+    width: 10%;
+    padding: 2%;
+    background-color: #fbee04;
+    border-radius: 5px;
+    font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #362f22;
+  }
+    
+    </style>
+    <!-- <script>
+    
+    
+    let button = document.createElement("button");
+            button.innerHTML = "Do Something";
+
+            button.addEventListener ("click", function() {
+            alert("did something");
+                });
+            
+            
+            </script> -->
+
+
+
+            <!-- Ovelay start here -->
+            <script>
+            function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }
+  function plusOne(x = document.getElementById("summa").value) {
+    x = ++x;
+    if (x >= 1) {
+      document.getElementById("summa").value = x;
+      function totalPrice(x = document.getElementById("summa").value) {
+        let tprice = x * 100;
+        return tprice;
+      }
+      document.getElementById("tprice").value = "$ " + totalPrice(x);
+    }
+  }
+  function minusOne(x = document.getElementById("summa").value) {
+    x = --x;
+    if (x >= 1) {
+      document.getElementById("summa").value = x;
+      function totalPrice(x = document.getElementById("summa").value) {
+        let tprice = x * 100;
+        return tprice;
+      }
+      document.getElementById("tprice").value = "$ " + totalPrice(x);
+    }
+  }
+  function totalPrice(x = document.getElementById("summa").value) {
+    let tprice = x * 100;
+    document.getElementById("tprice").value = tprice;
+  }
+
+
+  // doughnut chart
+
+var myCanvas = document.getElementById("myCanvas");
+myCanvas.width = 180;
+myCanvas.height = 180;
+
+var ctx = myCanvas.getContext("2d");
+
+function drawLine(ctx, startX, startY, endX, endY) {
+  ctx.beginPath();
+  ctx.moveTo(startX, startY);
+  ctx.lineTo(endX, endY);
+  // ctx.stroke();
+}
+
+function drawArc(ctx, centerX, centerY, radius, startAngle, endAngle) {
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+  // ctx.stroke();
+}
+
+function drawPieSlice(
+  ctx,
+  centerX,
+  centerY,
+  radius,
+  startAngle,
+  endAngle,
+  color
+) {
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(centerX, centerY);
+  ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+  ctx.closePath();
+  ctx.fill();
+}
+
+drawLine(ctx, 50, 50, 50, 50);
+drawArc(ctx, 100, 100, 100, 0, Math.PI / 3);
+drawPieSlice(
+  ctx,
+  100,
+  100,
+  100,
+  Math.PI / 2,
+  Math.PI / 2 + Math.PI / 4,
+  "#269bbc"
+);
+// ................Overlay object that we need to edit...........
+
+
+
+
+/* var superPw = {
+  Strengts: 35,
+  Skill: 25,
+  Brains: 9,
+  Gadget: 11,
+  Heart: 20
+}; */
+
+/* var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                let response = JSON.parse(xhttp.responseText);
+                let people = response.people;
+      
+                let output = [];
+      
+                for (let i = 0; i < people.length; i++) {
+                  
+                  output.push(people[i].name)
+                   +
+                  output.push(people[i].image)
+                   +
+                  output.push(people[i].strengts)
+                   +
+                  output.push(people[i].skill)
+                   +
+                  output.push(people[i].brains)
+                   +
+                  output.push(people[i].gadget)
+                   +
+                  output.push(people[i].heart);
+                }
+      
+                document.getElementById("hero").innerHTML = output;
+              }
+            };
+            xhttp.open("GET", "hero.json", true);
+            xhttp.send();
+
+
+            console.log(output);
+          
+
+function superPw (name, image, strengts, skill, brains, gadget, heart){
+
+  this.name=name;
+  this.image=image;
+  this.strengts=strengts;
+  this.skill=skill;
+  this.brains=brains;
+  this.gadget=gadget;
+  this.heart=heart;
+} 
+let batman = new superPw(50,20,30,45,40);
+
+*/
+
+
+
+/* 
+
+ -----------The idea is to---------
+
+let output[0] = new superPw (output[1], output[2],
+   output[3], output[4], output[5]) */
+
+
+
+
+
+
+var Piechart = function(options) {
+  this.options = options;
+  this.canvas = options.canvas;
+  this.ctx = this.canvas.getContext("2d");
+  this.colors = options.colors;
+
+  this.draw = function() {
+    var total_value = 0;
+    var color_index = 0;
+    for (var categ in this.options.data) {
+      var val = this.options.data[categ];
+      total_value += val;
+    }
+
+    var start_angle = 0;
+    for (categ in this.options.data) {
+      val = this.options.data[categ];
+      var slice_angle = (2 * Math.PI * val) / total_value;
+
+      drawPieSlice(
+        this.ctx,
+        this.canvas.width / 2,
+        this.canvas.height / 2,
+        Math.min(this.canvas.width / 2, this.canvas.height / 2),
+        start_angle,
+        start_angle + slice_angle,
+        this.colors[color_index % this.colors.length]
+      );
+
+      start_angle += slice_angle;
+      color_index++;
+    }
+
+    if (this.options.doughnutHoleSize) {
+      drawPieSlice(
+        this.ctx,
+        this.canvas.width / 2,
+        this.canvas.height / 2,
+        this.options.doughnutHoleSize *
+          Math.min(this.canvas.width / 2, this.canvas.height / 2),
+        0,
+        2 * Math.PI,
+        "#269bbc"
+      );
+    }
+  };
+};
+
+var myDougnutChart = new Piechart({
+  canvas: myCanvas,
+  data: superPw,
+  colors: ["#3ED1EE", "#BCD689", "#824583", "#FFD458", "#FF9241"],
+  doughnutHoleSize: 0.5
+});
+myDougnutChart.draw();
+            
+            </script>
+
+            <!-- Ovelay end here -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                let response = JSON.parse(xhttp.responseText);
+                let people = response.people;
+      
+                let output = "";
+      
+                for (let i = 0; i < people.length; i++) {
+                  output +=
+                    "<li class='list'>" +
+                    "<IMG src=" +
+                    people[i].image+ 
+                    ">"+"<br>"+
+                    people[i].name 
+                    +"<br>"+"<br>"+
+                    " " +people[i].stringth
+                    +"<br>"+
+                    " " +people[i].skills
+                    +"<br>"+
+                    " " +people[i].brain
+                    +"<br>"+
+                    
+                   "<button "+
+                  "type='button'"+ 
+                  "onclick="+'<a'+"href"+people[i].hire+">"+
+                   "Hire!"+"</a>"+
+                   "</button>"+
+                   
+
+
+                   "<br>"+
+
+
+
+                   "<a href="+
+                   "https://www.w3schools.com/html/"+
+                                      ">Hire!"+
+                   "</a>"
+
+                  "</li>";
+                }
+      
+                document.getElementById("hero").innerHTML = output;
+              }
+            };
+            xhttp.open("GET", "hero.json", true);
+            xhttp.send();
+          </script>
+          
+</head>
+<body>
+    <div class='header'>
+        <img class='logo' src="image/logo.svg" alt="">
+        <h1>Hire your best superhero</h1>
+    </div>
+
+    <nav>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+        </div>
+
+        <ul class='menu-list'>
+            <li class='home-section'><a href='./index.html' class='active'>Home</a></li>
+            <li class='service-section'><a href='./services.html'>Services</a></li>
+            <li class='about-section'><a href='./aboutUs.html'>About Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="hero-img"></div>
+        <ul class="items" id="hero"></ul>
+        
+    </main>
+
+    <div class="scrollTop hidden">
+        <a href="#">
+            <i class="fas fa-angle-up"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="socialMed">
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter-square"></i>
+        </div>
+
+
+<!-- start overlay  -->
+
+<div id="overlay">
+    <div id="box1">
+      <div class="item0" id="title">GIRL POWER</div>
+      <img
+        class="item0"
+        id="bild-overlay"
+        src="img/woman.jpg"
+        alt="Girl Power"
+      />
+
+      <!-- stars -->
+
+      <p class="item0" id="clasificacion">
+        <input id="radio1" type="radio" name="estrellas" value="5" />
+        <label for="radio1">★</label>
+        <input id="radio2" type="radio" name="estrellas" value="4" />
+        <label for="radio2">★</label>
+        <input id="radio3" type="radio" name="estrellas" value="3" />
+        <label for="radio3">★</label>
+        <input id="radio4" type="radio" name="estrellas" value="2" />
+        <label for="radio4">★</label>
+        <input id="radio5" type="radio" name="estrellas" value="1" />
+        <label for="radio5">★</label>
+      </p>
+    </div>
+
+    <button id="button1" onclick="off()">X</button>
+
+    <!-- chart -->
+
+    <canvas id="myCanvas"></canvas>
+
+    <div class="box2">
+      <div class="item" id="circle1"></div>
+      <div class="item" id="circle2"></div>
+      <div class="item" id="circle3"></div>
+      <div class="item" id="circle4"></div>
+      <div class="item" id="circle5"></div>
+    </div>
+
+    <div class="box2" id="color-name">
+      <div class="item">Strengts</div>
+      <div class="item">Skill</div>
+      <div class="item">Brains</div>
+      <div class="item">Gadget</div>
+      <div class="item">Heart</div>
+    </div>
+
+    <div id="box3">
+      <div id="hours">
+        Hours:
+        <input onclick="minusOne();" type="button" id="rest" value="-" />
+        <input type="button" id="summa" value="1" />
+        <input onclick="plusOne();" type="button" id="add" value="+" />
+      </div>
+
+      <div id="price">
+        Total Price:
+        <input type="button" id="tprice" value="$ 100" />
+      </div>
+
+      <input type="button" id="hire" value="Hire" />
+    </div>
+
+    <script src="overlay.js"></script>
+
+  </div>
+
+  <!-- end overlay -->
+
+  <div id="button0">
+    <button onclick="on()">Turn on overlay effect</button>
+  </div>
+
+
+        <p>&copy; 2018 All Rights Reserved | SUPERHIRO 4 HIRE</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

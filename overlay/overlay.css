@@ -5,6 +5,7 @@
     padding: 20px;
   }
   #overlay {
+    display: none;
     position: fixed;
     top: 20%;
     left: 20%;
@@ -163,4 +164,17 @@
     font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
     font-size: 1rem;
     color: #362f22;
+  }
+
+  #md-button {
+    background-color: #0f9fbf;
+    border: none;
+    color: white;
+    padding: 10px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
   }

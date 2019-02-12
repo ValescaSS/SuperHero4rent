@@ -47,6 +47,7 @@ body {
   justify-content: space-around;
   padding: 1em 3em;
   box-shadow: 0 2px 3px lighten($clr-dark, 20%);
+  
 
   .logo {
     width: 6rem;
@@ -164,6 +165,7 @@ main {
   // min-height & flex setup to have the footer stick to the bottom
   min-height: 100%;
   flex: 1 0 auto;
+  z-index: -10;
   // here below goes the rest of main
 
   .hero-img {
@@ -570,7 +572,7 @@ footer {
              width: 80%;
              position: relative;
              top: 13rem;
-             z-index: -1;
+             z-index: 1;
              padding-bottom: 50px;
              color: #f85d3c;
              text-align: center;
@@ -584,3 +586,11 @@ footer {
             padding-bottom: 20px;
             padding-top: 20px;
           }
+
+          #name{
+            color: #0f9fbf;
+          }
+
+         
+
+          

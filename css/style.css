@@ -600,7 +600,7 @@ footer .socialMed {
   width: 80%;
   position: relative;
   top: 13rem;
-  z-index: -1;
+  z-index: 1;
   padding-bottom: 50px;
   color: #f85d3c;
   text-align: center;
@@ -610,5 +610,9 @@ footer .socialMed {
   border: 1px solid #88a0ad;
   padding-bottom: 20px;
   padding-top: 20px;
+}
+
+#name {
+  color: #0f9fbf;
 }
 /*# sourceMappingURL=style.css.map */
