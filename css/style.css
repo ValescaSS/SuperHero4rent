@@ -188,6 +188,7 @@ main {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
+  z-index: -10;
 }
 
 main .hero-img {
@@ -576,6 +577,25 @@ footer .socialMed {
     text-align: center;
     z-index: -1;
   }
+  .items {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  .items {
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    position: relative;
+    top: 18rem;
+    z-index: -5;
+    padding-bottom: 50px;
+    color: #f85d3c;
+    text-align: center;
+  }
 }
 
 /* html {
@@ -600,7 +620,7 @@ footer .socialMed {
   width: 80%;
   position: relative;
   top: 13rem;
-  z-index: 1;
+  z-index: -5;
   padding-bottom: 50px;
   color: #f85d3c;
   text-align: center;

@@ -539,6 +539,30 @@ footer {
     text-align: center;
     z-index: -1;
   }
+  .items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px; 
+    
+    
+      } 
+
+      .items{
+        list-style: none;
+        margin-left: auto;
+        margin-right: auto;
+         width: 80%;
+         position: relative;
+         top: 18rem;
+         z-index: -5;
+         padding-bottom: 50px;
+         color: #f85d3c;
+         text-align: center;
+         
+         
+         
+      }
+  
 }
 
 
@@ -572,7 +596,7 @@ footer {
              width: 80%;
              position: relative;
              top: 13rem;
-             z-index: 1;
+             z-index: -5;
              padding-bottom: 50px;
              color: #f85d3c;
              text-align: center;
