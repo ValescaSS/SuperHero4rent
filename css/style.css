@@ -9,21 +9,15 @@ body {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   padding: 0;
   background: #f2ecd8;
   font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .header {
@@ -33,24 +27,19 @@ body {
   background: url(../image/5-comic-burst-background-1.png) no-repeat;
   background-size: cover;
   background-position-y: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   padding: 1em 3em;
-  -webkit-box-shadow: 0 2px 3px #756549;
-          box-shadow: 0 2px 3px #756549;
+  box-shadow: 0 2px 3px #756549;
+  z-index: 10;
 }
-
+.header div {
+  display: flex;
+  flex-direction: column;
+}
 .header .logo {
   width: 6rem;
 }
-
 .header h1 {
   font-size: 2rem;
   letter-spacing: 0.1em;
@@ -58,138 +47,101 @@ body {
   position: relative;
   left: 2rem;
 }
-
-nav {
-  position: fixed;
-  font-size: 1.2rem;
-  width: 100%;
-  height: auto;
-}
-
-nav .hamburger-menu {
-  position: absolute;
-  top: 5rem;
-  left: 0;
-  bottom: 0;
-  right: -70%;
-  margin: auto;
-  width: 40px;
-  height: 29px;
-  cursor: pointer;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-nav .hamburger-menu.animate {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-}
-
-nav .bar,
-nav .bar:before,
-nav .bar:after {
-  width: 40px;
-  height: 5px;
-}
-
-nav .bar {
-  position: relative;
-  -webkit-transform: translateY(12px);
-          transform: translateY(12px);
-  background: #f85d3c;
-}
-
-nav .bar:before {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 12px;
-  background: #f85d3c;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-nav .bar:after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 12px;
-  background: #f85d3c;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-nav .bar.animate:after {
-  width: 25px;
-  -webkit-transform: rotate(-45deg) translateX(6px);
-          transform: rotate(-45deg) translateX(6px);
-}
-
-nav .bar.animate:before {
-  width: 25px;
-  -webkit-transform: rotate(45deg) translateX(6px);
-          transform: rotate(45deg) translateX(6px);
-}
-
-nav .menu-list {
+.header .menu-list {
   font-size: 2rem;
   background: #f85d3c;
   width: 100%;
   height: 9rem;
   position: absolute;
-  top: 8rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  top: 12rem;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
 }
-
-nav .menu-list li {
+.header .menu-list li {
   text-align: center;
   width: 120%;
   height: 3rem;
   border-bottom: 1px solid #fbee04;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
-nav .menu-list li a {
+.header .menu-list li a {
   text-decoration: none;
   color: #0f9fbf;
 }
-
-nav .menu-list li a:hover {
+.header .menu-list li a:hover {
   color: #fbee04;
 }
-
-nav .active {
+.header .menu-list .active {
   color: #fbee04 !important;
+}
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 28px 1em;
+  position: relative;
+  user-select: none;
+}
+.header .navicon {
+  background: #f85d3c;
+  display: block;
+  height: 3px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 2em;
+  right: -2rem;
+  border-radius: 3px;
+}
+.header .navicon:before,
+.header .navicon:after {
+  background: #f85d3c;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  border-radius: 3px;
+}
+.header .navicon:before {
+  top: 10px;
+}
+.header .navicon:after {
+  top: -10px;
+}
+.header .menu-btn {
+  display: none;
+}
+.header .menu-btn:checked ~ .menu-list {
+  max-height: 9rem;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
 }
 
 main {
   min-height: 100%;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  flex: 1 0 auto;
 }
-
 main .hero-img {
   background-image: url(../image/977333_free-marvel-superhero-wallpapers-high-quality-resolution-v3y-wallx_1920x1080_h.jpg);
   background-size: cover;
@@ -199,7 +151,146 @@ main .hero-img {
   width: 100%;
   position: relative;
   top: 7rem;
-  z-index: -10;
+}
+main #md-blue {
+  width: 70%;
+  height: 4rem;
+  font-size: 1.5em;
+  top: 17rem;
+  margin: auto;
+  display: flex;
+  position: relative;
+  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 40px;
+  color: #f85d3c;
+}
+main #md-sec-av {
+  width: 90%;
+  margin: 10% 5%;
+  position: relative;
+  top: 17rem;
+}
+main #md-sec-av .md-avatar {
+  width: 90%;
+  margin: 5% 5%;
+  position: relative;
+  top: 10px;
+}
+main #md-sec-av .md-avatar .md-avatar-img {
+  width: 60%;
+  margin: 0 20%;
+  height: 12rem;
+  background-color: #0f9fbf2a;
+  border-radius: 50%;
+}
+main #md-sec-av .md-avatar .md-avatar-tex {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  color: #0f9fbf;
+  margin: 10px 10px;
+}
+main #md-sec {
+  position: relative;
+  top: 300px;
+  width: 80%;
+  height: auto;
+  margin: 0 10%;
+}
+main #md-sec .md-h2 {
+  color: #f85d3c;
+  text-align: center;
+}
+main #md-sec .md-p {
+  color: #0f9fbf;
+  min-width: 320px;
+  text-align: justify;
+  line-height: 1.5em;
+}
+main #md-blue-adress {
+  width: 70%;
+  height: 4rem;
+  font-size: 1.8em;
+  top: 330px;
+  margin: auto;
+  display: flex;
+  position: relative;
+  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 40px;
+  color: #f85d3c;
+}
+main #md-adress-img {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  position: relative;
+  top: 380px;
+}
+main #md-adress-img #karta {
+  width: 100%;
+  border-radius: 5%;
+}
+
+.md-h2-services {
+  position: relative;
+  top: 10px;
+  color: #f85d3c;
+}
+
+.md-p-services {
+  position: relative;
+  top: 10px;
+  color: #0f9fbf;
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+#md-more {
+  color: #f85d3c;
+  position: relative;
+  top: 330px;
+  text-align: center;
+}
+
+#md-blue-faq {
+  width: 35%;
+  height: 4rem;
+  font-size: 1.8em;
+  top: 100px;
+  margin: auto;
+  display: flex;
+  position: relative;
+  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 40px;
+  color: #f85d3c;
+}
+
+.md-h2-faq {
+  position: relative;
+  top: 170px;
+  color: #f85d3c;
+}
+
+.md-p-faq {
+  position: relative;
+  top: 170px;
+  color: #0f9fbf;
+  text-align: justify;
+  line-height: 1.5em;
 }
 
 .scrollTop {
@@ -212,29 +303,25 @@ main .hero-img {
   background: #f97155;
   opacity: 0.85;
   color: white;
-  -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  z-index: 10;
 }
-
 .scrollTop:hover {
   cursor: pointer;
   opacity: 1;
   background: #f85d3c;
 }
-
 .scrollTop i {
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   font-size: 3em;
   color: white;
 }
 
 .hidden {
-  -webkit-transition: all 500ms ease-in;
   transition: all 500ms ease-in;
 }
 
@@ -245,336 +332,82 @@ footer {
   width: 100%;
   height: 15vh;
   color: #463d2c;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
   position: relative;
   top: 100%;
   z-index: -1;
 }
-
 footer .socialMed {
   font-size: 3rem;
   margin-top: 1rem;
 }
 
-#md-blue {
-  width: 35%;
-  height: 4rem;
-  font-size: 1.8em;
-  top: 13rem;
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
-  background-size: cover;
-  background-position-y: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 40px;
-  color: #f85d3c;
-  z-index: -1;
-}
-
-.md-avatar {
-  /* To correctly align image, regardless of content height: */
-  vertical-align: top;
-  /* To horizontally center images and caption */
-  text-align: center;
-  /* The width of the container also implies margin around the images. */
-  width: 22%;
-  position: relative;
-  top: 300px;
-  z-index: -1;
-}
-
-.md-avatar-img {
-  width: 12rem;
-  height: 12rem;
-  background-color: #0f9fbf2a;
-  border-radius: 50%;
-}
-
-.md-avatar-tex {
-  display: block;
-  font-size: 1.2em;
-  color: #0f9fbf;
-}
-
-.md-h2 {
-  position: relative;
-  top: 400px;
-  color: #f85d3c;
-  z-index: -1;
-}
-
-.md-p {
-  position: relative;
-  top: 400px;
-  color: #0f9fbf;
-  z-index: -1;
-  min-width: 320px;
-}
-
-#md-sec {
-  margin-left: 150px;
-  margin-right: 150px;
-}
-
-#md-sec-av {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#md-blue-adress {
-  width: 35%;
-  height: 4rem;
-  font-size: 1.8em;
-  top: 500px;
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
-  background-size: cover;
-  background-position-y: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 40px;
-  color: #f85d3c;
-  z-index: -1;
-}
-
-#md-adress-img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 300px;
-  position: relative;
-  top: 600px;
-  z-index: -1;
-}
-
-#karta {
-  border-radius: 5%;
-}
-
-.md-h2-services {
-  position: relative;
-  top: 280px;
-  color: #f85d3c;
-  z-index: -1;
-}
-
-.md-p-services {
-  position: relative;
-  top: 280px;
-  color: #0f9fbf;
-  z-index: -1;
-}
-
-#md-more {
-  color: #f85d3c;
-  position: relative;
-  top: 330px;
-  text-align: center;
-  z-index: -1;
-}
-
-#md-blue-faq {
-  width: 35%;
-  height: 4rem;
-  font-size: 1.8em;
-  top: 450px;
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
-  background-size: cover;
-  background-position-y: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 40px;
-  color: #f85d3c;
-  z-index: -1;
-}
-
-.md-h2-faq {
-  position: relative;
-  top: 500px;
-  color: #f85d3c;
-  z-index: -1;
-}
-
-.md-p-faq {
-  position: relative;
-  top: 500px;
-  color: #0f9fbf;
-  z-index: -1;
-}
-
 @media (min-width: 768px) {
-  .header {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+  .header div {
+    flex-direction: row;
+    align-items: center;
   }
-  nav {
-    top: 5.5rem;
-    right: 1rem;
-    width: 50%;
-  }
-  nav .hamburger-menu {
-    display: none;
-  }
-  nav .menu-list {
+  .header .menu-list {
     border-radius: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    top: -2rem;
+    flex-direction: row;
+    top: 5.5rem;
     height: 4rem;
     font-size: 1.5rem;
     padding-left: 1rem;
     padding-right: 1.2rem;
+    width: 50%;
+    right: 1rem;
+    max-height: 7rem;
   }
-  nav .menu-list li {
-    width: 100%;
+  .header .menu-list li {
     border-bottom: initial;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+
+  main #md-blue {
+    width: 35%;
+    top: 15rem;
+  }
+  main #md-sec-av {
+    margin: 0 5%;
+    top: 18rem;
+    display: flex;
+    justify-content: center;
+  }
+  main #md-sec-av .md-avatar {
+    width: 100%;
+    top: 8px;
+  }
+  main #md-sec-av .md-avatar .md-avatar-img {
+    width: 100%;
+    margin: 0;
+  }
+  main #md-blue-adress {
+    width: 35%;
+    top: 150px;
+  }
+  main #md-sec {
+    margin: 0 auto;
+  }
+  main #md-sec .md-h2 {
+    position: relative;
+    top: 200px;
+  }
+  main #md-sec .md-p {
+    position: relative;
+    top: 200px;
+  }
+  main #md-adress-img {
+    width: 50%;
+    top: 500px;
   }
 }
 
-/* @media (max-width: 768px) {
-    position: relative;
-    top: 20rem;
-  } */
-@media (max-width: 768px) {
-  #md-blue {
-    position: relative;
-    top: 20rem;
-    width: 25rem;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
-  }
-  #md-sec-av {
-    position: relative;
-    top: 7rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-  .md-avatar {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    padding-bottom: 4rem;
-  }
-  .md-avatar-tex {
-    display: block;
-  }
-  #md-sec-av {
-    -ms-flex-line-pack: center;
-        align-content: center;
-  }
-  #md-sec {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  #md-blue-adress {
-    width: 25rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  #md-blue-services {
-    position: relative;
-    top: 10rem;
-    width: 25rem;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
-  }
-  #md-blue-faq {
-    position: relative;
-    /* top: 10rem; */
-    width: 25rem;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
-  }
-  .md-h2-services {
-    position: relative;
-    top: 22rem;
-    color: #f85d3c;
-    z-index: -1;
-  }
-  .md-p-services {
-    position: relative;
-    top: 22rem;
-    color: #0f9fbf;
-    z-index: -1;
-  }
-  #md-more {
-    color: #f85d3c;
-    position: relative;
-    top: 22rem;
-    text-align: center;
-    z-index: -1;
-  }
-}
 /*# sourceMappingURL=style.css.map */

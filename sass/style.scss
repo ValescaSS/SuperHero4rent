@@ -43,10 +43,15 @@ body {
   background-size: cover;
   background-position-y: center;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   padding: 1em 3em;
   box-shadow: 0 2px 3px lighten($clr-dark, 20%);
+  z-index: 10;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 
   .logo {
     width: 6rem;
@@ -58,71 +63,6 @@ body {
     position: relative;
     left: 2rem;
   }
-}
-
-nav {
-  position: fixed;
-  font-size: 1.2rem;
-  width: 100%;
-  height: auto;
-
-  .hamburger-menu {
-    position: absolute;
-    top: 5rem;
-    left: 0;
-    bottom: 0;
-    right: -70%;
-    margin: auto;
-    width: $bar-width;
-    height: $bar-height + $bar-spacing * 2;
-    cursor: pointer;
-    transition: all $transition-time ease;
-
-    &.animate {
-      transform: rotate(360deg);
-    }
-  }
-
-  .bar,
-  .bar:before,
-  .bar:after {
-    width: $bar-width;
-    height: $bar-height;
-  }
-
-  .bar {
-    position: relative;
-    transform: translateY($bar-spacing);
-    background: $clr-title;
-  }
-
-  .bar:before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: $bar-spacing;
-    background: $clr-title;
-    transition: all $transition-time ease;
-  }
-
-  .bar:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: $bar-spacing;
-    background: $clr-title;
-    transition: all $transition-time ease;
-  }
-
-  .bar.animate:after {
-    width: 25px;
-    transform: rotate(-45deg) translateX(6px);
-  }
-
-  .bar.animate:before {
-    width: 25px;
-    transform: rotate(45deg) translateX(6px);
-  }
 
   .menu-list {
     font-size: 2rem;
@@ -130,12 +70,17 @@ nav {
     width: 100%;
     height: 9rem;
     position: absolute;
-    top: 8rem;
+    top: 12rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
 
     li {
       text-align: center;
@@ -154,9 +99,74 @@ nav {
         color: $clr-txt;
       }
     }
+
+    .active {
+      color: $clr-txt !important;
+    }
   }
-  .active {
-    color: $clr-txt !important;
+
+  .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 1em;
+    position: relative;
+    user-select: none;
+  }
+
+  .navicon {
+    background: $clr-title;
+    display: block;
+    height: 3px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 2em;
+    right: -2rem;
+    border-radius: 3px;
+  }
+
+  .navicon:before,
+  .navicon:after {
+    background: $clr-title;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  .navicon:before {
+    top: 10px;
+  }
+
+  .navicon:after {
+    top: -10px;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .menu-btn:checked ~ .menu-list {
+    max-height: 9rem;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
   }
 }
 
@@ -175,8 +185,147 @@ main {
     width: 100%;
     position: relative;
     top: 7rem;
-    z-index: -10;
   }
+  #md-blue {
+    width: 70%;
+    height: 4rem;
+    font-size: 1.5em;
+    top: 17rem;
+    margin: auto;
+    display: flex;
+    position: relative;
+    background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg)
+      no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 40px;
+    color: $clr-title;
+  }
+  #md-sec-av {
+    width: 90%;
+    margin: 10% 5%;
+    position: relative;
+    top: 17rem;
+    .md-avatar {
+      width: 90%;
+      margin: 5% 5%;
+      position: relative;
+      top: 10px;
+      .md-avatar-img {
+        width: 60%;
+        margin: 0 20%;
+        height: 12rem;
+        background-color: #0f9fbf2a;
+        border-radius: 50%;
+      }
+      .md-avatar-tex {
+        display: block;
+        text-align: center;
+        font-size: 1.2em;
+        color: $clr-extra;
+        margin: 10px 10px;
+      }
+    }
+  }
+  #md-sec {
+    position: relative;
+    top: 300px;
+    width: 80%;
+    height: auto;
+    margin: 0 10%;
+    .md-h2 {
+      color: $clr-title;
+      text-align: center;
+    }
+    .md-p {
+      color: $clr-extra;
+      min-width: 320px;
+      text-align: justify;
+      line-height: 1.5em;
+    }
+  }
+  #md-blue-adress {
+    width: 70%;
+    height: 4rem;
+    font-size: 1.8em;
+    top: 330px;
+    margin: auto;
+    display: flex;
+    position: relative;
+    background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg)
+      no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 40px;
+    color: $clr-title;
+  }
+  #md-adress-img {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    position: relative;
+    top: 380px;
+    #karta {
+      width: 100%;
+      border-radius: 5%;
+    }
+  }
+}
+
+// Services Mobile version
+
+.md-h2-services {
+  position: relative;
+  top: 10px;
+  color: $clr-title;
+}
+.md-p-services {
+  position: relative;
+  top: 10px;
+  color: $clr-extra;
+  text-align: justify;
+  line-height: 1.5em;
+}
+#md-more {
+  color: $clr-title;
+  position: relative;
+  top: 330px;
+  text-align: center;
+}
+#md-blue-faq {
+  width: 35%;
+  height: 4rem;
+  font-size: 1.8em;
+  top: 100px;
+  margin: auto;
+  display: flex;
+  position: relative;
+  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg)
+    no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 40px;
+  color: $clr-title;
+}
+.md-h2-faq {
+  position: relative;
+  top: 170px;
+  color: $clr-title;
+}
+.md-p-faq {
+  position: relative;
+  top: 170px;
+  color: #0f9fbf;
+  text-align: justify;
+  line-height: 1.5em;
 }
 
 .scrollTop {
@@ -190,6 +339,7 @@ main {
   opacity: 0.85;
   color: white;
   transition: all 200ms ease-in-out;
+  z-index: 10;
 
   &:hover {
     cursor: pointer;
@@ -236,305 +386,76 @@ footer {
   }
 }
 
-// About us Desktop version
-// OBS!! Alla tager och klasser som jag har skapat börjar med "md-"
-// På detta sätt vi ska inte ha konflikter nar vi merge
-
-#md-blue {
-  width: 35%;
-  height: 4rem;
-  font-size: 1.8em;
-  top: 13rem;
-  margin: auto;
-  display: flex;
-  position: relative;
-  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg)
-    no-repeat;
-  background-size: cover;
-  background-position-y: center;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 40px;
-  color: $clr-title;
-  z-index: -1;
-}
-
-.md-avatar {
-  /* To correctly align image, regardless of content height: */
-  vertical-align: top;
-
-  /* To horizontally center images and caption */
-  text-align: center;
-  /* The width of the container also implies margin around the images. */
-  width: 22%;
-
-  position: relative;
-  top: 300px;
-  z-index: -1;
-}
-.md-avatar-img {
-  width: 12rem;
-  height: 12rem;
-  background-color: #0f9fbf2a;
-  border-radius: 50%;
-}
-
-.md-avatar-tex {
-  display: block;
-  font-size: 1.2em;
-  color: $clr-extra;
-}
-
-.md-h2 {
-  position: relative;
-  top: 400px;
-  color: $clr-title;
-  z-index: -1;
-}
-
-.md-p {
-  position: relative;
-  top: 400px;
-  color: $clr-extra;
-  z-index: -1;
-  min-width: 320px;
-}
-
-#md-sec {
-  margin-left: 150px;
-  margin-right: 150px;
-}
-
-#md-sec-av {
-  display: flex;
-  justify-content: center;
-}
-
-#md-blue-adress {
-  width: 35%;
-  height: 4rem;
-  font-size: 1.8em;
-  top: 500px;
-  margin: auto;
-  display: flex;
-  position: relative;
-  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg)
-    no-repeat;
-  background-size: cover;
-  background-position-y: center;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 40px;
-  color: $clr-title;
-  z-index: -1;
-}
-
-#md-adress-img {
-  display: flex;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 300px;
-  position: relative;
-  top: 600px;
-  z-index: -1;
-}
-
-#karta {
-  border-radius: 5%;
-}
-
-// Services Desktop version
-// OBS!! Alla tager och klasser som jag har skapat börjar med "md-"
-// På detta sätt vi ska inte ha konflikter nar vi merge
-
-.md-h2-services {
-  position: relative;
-  top: 280px;
-  color: $clr-title;
-  z-index: -1;
-}
-
-.md-p-services {
-  position: relative;
-  top: 280px;
-  color: $clr-extra;
-  z-index: -1;
-}
-
-#md-more {
-  color: $clr-title;
-  position: relative;
-  top: 330px;
-  text-align: center;
-  z-index: -1;
-}
-
-#md-blue-faq {
-  width: 35%;
-  height: 4rem;
-  font-size: 1.8em;
-  top: 450px;
-  margin: auto;
-  display: flex;
-  position: relative;
-  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg)
-    no-repeat;
-  background-size: cover;
-  background-position-y: center;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 40px;
-  color: $clr-title;
-  z-index: -1;
-}
-
-.md-h2-faq {
-  position: relative;
-  top: 500px;
-  color: $clr-title;
-  z-index: -1;
-}
-
-.md-p-faq {
-  position: relative;
-  top: 500px;
-  color: #0f9fbf;
-  z-index: -1;
-}
-
-@media (min-width: 576px) {
-}
 @media (min-width: 768px) {
   .header {
-    flex-direction: row;
-    align-items: center;
-  }
-  nav {
-    top: 5.5rem;
-    right: 1rem;
-    width: 50%;
-
-    .hamburger-menu {
-      display: none;
+    div {
+      flex-direction: row;
+      align-items: center;
     }
 
     .menu-list {
       border-radius: 10px;
       display: flex;
       flex-direction: row;
-      top: -2rem;
+      top: 5.5rem;
       height: 4rem;
       font-size: 1.5rem;
       padding-left: 1rem;
       padding-right: 1.2rem;
+      width: 50%;
+      right: 1rem;
+      max-height: 7rem;
 
       li {
-        width: 100%;
         border-bottom: initial;
       }
     }
+
+    .menu-icon {
+      display: none;
+    }
   }
 
-  // About us Mobile version
-  // OBS!! Alla tager och klasser som jag har skapat börjar med "md-"
-  // På detta sätt vi ska inte ha konflikter nar vi merge
-}
-@media (min-width: 992px) {
-}
-@media (min-width: 1200px) {
-}
-
-/* @media (max-width: 768px) {
-    position: relative;
-    top: 20rem;
-  } */
-
-@media (max-width: 768px) {
-  #md-blue {
-    position: relative;
-    top: 20rem;
-    width: 25rem;
-    margin: 0 auto;
-    display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
-  }
-
-  #md-sec-av {
-    position: relative;
-    top: 7rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-  .md-avatar {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    padding-bottom: 4rem;
-  }
-  .md-avatar-tex {
-    display: block;
-  }
-
-  #md-sec-av {
-    align-content: center;
-  }
-
-  #md-sec {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  #md-blue-adress {
-    width: 25rem;
-    display: flex;
-  }
-
-  #md-blue-services {
-    position: relative;
-    top: 10rem;
-    width: 25rem;
-    margin: 0 auto;
-    display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
-    
-  }
-
-  #md-blue-faq{
-    position: relative;
-    /* top: 10rem; */
-    width: 25rem;
-    margin: 0 auto;
-    display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
-  }
-
-
-  .md-h2-services {
-    position: relative;
-    top: 22rem;
-    color: $clr-title;
-    z-index: -1;
-  }
-  
-  .md-p-services {
-    position: relative;
-    top: 22rem;
-    color: $clr-extra;
-    z-index: -1;
-  }
-  
-  #md-more {
-    color: $clr-title;
-    position: relative;
-    top: 22rem;
-    text-align: center;
-    z-index: -1;
+  main {
+    #md-blue {
+      width: 35%;
+      top: 15rem;
+    }
+    #md-sec-av {
+      
+      margin: 0 5%;
+      
+      top: 18rem;
+      display: flex;
+      justify-content: center;
+      .md-avatar {
+        width: 100%;
+        top: 8px;
+        .md-avatar-img {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+    #md-blue-adress {
+      width: 35%;
+      top: 150px;
+    }
+    #md-sec {
+      margin: 0 auto;
+      .md-h2 {
+        position: relative;
+        top: 200px;
+      }
+      .md-p {
+        position: relative;
+        top: 200px;
+      }
+    }
+    #md-adress-img {
+      width: 50%;
+      top: 500px;
+    }
   }
 }
+
