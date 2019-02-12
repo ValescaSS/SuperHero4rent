@@ -82,7 +82,7 @@ drawPieSlice(
   "#269bbc"
 );
 
-var superPw = {
+va: superPw = {
   Strengts: 35,
   Skill: 25,
   Brains: 9,
