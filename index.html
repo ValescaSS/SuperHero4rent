@@ -1,149 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SuperHero4Hire</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <div>
-            <a href="#" class="logo">
-                <img src="image/logo.svg" alt="">
-            </a>
-            <h1>Hire your best superhero</h1>
-        </div>
+      <div>
+        <a href="#" class="logo">
+          <img src="image/logo.svg" alt="" />
+        </a>
+        <h1>Hire your best superhero</h1>
+      </div>
 
-        <input class="menu-btn" type="checkbox" id="menu-btn">
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"
+        ><span class="navicon"></span
+      ></label>
 
-        <ul class='menu-list'>
-            <li class='home-section'><a href='index.html' class='active'>Home</a></li>
-            <li class='service-section'><a href='services.html'>Services</a></li>
-            <li class='about-section'><a href='aboutUs.html'>About Us</a></li>
-        </ul>
+      <ul class="menu-list">
+        <li class="home-section">
+          <a href="index.html" class="active">Home</a>
+        </li>
+        <li class="service-section"><a href="services.html">Services</a></li>
+        <li class="about-section"><a href="aboutUs.html">About Us</a></li>
+      </ul>
     </header>
 
     <main>
-        <div class="hero-img"></div>
+      <div class="hero-img"></div>
 
-        <section class='showcases'>
-            <h3>Popular Heroes</h3>
+      <section class="showcases">
+        <h3>Popular Heroes</h3>
 
-            <!-- start overlay  -->
+        <!-- start overlay  -->
 
-            <div id="overlay">
-                <div id="box1">
-                    <div class="item0" id="title">GIRL POWER</div>
-                    <img class="item0" id="bild-overlay" src="image/woman.jpg" alt="Girl Power" />
+        <div id="overlay">
+          <div id="box1">
+            <div class="item0" id="title">GIRL POWER</div>
+            <img
+              class="item0"
+              id="bild-overlay"
+              src="image/woman.jpg"
+              alt="Girl Power"
+            />
 
-                    <!-- stars -->
+            <!-- stars -->
 
-                    <p class="item0" id="clasificacion">
-                        <input id="radio1" type="radio" name="estrellas" value="5" />
-                        <label for="radio1">★</label>
-                        <input id="radio2" type="radio" name="estrellas" value="4" />
-                        <label for="radio2">★</label>
-                        <input id="radio3" type="radio" name="estrellas" value="3" />
-                        <label for="radio3">★</label>
-                        <input id="radio4" type="radio" name="estrellas" value="2" />
-                        <label for="radio4">★</label>
-                        <input id="radio5" type="radio" name="estrellas" value="1" />
-                        <label for="radio5">★</label>
-                    </p>
-                </div>
+            <p class="item0" id="clasificacion">
+              <input id="radio1" type="radio" name="estrellas" value="5" />
+              <label for="radio1">★</label>
+              <input id="radio2" type="radio" name="estrellas" value="4" />
+              <label for="radio2">★</label>
+              <input id="radio3" type="radio" name="estrellas" value="3" />
+              <label for="radio3">★</label>
+              <input id="radio4" type="radio" name="estrellas" value="2" />
+              <label for="radio4">★</label>
+              <input id="radio5" type="radio" name="estrellas" value="1" />
+              <label for="radio5">★</label>
+            </p>
+          </div>
 
-                <button id="button1" onclick="off()">X</button>
+          <button id="button1" onclick="off()">X</button>
 
-                <!-- chart -->
+          <!-- chart -->
 
-                <canvas id="myCanvas"></canvas>
+          <canvas id="myCanvas"></canvas>
 
-                <div id="color-circle">
-                    <div class="circle-item" id="circle1"></div>
-                    <div class="circle-item" id="circle2"></div>
-                    <div class="circle-item" id="circle3"></div>
-                    <div class="circle-item" id="circle4"></div>
-                    <div class="circle-item" id="circle5"></div>
-                </div>
+          <div id="color-circle">
+            <div class="circle-item" id="circle1"></div>
+            <div class="circle-item" id="circle2"></div>
+            <div class="circle-item" id="circle3"></div>
+            <div class="circle-item" id="circle4"></div>
+            <div class="circle-item" id="circle5"></div>
+          </div>
 
-                <div id="color-name">
-                    <div class="circle-item">Strengts</div>
-                    <div class="circle-item">&nbsp;&nbsp;&nbsp;&nbsp;Skill</div>
-                    <div class="circle-item">&nbsp;&nbsp;Brains</div>
-                    <div class="circle-item">&nbsp;&nbsp;Gadget</div>
-                    <div class="circle-item">&nbsp;&nbsp;&nbsp;Heart</div>
-                </div>
+          <div id="color-name">
+            <div class="circle-item">Strengts</div>
+            <div class="circle-item">&nbsp;&nbsp;&nbsp;&nbsp;Skill</div>
+            <div class="circle-item">&nbsp;&nbsp;Brains</div>
+            <div class="circle-item">&nbsp;&nbsp;Gadget</div>
+            <div class="circle-item">&nbsp;&nbsp;&nbsp;Heart</div>
+          </div>
 
-                <div id="box2">
-                    <div id="hours">
-                        Hours:
-                        <input onclick="minusOne();" type="button" id="rest" value="-" />
-                        <input type="button" id="hour" value="1" />
-                        <input onclick="plusOne();" type="button" id="add" value="+" />
-                    </div>
-
-                    <div id="price">
-                        Total Price:
-                        <input type="button" id="tprice" value="$ 100" />
-                    </div>
-
-                    <input type="button" id="hire" value="Hire" />
-                </div>
+          <div id="box2">
+            <div id="hours">
+              Hours:
+              <input onclick="minusOne();" type="button" id="rest" value="-" />
+              <input type="button" id="hour" value="1" />
+              <input onclick="plusOne();" type="button" id="add" value="+" />
             </div>
 
-            <!-- end overlay -->
+            <div id="price">
+              Total Price:
+              <input type="button" id="tprice" value="$ 100" />
+            </div>
 
-            <!-- <div id="button0">
+            <input type="button" id="hire" value="Hire" />
+          </div>
+        </div>
+
+        <!-- end overlay -->
+
+        <!-- <div id="button0">
                 <button onclick="on()">Turn on overlay effect</button>
             </div> -->
 
-            <div class="gallery">
-                <div class="items item-1">
-                    <img class="thumbnail" src="image/3.jpg" alt="">
-                    <!-- <h4>Wonder Woman</h4> -->
-                </div>
-                <div class="items item-2">
-                    <img class="thumbnail" src="image/2.jpg" alt="">
-                    <!-- <h4>Batman</h4> -->
-                </div>
-                <div class="items item-3">
-                    <img class="thumbnail" src="image/1.jpg" alt="">
-                    <!-- <h4>Harley Quinn</h4> -->
-                </div>
-            </div>
-        </section>
+        <div class="gallery">
+          <div class="items item-1">
+            <img class="thumbnail" src="image/3.jpg" alt="" />
+            <!-- <h4>Wonder Woman</h4> -->
+          </div>
+          <div class="items item-2">
+            <img class="thumbnail" src="image/2.jpg" alt="" />
+            <!-- <h4>Batman</h4> -->
+          </div>
+          <div class="items item-3">
+            <img class="thumbnail" src="image/1.jpg" alt="" />
+            <!-- <h4>Harley Quinn</h4> -->
+          </div>
+        </div>
+      </section>
 
-        <section class='showcases'>
-            <h3>Coming Soon...</h3>
-            <div class="gallery"></div>
-        </section>
+      <section class="showcases">
+        <h3>Coming Soon...</h3>
+        <div class="gallery"></div>
+      </section>
 
-        <section class='showcases'>
-            <h3>Editor's Choice</h3>
-            <div class="gallery"></div>
-        </section>
+      <section class="showcases">
+        <h3>Editor's Choice</h3>
+        <div class="gallery"></div>
+      </section>
     </main>
 
+    <footer>
+      <div class="socialMed">
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter-square"></i></a>
+      </div>
+      <p>&copy; 2019 All Rights Reserved | SUPERHERO 4 HIRE</p>
+    </footer>
     <div class="scrollTop hidden">
-        <a href="#">
-            <i class="fas fa-angle-up"></i>
-        </a>
+      <a href="#">
+        <i class="fas fa-angle-up"></i>
+      </a>
     </div>
 
-    <footer>
-        <div class="socialMed">
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter-square"></i></a>
-        </div>
-        <p>&copy; 2019 All Rights Reserved | SUPERHERO 4 HIRE</p>
-    </footer>
-
     <script src="js/script.js"></script>
-
-</body>
+  </body>
 </html>
