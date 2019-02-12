@@ -1,213 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SuperHero4Hire</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
 
     <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-    crossorigin="anonymous"
-  />
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./overlay/overlay.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-function on() {
-    document.getElementById("overlay").style.display = "block";
-  }
-  function off() {
-    document.getElementById("overlay").style.display = "none";
-  }</script>
-
-   
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./overlay/overlay.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
     <script>
+      function on() {
+        document.getElementById("overlay").style.display = "block";
+      }
+      function off() {
+        document.getElementById("overlay").style.display = "none";
+      }
+    </script>
 
-        
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-              if (this.readyState == 4 && this.status == 200) {
-                let response = JSON.parse(xhttp.responseText);
-                let people = response.people;
-      
-                let output = "";
-      
-                for (let i = 0; i < people.length; i++) {
-                  output +=
-                    "<li class='list'>" +
-                    "<IMG src=" +
-                    people[i].image+ 
-                    ">"+"<br>"+
-                    people[i].name 
-                    +"<br>"+"<br>"+
-                    " " +people[i].stringth
-                    +"<br>"+
-                    " " +people[i].skills
-                    +"<br>"+
-                    " " +people[i].brain
-                    +"<br>"+
-                    " " +people[i].gadget
-                    +"<br>"+
-                    " " +people[i].heart
-                    +"<br>"+
-                    // Strengts, Skill, Brains, Gadget, Heart
-                    "<button id='md-button' onclick=setValues("+people[i].stringth+","+people[i].skills+","+people[i].brain+","+people[i].gadget+","+people[i].heart+")>Hire</button>"
-                    +"<br>"+
-                
-                   "<br>"+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-                  "</li>";
-                }
-      
-                document.getElementById("hero").innerHTML = output;
-              }
-            };
-            xhttp.open("GET", "hero.json", true);
-            xhttp.send();
+    <script>
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          let response = JSON.parse(xhttp.responseText);
+          let people = response.people;
 
-            
-          </script>
+          let output = "";
 
+          for (let i = 0; i < people.length; i++) {
+            output +=
+              "<li class='list'>" +
+              "<IMG src=" +
+              people[i].image +
+              ">" +
+              "<br>" +
+              people[i].name +
+              "<br>" +
+              "<br>" +
+              " " +
+              people[i].stringth * 2 +
+              "% Strength" +
+              "<br>" +
+              " " +
+              people[i].skills * 2 +
+              "% Skills" +
+              "<br>" +
+              " " +
+              people[i].brain * 2 +
+              "% Brains" +
+              "<br>" +
+              " " +
+              people[i].gadget * 2 +
+              "% Gadgets" +
+              "<br>" +
+              " " +
+              people[i].heart * 2 +
+              "% Heart" +
+              "<br>" +
+              // Strengts, Skill, Brains, Gadget, Heart
+              "<button id='md-button' onclick=setValues(" +
+              people[i].stringth +
+              "," +
+              people[i].skills +
+              "," +
+              people[i].brain +
+              "," +
+              people[i].gadget +
+              "," +
+              people[i].heart +
+              ")>Hire</button>" +
+              "<br>" +
+              "<br>" +
+              "</li>";
+          }
 
-          
-</head>
-<body>
-    <div class='header'>
-        <img class='logo' src="image/logo.svg" alt="">
-        <h1>Hire your best superhero</h1>
+          document.getElementById("hero").innerHTML = output;
+        }
+      };
+      xhttp.open("GET", "hero.json", true);
+      xhttp.send();
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <img class="logo" src="image/logo.svg" alt="" />
+      <h1>Hire your best superhero</h1>
     </div>
 
     <nav>
-        <div class="hamburger-menu">
-            <div class="bar"></div>
-        </div>
+      <div class="hamburger-menu">
+        <div class="bar"></div>
+      </div>
 
-        <ul class='menu-list'>
-            <li class='home-section'><a href='./index.html' class='active'>Home</a></li>
-            <li class='service-section'><a href='./services.html'>Services</a></li>
-            <li class='about-section'><a href='./aboutUs.html'>About Us</a></li>
-        </ul>
+      <ul class="menu-list">
+        <li class="home-section">
+          <a href="./index.html" class="active">Home</a>
+        </li>
+        <li class="service-section"><a href="./services.html">Services</a></li>
+        <li class="about-section"><a href="./aboutUs.html">About Us</a></li>
+      </ul>
     </nav>
 
     <main>
-        <div class="hero-img"></div>
+      <div class="hero-img"></div>
 
-        <div id="md-blue">
-                <h2>Our heros</h2>
-              </div>
-        <ul class="items" id="hero"></ul>
-        
-        
-
+      <div id="md-blue">
+        <h2>Our heros</h2>
+      </div>
+      <ul class="items" id="hero"></ul>
 
       <!-- start overlay  -->
 
-      <div id="overlay" >
-            <div id="box1">
-              <div class="item0" id="title">Order hero</div>
-              <img
-                class="item0"
-                id="bild-overlay"
-                src="image/logo.svg"
-                alt="logo"
-              />
-    
-              <!-- stars -->
-    
-              <p class="item0" id="clasificacion">
-                <input id="radio1" type="radio" name="estrellas" value="5" />
-                <label for="radio1">★</label>
-                <input id="radio2" type="radio" name="estrellas" value="4" />
-                <label for="radio2">★</label>
-                <input id="radio3" type="radio" name="estrellas" value="3" />
-                <label for="radio3">★</label>
-                <input id="radio4" type="radio" name="estrellas" value="2" />
-                <label for="radio4">★</label>
-                <input id="radio5" type="radio" name="estrellas" value="1" />
-                <label for="radio5">★</label>
-              </p>
-            </div>
-    
-            <button id="button1" onclick="off()">X</button>
-    
-            <!-- chart -->
-    
-            <canvas id="myCanvas"></canvas>
-    
-            <div class="box2">
-              <div class="item" id="circle1"></div>
-              <div class="item" id="circle2"></div>
-              <div class="item" id="circle3"></div>
-              <div class="item" id="circle4"></div>
-              <div class="item" id="circle5"></div>
-            </div>
-    
-            <div class="box2" id="color-name">
-              <div class="item">Strengts</div>
-              <div class="item">Skill</div>
-              <div class="item">Brains</div>
-              <div class="item">Gadget</div>
-              <div class="item">Heart</div>
-            </div>
-    
-            <div id="box3">
-              <div id="hours">
-                Hours:
-                <input onclick="minusOne();" type="button" id="rest" value="-" />
-                <input type="button" id="summa" value="1" />
-                <input onclick="plusOne();" type="button" id="add" value="+" />
-              </div>
-    
-              <div id="price">
-                Total Price:
-                <input type="button" id="tprice" value="$ 100" />
-              </div>
-              <form action="./form.html" method="get">
-                <input type="submit" value="Go to my link location" 
-                     name="Submit" id="frm1_submit" />
-            </form>
-              <!-- <input type="button" action="./form.html" id="hire" value="Hire"  /> -->
-            </div>
-    
-            
+      <div id="overlay">
+        <div id="box1">
+          <div class="item0" id="title">Order hero</div>
+          <img
+            class="item0"
+            id="bild-overlay"
+            src="image/logo.svg"
+            alt="logo"
+          />
+
+          <!-- stars -->
+
+          <p class="item0" id="clasificacion">
+            <input id="radio1" type="radio" name="estrellas" value="5" />
+            <label for="radio1">★</label>
+            <input id="radio2" type="radio" name="estrellas" value="4" />
+            <label for="radio2">★</label>
+            <input id="radio3" type="radio" name="estrellas" value="3" />
+            <label for="radio3">★</label>
+            <input id="radio4" type="radio" name="estrellas" value="2" />
+            <label for="radio4">★</label>
+            <input id="radio5" type="radio" name="estrellas" value="1" />
+            <label for="radio5">★</label>
+          </p>
+        </div>
+
+        <button id="button1" onclick="off()">X</button>
+
+        <!-- chart -->
+
+        <canvas id="myCanvas"></canvas>
+
+        <div class="box2">
+          <div class="item" id="circle1"></div>
+          <div class="item" id="circle2"></div>
+          <div class="item" id="circle3"></div>
+          <div class="item" id="circle4"></div>
+          <div class="item" id="circle5"></div>
+        </div>
+
+        <div class="box2" id="color-name">
+          <div class="item">Strengts</div>
+          <div class="item">Skill</div>
+          <div class="item">Brains</div>
+          <div class="item">Gadget</div>
+          <div class="item">Heart</div>
+        </div>
+
+        <div id="box3">
+          <div id="hours">
+            Hours:
+            <input onclick="minusOne();" type="button" id="rest" value="-" />
+            <input type="button" id="summa" value="1" />
+            <input onclick="plusOne();" type="button" id="add" value="+" />
           </div>
 
-
-         
-
-
-
-
+          <div id="price">
+            Total Price:
+            <input type="button" id="tprice" value="$ 100" />
+          </div>
+          <form id="hire" action="./form.html" method="get">
+            <input type="submit" value="Hire" name="Submit" id="frm1_submit" />
+          </form>
+          <!-- <input type="button" action="./form.html" id="hire" value="Hire"  /> -->
+        </div>
+      </div>
     </main>
 
     <div class="scrollTop hidden">
-        <a href="#">
-            <i class="fas fa-angle-up"></i>
-        </a>
+      <a href="#">
+        <i class="fas fa-angle-up"></i>
+      </a>
     </div>
-
-
-
 
     <script src="./overlay/overlay.js"></script>
 
-
-
     <footer>
-        <div class="socialMed">
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter-square"></i>
-        </div>
-        <p>&copy; 2018 All Rights Reserved | SUPERHIRO 4 HIRE</p>
+      <div class="socialMed">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter-square"></i>
+      </div>
+      <p>&copy; 2018 All Rights Reserved | SUPERHIRO 4 HIRE</p>
     </footer>
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
