@@ -145,7 +145,7 @@ drawPieSlice(
                 
                 
                 
-                var Piechart = function() {
+                var Piechart = function(options) {
                   this.options = options;
                   this.canvas = options.canvas;
                   this.ctx = this.canvas.getContext("2d");
@@ -198,6 +198,6 @@ drawPieSlice(
                       colors: ["#3ED1EE", "#BCD689", "#824583", "#FFD458", "#FF9241"],
                       doughnutHoleSize: 0.5
                     });
-                    
+
                     myDougnutChart.draw();
                     
