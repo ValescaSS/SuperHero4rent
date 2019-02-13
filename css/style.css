@@ -303,8 +303,8 @@ main {
 .items {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (minmax(150px, 1fr))[3];
+      grid-template-columns: repeat(3, minmax(150px, 1fr));
   grid-gap: 10px;
   list-style: none;
   padding: 0;
@@ -320,6 +320,10 @@ main {
   border: 1px solid #88a0ad;
   padding-bottom: 20px;
   padding-top: 20px;
+}
+
+.list img {
+  width: 100%;
 }
 
 #name {
@@ -634,13 +638,11 @@ main {
     z-index: -1;
   }
   .items {
-    display: -ms-grid;
-    display: grid;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
-  .list {
-    border: none;
+  .list img {
+    width: 80%;
   }
 }
 /*# sourceMappingURL=style.css.map */

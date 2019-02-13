@@ -265,7 +265,7 @@ main {
 
 .items{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
   grid-gap: 10px;
 
   list-style: none;
@@ -283,6 +283,10 @@ main {
   border: 1px solid rgb(136, 160, 173);
   padding-bottom: 20px;
   padding-top: 20px;
+
+  img {
+    width: 100%;
+  }
 }
 
 #name{
@@ -599,11 +603,13 @@ main {
   }
 
   .items {
-    display: grid;
+    // display: grid;
     grid-template-columns: 1fr;
   }
 
   .list {
-    border: none;
+    img {
+      width: 80%;
+    }
   }
 }
