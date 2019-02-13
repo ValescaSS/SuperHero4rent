@@ -166,30 +166,3 @@ var myDougnutChart = new Piechart({
     doughnutHoleSize: 0.5
 });
 myDougnutChart.draw();
-
-
-
-// const items = document.querySelectorAll('.item');
-
-// items.forEach(item => item.addEventListener('click', handleClick));
-
-// overlayClose.addEve
-
-// for(let i = 0; i < thumbnails.length; i++) {
-//     thumbnails[i].addEventListener('click', openOverlay);
-// }
-
-// function openOverlay(e) {
-//     console.log(e.currentTarget);
-//     // overlay.classList.toggle('open');
-//     // overlayImage.src = e.target.src;
-//     overlayImage.src = e.target.src;
-//     overlay.classList.add('open');
-// }
-
-// function closeOverlay() {
-//     overlay.classList.remove('open');
-// }
-
-// thumbnails.addEventListener('click', openOverlay);
-// overlayClose.addEventListener('click', closeOverlay);

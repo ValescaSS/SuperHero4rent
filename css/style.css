@@ -221,32 +221,123 @@ main .hero-img {
   margin-bottom: 10rem;
 }
 
-main .showcases {
+main #md-blue {
+  width: 35%;
+  height: 4rem;
+  font-size: 1.8em;
+  top: 13rem;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  position: relative;
+  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 40px;
+  color: #f85d3c;
+  z-index: -1;
+}
+
+main .md-avatar {
+  /* To correctly align image, regardless of content height: */
+  vertical-align: top;
+  /* To horizontally center images and caption */
+  text-align: center;
+  /* The width of the container also implies margin around the images. */
+  width: 22%;
+  position: relative;
+  top: 300px;
+  z-index: -1;
+}
+
+main .md-avatar-img {
+  width: 12rem;
+  height: 12rem;
+  background-color: #0f9fbf2a;
+  border-radius: 50%;
+}
+
+main .md-avatar-tex {
+  display: block;
+  font-size: 1.2em;
+  color: #0f9fbf;
+}
+
+main .md-h2 {
+  position: relative;
+  top: 400px;
+  color: #f85d3c;
+  z-index: -1;
+}
+
+main .md-p {
+  position: relative;
+  top: 400px;
+  color: #0f9fbf;
+  z-index: -1;
+  min-width: 320px;
+}
+
+main #md-sec {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+main #md-sec-av {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 10% 0;
 }
 
-main .showcases h3 {
-  text-align: center;
-  font-size: 1.5em;
-  letter-spacing: 0.1em;
+main #md-blue-adress {
+  width: 35%;
+  height: 4rem;
+  font-size: 1.8em;
+  top: 500px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  background: url(../inspiration/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 40px;
   color: #f85d3c;
-  background: #0f9fbf;
-  padding: 1em;
-  border-radius: 1em;
-  width: 50%;
+  z-index: -1;
+}
+
+main #md-adress-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  position: relative;
+  top: 600px;
+  z-index: -1;
+}
+
+main #karta {
+  border-radius: 5%;
 }
 
 main #button0 {
@@ -737,44 +828,6 @@ main #text0 {
   line-height: 2em;
 }
 
-.gallery {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-auto-rows: 350px;
-  grid-gap: 10px;
-  width: 80%;
-  font-family: "Notable", sans-serif;
-  letter-spacing: 0.2em;
-}
-
-.gallery .items {
-  display: -ms-grid;
-  display: grid;
-}
-
-.gallery .items img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  cursor: pointer !important;
-}
-
-.gallery .items h4 {
-  z-index: -1;
-  text-align: center;
-  line-height: 3;
-  background: #f85d3c;
-  color: #fbee04;
-  font-size: 15px;
-  position: relative;
-  width: 100%;
-  height: 3rem;
-  top: -1.3rem;
-}
-
 .scrollTop {
   position: fixed;
   bottom: 2em;
@@ -1134,5 +1187,111 @@ footer .socialMed i {
     width: 43%;
   }
   /*** form ends ****/
+}
+
+@media (max-width: 768px) {
+  #md-blue {
+    position: relative;
+    top: 20rem;
+    width: 25rem;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+  }
+  #md-sec-av {
+    position: relative;
+    top: 7rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .md-avatar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 4rem;
+  }
+  .md-avatar-tex {
+    display: block;
+  }
+  #md-sec-av {
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  #md-sec {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  #md-blue-adress {
+    width: 25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #md-blue-services {
+    position: relative;
+    top: 10rem;
+    width: 25rem;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+  }
+  #md-blue-faq {
+    position: relative;
+    /* top: 10rem; */
+    width: 25rem;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+  }
+  .md-h2-services {
+    position: relative;
+    top: 22rem;
+    color: #f85d3c;
+    z-index: -1;
+  }
+  .md-p-services {
+    position: relative;
+    top: 22rem;
+    color: #0f9fbf;
+    z-index: -1;
+  }
+  #md-more {
+    color: #f85d3c;
+    position: relative;
+    top: 22rem;
+    text-align: center;
+    z-index: -1;
+  }
+  .items {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  .items {
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    position: relative;
+    top: 18rem;
+    z-index: -5;
+    padding-bottom: 50px;
+    color: #f85d3c;
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */
