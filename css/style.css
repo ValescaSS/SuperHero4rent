@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Bangers|Notable");
 html,
 body {
-  height: 100%;
   margin: 0;
   scroll-behavior: smooth;
 }
@@ -24,6 +23,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-height: 100vh;
 }
 
 .header {
@@ -41,6 +41,9 @@ body {
   padding: 1em 3em;
   -webkit-box-shadow: 0 2px 3px #756549;
           box-shadow: 0 2px 3px #756549;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
 }
 
 .header div {
@@ -195,7 +198,6 @@ body {
 }
 
 main {
-  min-height: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
@@ -276,6 +278,11 @@ footer {
   position: relative;
   top: 100%;
   z-index: -1;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  margin-top: 15rem;
+  margin-bottom: -2rem;
 }
 
 footer .socialMed {
