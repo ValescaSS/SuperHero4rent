@@ -183,6 +183,7 @@ main #button0 {
   padding: 20px;
 }
 main #overlay {
+  display: none;
   position: absolute;
   top: 45%;
   left: 5%;
@@ -324,7 +325,8 @@ main #overlay #box2 #price {
   border-radius: 5px;
   margin-bottom: 6%;
 }
-main #overlay #box2 #hire {
+main #overlay #box2 form #hire {
+  border: 1px solid;
   width: 30%;
   padding: 2%;
   background-color: #fbee04;
@@ -333,6 +335,18 @@ main #overlay #box2 #hire {
   font-size: 5vw;
   color: #362f22;
   margin-left: auto;
+}
+main #md-button {
+  background-color: #0f9fbf;
+  border: none;
+  color: white;
+  padding: 10px 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 main #md-blue {
   width: 70%;
@@ -681,6 +695,7 @@ footer .socialMed i {
   }
 
   main {
+    /* index */
     /* overlay */
     /*** form start ****/
   }
@@ -880,6 +895,40 @@ main #form2 {
   }
 
   /*** form ends ****/
+}
+/* html {
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+
+      } */
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.items {
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  position: relative;
+  top: 13rem;
+  padding-bottom: 50px;
+  color: #f85d3c;
+  text-align: center;
+}
+
+.list {
+  border: 1px solid #88a0ad;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+#name {
+  color: #0f9fbf;
 }
 
 /*# sourceMappingURL=style.css.map */
