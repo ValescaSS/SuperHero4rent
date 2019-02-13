@@ -36,129 +36,141 @@ body {
 }
 
 .header {
-  width: 100%;
-  height: auto;
-  position: fixed;
-  background: url(../image/5-comic-burst-background-1.png) no-repeat;
-  background-size: cover;
-  background-position-y: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 1em 3em;
-  box-shadow: 0 2px 3px lighten($clr-dark, 20%);
-  
-
-  .logo {
-    width: 6rem;
-  }
-  h1 {
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    color: $clr-title;
-    position: relative;
-    left: 2rem;
-  }
-}
-
-nav {
-  position: fixed;
-  font-size: 1.2rem;
-  width: 100%;
-  height: auto;
-
-  .hamburger-menu {
-    position: absolute;
-    top: 5rem;
-    left: 0;
-    bottom: 0;
-    right: -70%;
-    margin: auto;
-    width: $bar-width;
-    height: $bar-height + $bar-spacing * 2;
-    cursor: pointer;
-    transition: all $transition-time ease;
-
-    &.animate {
-      transform: rotate(360deg);
-    }
-  }
-
-  .bar,
-  .bar:before,
-  .bar:after {
-    width: $bar-width;
-    height: $bar-height;
-  }
-
-  .bar {
-    position: relative;
-    transform: translateY($bar-spacing);
-    background: $clr-title;
-  }
-
-  .bar:before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: $bar-spacing;
-    background: $clr-title;
-    transition: all $transition-time ease;
-  }
-
-  .bar:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: $bar-spacing;
-    background: $clr-title;
-    transition: all $transition-time ease;
-  }
-
-  .bar.animate:after {
-    width: 25px;
-    transform: rotate(-45deg) translateX(6px);
-  }
-
-  .bar.animate:before {
-    width: 25px;
-    transform: rotate(45deg) translateX(6px);
-  }
-
-  .menu-list {
-    font-size: 2rem;
-    background: $clr-title;
     width: 100%;
-    height: 9rem;
-    position: absolute;
-    top: 8rem;
+    height: auto;
+    position: fixed;
+    background: url(../image/5-comic-burst-background-1.png) no-repeat;
+    background-size: cover;
+    background-position-y: center;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
+    justify-content: space-around;
+    padding: 1em 3em;
+    box-shadow: 0 2px 3px lighten($clr-dark, 20%);
 
-    li {
-      text-align: center;
-      width: 120%;
-      height: 3rem;
-      border-bottom: 1px solid $clr-txt;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    div {
+        display: flex;
+        flex-direction: column;
 
-      a {
-        text-decoration: none;
-        color: $clr-extra;
-      }
-      a:hover {
-        color: $clr-txt;
-      }
+        .logo {
+          img {
+            width: 6rem;
+          }
+        }
+
+        h1 {
+            font-size: 2rem;
+            letter-spacing: .1em;
+            color: $clr-title;
+            position: relative;
+            left: 2rem;
+        }
     }
-  }
-  .active {
-    color: $clr-txt !important;
-  }
+
+    .menu-list {
+        font-size: 2rem;
+        background: $clr-title;
+        width: 100%;
+        height: 9rem;
+        position: absolute;
+        top: 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+
+        li {
+            text-align: center;
+            width: 120%;
+            height: 3rem;
+            border-bottom: 1px solid $clr-txt;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                color: $clr-extra;
+            }
+            a:hover {
+                color: $clr-txt;
+            }
+        }
+
+        .active {
+            color: $clr-txt !important;
+        }
+    }
+
+    .menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        padding: 28px 1em;
+        position: relative;
+        user-select: none;
+    }
+
+    .navicon {
+        background: $clr-title;
+        display: block;
+        height: 3px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 2em;
+        right: -2rem;
+        border-radius: 3px;
+    }
+
+    .navicon:before,
+    .navicon:after {
+        background: $clr-title;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+        border-radius: 3px;
+    }
+
+    .navicon:before {
+    top: 10px;
+    }
+
+    .navicon:after {
+    top: -10px;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .menu-btn:checked ~ .menu-list {
+        max-height: 9rem;
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon {
+        background: transparent;
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+    }
+
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+        top: 0;
+    }
+
 }
 
 main {
@@ -173,7 +185,7 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 50vmin;
+    height: 30vmin;
     width: 100%;
     position: relative;
     top: 7rem;
@@ -210,33 +222,69 @@ main {
   }
 }
 
-// Don't mind this .hidden for now, it will come in handy later after adding in js
 .hidden {
-  // display: none;
-  transition: all 500ms ease-in;
+	display: none;
+	transition: all 500ms ease-in;
 }
 
 footer {
-  background: url(../image/5-comic-burst-background-1.png) no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 15vh;
-  color: lighten($clr-dark, 5%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  position: relative;
-  top: 100%;
-  z-index: -1;
+	background: url(../image/5-comic-burst-background-1.png) no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 15vh;
+	color: lighten($clr-dark, 5%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	position: relative;
+	top: 100%;
+	z-index: -1;
 
-  .socialMed {
-    font-size: 3rem;
-    margin-top: 1rem;
-  }
+	.socialMed {
+		font-size: 3rem;
+		margin-top: 1rem;
+
+		.fab {
+			color: lighten($clr-dark, 5%);
+		}
+	}
 }
+
+// 'our heroes' Desktop layout
+main {
+  display: grid;
+  justify-items: center;
+}
+
+.items{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+
+  list-style: none;
+  padding: 0;
+  width: 80%;
+  position: relative;
+  top: 13rem;
+  z-index: -5;
+  // padding-bottom: 50px;
+  color: #f85d3c;
+  text-align: center;
+}
+
+.list{
+  border: 1px solid rgb(136, 160, 173);
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+#name{
+  color: #0f9fbf;
+}
+
 
 // About us Desktop version
 // OBS!! Alla tager och klasser som jag har skapat börjar med "md-"
@@ -246,7 +294,7 @@ footer {
   width: 35%;
   height: 4rem;
   font-size: 1.8em;
-  top: 13rem;
+  top: 11rem;
   margin: auto;
   display: flex;
   position: relative;
@@ -408,40 +456,46 @@ footer {
 @media (min-width: 576px) {
 }
 @media (min-width: 768px) {
-  .header {
-    flex-direction: row;
-    align-items: center;
-  }
-  nav {
-    top: 5.5rem;
-    right: 1rem;
-    width: 50%;
+	.header {
+        div {
+            flex-direction: row;
+            align-items: center;
 
-    .hamburger-menu {
-      display: none;
-    }
+            .logo {
+              position: relative;
+              left: -38%;
+            }
+        }
 
-    .menu-list {
-      border-radius: 10px;
-      display: flex;
-      flex-direction: row;
-      top: -2rem;
-      height: 4rem;
-      font-size: 1.5rem;
-      padding-left: 1rem;
-      padding-right: 1.2rem;
+        .menu-list {
+            border-radius: 10px;
+            display: flex !important;
+            flex-direction: row;
+            top: 5.5rem;
+            height: 4rem;
+            font-size: 1.5rem;
+            padding-left: 1rem;
+            padding-right: 1.2rem;
+            width: 50%;
+            right: 1rem;
+			      max-height: 7rem;
 
-      li {
-        width: 100%;
-        border-bottom: initial;
-      }
-    }
-  }
+            li {
+                border-bottom: initial;
+            }
+        }
+
+        .menu-icon {
+            display: none;
+        }
+	}
+
+}
 
   // About us Mobile version
   // OBS!! Alla tager och klasser som jag har skapat börjar med "md-"
   // På detta sätt vi ska inte ha konflikter nar vi merge
-}
+
 @media (min-width: 992px) {
 }
 @media (min-width: 1200px) {
@@ -455,7 +509,7 @@ footer {
 @media (max-width: 768px) {
   #md-blue {
     position: relative;
-    top: 20rem;
+    top: 6em;
     width: 25rem;
     margin: 0 auto;
     display: flex;
@@ -504,7 +558,7 @@ footer {
     display: flex;
     /* align-items: center; */
     /* justify-content: center; */
-    
+
   }
 
   #md-blue-faq{
@@ -524,14 +578,14 @@ footer {
     color: $clr-title;
     z-index: -1;
   }
-  
+
   .md-p-services {
     position: relative;
     top: 22rem;
     color: $clr-extra;
     z-index: -1;
   }
-  
+
   #md-more {
     color: $clr-title;
     position: relative;
@@ -539,82 +593,13 @@ footer {
     text-align: center;
     z-index: -1;
   }
-  .items{
+
+  .items {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px; 
-    
-    
-      } 
+    grid-template-columns: 1fr;
+  }
 
-      .items{
-        list-style: none;
-        margin-left: auto;
-        margin-right: auto;
-         width: 80%;
-         position: relative;
-         top: 18rem;
-         z-index: -5;
-         padding-bottom: 50px;
-         color: #f85d3c;
-         text-align: center;
-         
-         
-         
-      }
-  
+  .list {
+    border: none;
+  }
 }
-
-
-
-
-//testing json
-
-
-      /* html {
-        box-sizing: border-box;
-        margin-left: auto;
-        margin-right: auto;
-        width: 70%;
-        
-      } */
-
-      
-      
-      .items{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 10px; 
-        
-        
-          } 
-
-          .items{
-            list-style: none;
-            margin-left: auto;
-            margin-right: auto;
-             width: 80%;
-             position: relative;
-             top: 13rem;
-             z-index: -5;
-             padding-bottom: 50px;
-             color: #f85d3c;
-             text-align: center;
-             
-	           
-             
-          }
-
-          .list{
-            border: 1px solid rgb(136, 160, 173);
-            padding-bottom: 20px;
-            padding-top: 20px;
-          }
-
-          #name{
-            color: #0f9fbf;
-          }
-
-         
-
-          
