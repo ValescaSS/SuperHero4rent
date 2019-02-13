@@ -351,7 +351,7 @@ main {
       top: 80%;
       #rest,
       #add,
-      #hire {
+      .buttonHire {
         cursor: pointer;
       }
       #rest,
@@ -369,8 +369,9 @@ main {
         border-radius: 5px;
         margin-bottom: 6%;
       }
-      form #hire {
-        border: 1px solid;
+      .buttonHire {
+        text-decoration: none;
+        text-align: center;
         width: 30%;
         padding: 2%;
         background-color: $clr-txt;
@@ -827,9 +828,10 @@ footer {
             font-size: 1vw;
           }
         }
-        #hire {
-          width: 15%;
+        .buttonHire {
+          width: 12%;
           font-size: 1.5vw;
+          padding: 1.5% 0;
         }
       }
     }
