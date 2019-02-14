@@ -746,7 +746,7 @@ main {
   transition: all 500ms ease-in;
 }
 
-footer {
+footer, #footer {
   background: url(../image/5-comic-burst-background-1.png) no-repeat;
   background-size: cover;
   background-position: center;
@@ -773,6 +773,11 @@ footer {
       color: lighten($clr-dark, 5%);
     }
   }
+}
+
+#footer {
+  margin-top: 35rem;
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -957,6 +962,7 @@ footer {
       width: 50%;
       top: 500px;
     }
+
 
     /*** form start ****/
 
