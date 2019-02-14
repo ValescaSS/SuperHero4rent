@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Bangers|Notable");
 html,
 body {
-  height: 100%;
   margin: 0;
   scroll-behavior: smooth;
 }
@@ -18,6 +17,7 @@ body {
   font-family: "Bangers", cursive, Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .header {
@@ -32,17 +32,14 @@ body {
   padding: 1em 3em;
   box-shadow: 0 2px 3px #756549;
   z-index: 10;
+  flex: 0;
 }
 .header div {
   display: flex;
   flex-direction: column;
 }
-.header div .logo {
-  width: 7rem;
-  margin-left: 0;
-}
 .header div .logo img {
-  width: 100%;
+  width: 6rem;
 }
 .header div h1 {
   font-size: 2rem;
@@ -143,38 +140,42 @@ body {
 }
 
 main {
-  min-height: 100%;
   flex: 1 0 auto;
+  justify-items: center;
+  height: auto;
+  /* overlay */
   /* services och about us */
-  /*** form start ****/
+  /* Services */
+  /* form mobil*/
 }
 main .hero-img {
   background-image: url(../image/977333_free-marvel-superhero-wallpapers-high-quality-resolution-v3y-wallx_1920x1080_h.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 50vmin;
+  height: 30vmin;
   width: 100%;
   position: relative;
   top: 7rem;
-  margin-bottom: 10rem;
 }
-main .showcases {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 10% 0;
-}
-main .showcases h3 {
-  text-align: center;
-  font-size: 1.5em;
-  letter-spacing: 0.1em;
+main .items {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
   color: #f85d3c;
-  background: #0f9fbf;
-  padding: 1em;
-  border-radius: 1em;
-  width: 50%;
+  text-align: center;
+  padding: 0;
+}
+main .list {
+  border: none;
+}
+main .list {
+  border: 1px solid #88a0ad;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+main #name {
+  color: #0f9fbf;
 }
 main #button0 {
   position: relative;
@@ -349,12 +350,27 @@ main #md-button {
   margin: 4px 2px;
   cursor: pointer;
 }
-main #md-blue {
+main #md-blue1 {
   width: 70%;
   height: 4rem;
-  font-size: 1.5em;
-  top: 17rem;
-  margin: auto;
+  font-size: 1.8em;
+  top: 10rem;
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  color: #f85d3c;
+  z-index: -1;
+  margin: 0px auto;
+  background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg) 50%/cover no-repeat;
+  border-radius: 40px;
+}
+main #md-blue {
+  width: 90%;
+  height: 4rem;
+  font-size: 1.8em;
+  top: 18rem;
+  margin: 0 5%;
   display: flex;
   position: relative;
   background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg) no-repeat;
@@ -364,6 +380,7 @@ main #md-blue {
   align-items: center;
   border-radius: 40px;
   color: #f85d3c;
+  padding: 20px;
 }
 main #md-sec-av {
   width: 90%;
@@ -429,12 +446,12 @@ main #md-adress-img {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
   position: relative;
   top: 380px;
 }
 main #md-adress-img #karta {
-  width: 100%;
+  width: 90%;
+  height: 250px;
   border-radius: 5%;
 }
 main .md-h2-services {
@@ -578,37 +595,6 @@ main #text0 {
   line-height: 2em;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-auto-rows: 350px;
-  grid-gap: 10px;
-  width: 80%;
-  font-family: "Notable", sans-serif;
-  letter-spacing: 0.2em;
-}
-.gallery .items {
-  display: grid;
-}
-.gallery .items img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer !important;
-}
-.gallery .items h4 {
-  z-index: -1;
-  text-align: center;
-  line-height: 3;
-  background: #f85d3c;
-  color: #fbee04;
-  font-size: 15px;
-  position: relative;
-  width: 100%;
-  height: 3rem;
-  top: -1.3rem;
-}
-
 .scrollTop {
   position: fixed;
   bottom: 2em;
@@ -655,13 +641,16 @@ footer {
   flex-shrink: 0;
   position: relative;
   top: 100%;
+  flex: 0;
+  margin-top: 15rem;
+  margin-bottom: -2rem;
 }
 footer .socialMed {
   font-size: 3rem;
   margin-top: 1rem;
 }
-footer .socialMed i {
-  color: #362f22;
+footer .socialMed .fab {
+  color: #463d2c;
 }
 
 @media (min-width: 768px) {
@@ -696,9 +685,28 @@ footer .socialMed i {
   }
 
   main {
-    /* index */
-    /* overlay */
+    /* index desktop */
+    display: grid;
+    justify-items: center;
+    /* overlay desktop */
+    /* services och about us desktop */
     /*** form start ****/
+  }
+  main .items {
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+    padding: 0;
+    width: 80%;
+    position: relative;
+    top: 13rem;
+  }
+  main .list {
+    border: 1px solid #88a0ad;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  main #name {
+    color: #269bbc;
   }
   main #overlay {
     position: fixed;
@@ -780,9 +788,10 @@ main #overlay #box2 #price #tprice {
     font-size: 1.5vw;
     padding: 1.5% 0;
   }
-  main #md-blue {
+  main #md-blue1,
+main #md-blue {
     width: 35%;
-    top: 15rem;
+    top: 11rem;
   }
   main #md-sec-av {
     margin: 0 5%;
@@ -898,13 +907,6 @@ main #form2 {
 
   /*** form ends ****/
 }
-/* html {
-        box-sizing: border-box;
-        margin-left: auto;
-        margin-right: auto;
-        width: 70%;
-
-      } */
 .items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

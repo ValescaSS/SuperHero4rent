@@ -15,6 +15,7 @@ $clr-d: #ffd458;
 $clr-e: #ff9241;
 $clr-star: orange;
 $clr-form: #269bbc;
+$clr-border: rgb(136, 160, 173);
 
 $bar-width: 40px;
 $bar-height: 5px;
@@ -23,7 +24,7 @@ $transition-time: 0.5s;
 
 html,
 body {
-  height: 100%;
+  // height: 100%; ny
   margin: 0;
   scroll-behavior: smooth;
 }
@@ -40,6 +41,7 @@ body {
   font-family: $font-title, Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
+  min-height: 100vh; //ny
 }
 
 .header {
@@ -54,17 +56,15 @@ body {
   padding: 1em 3em;
   box-shadow: 0 2px 3px lighten($clr-dark, 20%);
   z-index: 10;
+  flex: 0; //ny
 
   div {
     display: flex;
     flex-direction: column;
 
     .logo {
-      width: 7rem;
-      margin-left: 0;
-
       img {
-        width: 100%;
+        width: 6rem;
       }
     }
 
@@ -76,6 +76,28 @@ body {
       left: 2rem;
     }
   }
+
+  // div {
+  //   display: flex;
+  //   flex-direction: column;
+  //   //revisar
+  //   .logo {
+  //     width: 7rem;
+  //     margin-left: 0;
+
+  //     img {
+  //       width: 100%;
+  //     }
+  //   }
+
+  //   h1 {
+  //     font-size: 2rem;
+  //     letter-spacing: 0.1em;
+  //     color: $clr-title;
+  //     position: relative;
+  //     left: 2rem;
+  //   }
+  // }
 
   .menu-list {
     font-size: 2rem;
@@ -184,43 +206,50 @@ body {
 }
 
 main {
-  // min-height & flex setup to have the footer stick to the bottom
-  min-height: 100%;
+  // display: grid;
   flex: 1 0 auto;
-  // here below goes the rest of main
+  justify-items: center;
+  // z-index: -10;
+  height: auto;
+
+  // index
 
   .hero-img {
     background-image: url(../image/977333_free-marvel-superhero-wallpapers-high-quality-resolution-v3y-wallx_1920x1080_h.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 50vmin;
+    height: 30vmin;
     width: 100%;
     position: relative;
     top: 7rem;
-    margin-bottom: 10rem;
+    // z-index: -10;
   }
 
-  .showcases {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 10% 0;
-
-    h3 {
-      text-align: center;
-      font-size: 1.5em;
-      letter-spacing: 0.1em;
-      color: $clr-title;
-      background: #0f9fbf;
-      padding: 1em;
-      border-radius: 1em;
-      width: 50%;
-    }
+  .items {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    color: $clr-title;
+    text-align: center;
+    padding: 0;
   }
 
-  // overlay style starts here
+  .list {
+    border: none;
+  }
+
+  .list {
+    border: 1px solid $clr-border;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  #name {
+    color: $clr-extra;
+  }
+
+  /* overlay */
 
   #button0 {
     position: relative;
@@ -383,8 +412,11 @@ main {
       }
     }
   }
+
+  /* services och about us */
+
   #md-button {
-    background-color: #0f9fbf;
+    background-color: $clr-extra;
     border: none;
     color: white;
     padding: 10px 100px;
@@ -396,14 +428,52 @@ main {
     cursor: pointer;
   }
 
-  /* services och about us */
-
-  #md-blue {
+  #md-blue1 {
     width: 70%;
     height: 4rem;
-    font-size: 1.5em;
-    top: 17rem;
-    margin: auto;
+    font-size: 1.8em;
+    top: 10rem;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(248, 93, 60);
+    z-index: -1;
+    margin: 0px auto;
+    background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg)
+      50% / cover no-repeat;
+    border-radius: 40px;
+  }
+
+  // top: 6em;
+  // width: 25rem;
+  // display: flex;
+  // margin: 0px auto;
+
+  // #md-blue1 {
+  //   width: 35%;
+  //   height: 4rem;
+  //   font-size: 1.8em;
+  //   top: 11rem;
+  //   margin: auto;
+  //   display: flex;
+  //   position: relative;
+  //   background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg)
+  //     no-repeat;
+  //   background-size: cover;
+  //   background-position-y: center;
+  //   justify-content: space-around;
+  //   align-items: center;
+  //   border-radius: 40px;
+  //   color: $clr-title;
+  // }
+
+  #md-blue {
+    width: 90%;
+    height: 4rem;
+    font-size: 1.8em;
+    top: 18rem;
+    margin: 0 5%;
     display: flex;
     position: relative;
     background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg)
@@ -414,7 +484,26 @@ main {
     align-items: center;
     border-radius: 40px;
     color: $clr-title;
+    padding: 20px;
   }
+
+  // #md-blue {
+  //   width: 25rem;
+  //   height: 4rem;
+  //   font-size: 1.5em;
+  //   top: 6em;
+  //   margin: 0 auto;
+  //   display: flex;
+  //   position: relative;
+  //   background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg)
+  //     no-repeat;
+  //   background-size: cover;
+  //   background-position-y: center;
+  //   justify-content: space-around;
+  //   align-items: center;
+  //   border-radius: 40px;
+  //   color: $clr-title;
+  // }
   #md-sec-av {
     width: 90%;
     margin: 10% 5%;
@@ -480,16 +569,18 @@ main {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    // width: 90%;
+    // height: 500px;
     position: relative;
     top: 380px;
     #karta {
-      width: 100%;
+      width: 90%;
+      height: 250px;
       border-radius: 5%;
     }
   }
 
-  // Services Mobile version
+  /* Services */
 
   .md-h2-services {
     position: relative;
@@ -534,12 +625,12 @@ main {
   .md-p-faq {
     position: relative;
     top: 170px;
-    color: #0f9fbf;
+    color: $clr-extra;
     text-align: justify;
     line-height: 1.5em;
   }
 
-  /*** form start ****/
+  /* form mobil*/
 
   #rubrik1,
   #rubrik2 {
@@ -621,41 +712,6 @@ main {
   }
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-auto-rows: 350px;
-  grid-gap: 10px;
-  width: 80%;
-  font-family: $font-alt;
-  letter-spacing: 0.2em;
-
-  .items {
-    // overflow: hidden;
-    display: grid;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: pointer !important;
-    }
-
-    h4 {
-      z-index: -1;
-      text-align: center;
-      line-height: 3;
-      background: $clr-title;
-      color: $clr-txt;
-      font-size: 15px;
-      position: relative;
-      width: 100%;
-      height: 3rem;
-      top: -1.3rem;
-    }
-  }
-}
-
 .scrollTop {
   position: fixed;
   bottom: 2em;
@@ -704,19 +760,21 @@ footer {
   flex-shrink: 0;
   position: relative;
   top: 100%;
+  // ny
+  // z-index: -1;
+  flex: 0;
+  margin-top: 15rem;
+  margin-bottom: -2rem;
 
   .socialMed {
     font-size: 3rem;
     margin-top: 1rem;
-
-    i {
-      color: $clr-dark;
+    .fab {
+      color: lighten($clr-dark, 5%);
     }
   }
 }
 
-@media (min-width: 576px) {
-}
 @media (min-width: 768px) {
   .header {
     div {
@@ -755,9 +813,31 @@ footer {
   }
 
   main {
-    /* index */
+    /* index desktop */
+    display: grid;
+    justify-items: center;
 
-    /* overlay */
+    .items {
+      grid-template-columns: repeat(3, 1fr);
+      list-style: none;
+      padding: 0;
+      width: 80%;
+      position: relative;
+      top: 13rem;
+      // padding-bottom: 50px;
+    }
+
+    .list {
+      border: 1px solid $clr-border;
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+
+    #name {
+      color: $clr-form;
+    }
+
+    /* overlay desktop */
 
     #overlay {
       position: fixed;
@@ -836,9 +916,12 @@ footer {
       }
     }
 
+    /* services och about us desktop */
+
+    #md-blue1,
     #md-blue {
       width: 35%;
-      top: 15rem;
+      top: 11rem;
     }
     #md-sec-av {
       margin: 0 5%;
@@ -961,20 +1044,8 @@ footer {
   }
   /*** form ends ****/
 }
-@media (min-width: 992px) {
-}
-@media (min-width: 1200px) {
-}
 
 //testing json
-
-/* html {
-        box-sizing: border-box;
-        margin-left: auto;
-        margin-right: auto;
-        width: 70%;
-        
-      } */
 
 .items {
   display: grid;
