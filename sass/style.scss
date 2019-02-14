@@ -251,15 +251,15 @@ main {
 
   /* overlay */
 
-  #button0 {
-    position: relative;
-    top: 200px;
-    left: 42.5%;
-    padding: 20px;
-  }
+  // #button0 {
+  //   position: relative;
+  //   top: 200px;
+  //   left: 42.5%;
+  //   padding: 20px;
+  // }
   #overlay {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 45%;
     left: 5%;
     width: 90%;
