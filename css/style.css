@@ -142,7 +142,6 @@ body {
 main {
   flex: 1 0 auto;
   justify-items: center;
-  height: auto;
   /* overlay */
   /* services och about us */
   /* Services */
@@ -825,6 +824,10 @@ main #md-blue {
   main #md-adress-img {
     width: 50%;
     top: 500px;
+  }
+  main #md-adress-img #karta {
+    width: 100%;
+    height: auto;
   }
   main #form1,
 main #form2 {

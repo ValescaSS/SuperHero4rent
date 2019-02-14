@@ -48,48 +48,7 @@ drawPieSlice(
   Math.PI / 2 + Math.PI / 4,
   "#269bbc"
 );
-// ................Overlay object that we need to edit...........
 
-/* let test;
- var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-              console.log(this.readyState + this.status);
-
-              if (this.readyState == 4 && this.status == 200) {
-                let response = JSON.parse(xhttp.responseText);
-                let listOfHeros = response.people;
-                let firstHero = listOfHeros[0];
-                superPw.Strengts = firstHero.stringth;
-                superPw.Skill = firstHero.skills;
-                superPw.Brains = firstHero.brain;
-                superPw.Gadget = firstHero.gadget;
-                superPw.Heart = firstHero.heart;
-                                
-              }
-            };
-            xhttp.open("GET", "../hero.json", true);
-            xhttp.send(); */
-
-// console.log(output);
-
-// function superPw (name, image, strengts, skill, brains, gadget, heart){
-
-//   this.name=name;
-//   this.image=image;
-//   this.strengts=strengts;
-//   this.skill=skill;
-//   this.brains=brains;
-//   this.gadget=gadget;
-//   this.heart=heart;
-// }
-// let batman = new superPw(50,20,30,45,40);
-
-/* 
-              
-              -----------The idea is to---------
-              
-              let output[0] = new superPw (output[1], output[2],
-                output[3], output[4], output[5]) */
 
 var Piechart = function(options) {
   this.options = options;
@@ -162,3 +121,60 @@ var setValues = function(Strengts, Skill, Brains, Gadget, Heart) {
   myDougnutChart.draw();
   on();
 };
+
+/* superhero namn  och bild */
+
+var superHeroNam = "Wonder Woman";
+
+var setNameOverlay = function(name){
+  this.superHeroNam = namn;
+  
+}
+
+
+
+
+
+
+// ................Overlay object that we need to edit...........
+
+// let test;
+//  var xhttp = new XMLHttpRequest();
+//             xhttp.onreadystatechange = function() {
+//               console.log(this.readyState + this.status);
+
+//               if (this.readyState == 4 && this.status == 200) {
+//                 let response = JSON.parse(xhttp.responseText);
+//                 let listOfHeros = response.people;
+//                 let firstHero = listOfHeros[0];
+//                 superPw.Strengts = firstHero.stringth;
+//                 superPw.Skill = firstHero.skills;
+//                 superPw.Brains = firstHero.brain;
+//                 superPw.Gadget = firstHero.gadget;
+//                 superPw.Heart = firstHero.heart;
+                                
+//               }
+//             };
+//             xhttp.open("GET", "../hero.json", true);
+//             xhttp.send();
+
+// console.log(output);
+
+// function superPw (name, image, strengts, skill, brains, gadget, heart){
+
+//   this.name=name;
+//   this.image=image;
+//   this.strengts=strengts;
+//   this.skill=skill;
+//   this.brains=brains;
+//   this.gadget=gadget;
+//   this.heart=heart;
+// }
+// let batman = new superPw(50,20,30,45,40);
+
+/* 
+              
+              -----------The idea is to---------
+              
+              let output[0] = new superPw (output[1], output[2],
+                output[3], output[4], output[5]) */

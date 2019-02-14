@@ -210,7 +210,7 @@ main {
   flex: 1 0 auto;
   justify-items: center;
   // z-index: -10;
-  height: auto;
+
 
   // index
 
@@ -445,29 +445,6 @@ main {
     border-radius: 40px;
   }
 
-  // top: 6em;
-  // width: 25rem;
-  // display: flex;
-  // margin: 0px auto;
-
-  // #md-blue1 {
-  //   width: 35%;
-  //   height: 4rem;
-  //   font-size: 1.8em;
-  //   top: 11rem;
-  //   margin: auto;
-  //   display: flex;
-  //   position: relative;
-  //   background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg)
-  //     no-repeat;
-  //   background-size: cover;
-  //   background-position-y: center;
-  //   justify-content: space-around;
-  //   align-items: center;
-  //   border-radius: 40px;
-  //   color: $clr-title;
-  // }
-
   #md-blue {
     width: 90%;
     height: 4rem;
@@ -487,23 +464,6 @@ main {
     padding: 20px;
   }
 
-  // #md-blue {
-  //   width: 25rem;
-  //   height: 4rem;
-  //   font-size: 1.5em;
-  //   top: 6em;
-  //   margin: 0 auto;
-  //   display: flex;
-  //   position: relative;
-  //   background: url(../image/blue-comic-background-with-lines-halftone_1017-11432.jpg)
-  //     no-repeat;
-  //   background-size: cover;
-  //   background-position-y: center;
-  //   justify-content: space-around;
-  //   align-items: center;
-  //   border-radius: 40px;
-  //   color: $clr-title;
-  // }
   #md-sec-av {
     width: 90%;
     margin: 10% 5%;
@@ -569,8 +529,6 @@ main {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    // width: 90%;
-    // height: 500px;
     position: relative;
     top: 380px;
     #karta {
@@ -938,6 +896,7 @@ footer {
         }
       }
     }
+
     #md-blue-adress {
       width: 35%;
       top: 150px;
@@ -956,6 +915,10 @@ footer {
     #md-adress-img {
       width: 50%;
       top: 500px;
+      #karta {
+        width: 100%;
+        height: auto;
+      }
     }
 
     /*** form start ****/
