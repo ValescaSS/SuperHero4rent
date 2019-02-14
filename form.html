@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuperHero4Hire</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="form.css" /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/combodate.js"></script>
+    <script src="js/form.js"></script>
+  </head>
+
+  <body>
+
+    <header class="header">
+      <div>
+        <a href="#" class="logo">
+          <img class="logo" src="../image/logo.svg" alt="" />
+        </a>
+        <h1>Hire your best superhero</h1>
+      </div>
+
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"
+        ><span class="navicon"></span
+      ></label>
+
+      <ul class="menu-list">
+        <li class="home-section"><a href="index.html">Home</a></li>
+        <li class="service-section"><a href="services.html">Services</a></li>
+        <li class="about-section"><a href="aboutUs.html">About Us</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <h2 id="rubrik1">Booking Information</h2>
+      <div id="form1">
+        <div id="item1">
+          <label for="fname">First Name</label><br />
+          <input type="text" name="fname" id="fname" />
+        </div>
+        <div id="item2">
+          <label for="lname">Last Name</label><br />
+          <input type="text" name="lname" id="lname" />
+        </div>
+        <div id="item3">
+          <label for="tphone">Telephone</label><br />
+          <input type="text" name="tphone" id="tphone" />
+        </div>
+        <div id="item4">
+          <label for="email">Email Address</label><br />
+          <input type="text" name="email" id="email" />
+        </div>
+        <div id="item5">
+          <label for="address">Address</label><br />
+          <input type="text" name="address" id="address" />
+        </div>
+        <div id="item6">
+          <label for="pcode">Postal Code</label><br />
+          <input type="text" name="pcode" id="pcode" />
+        </div>
+        <div id="item7">
+          <label for="country">Country</label><br />
+          <input type="text" name="country" id="country" />
+        </div>
+        <div id="item8">
+          <label for="shero">Super Hero</label><br />
+          <input type="text" name="shero" id="shero" />
+        </div>
+        <div id="item9">
+          <label for="date">Date for booking</label><br />
+          <input
+            type="text"
+            id="date"
+            data-format="DD-MM-YYYY"
+            data-template="D MMM YYYY"
+            name="date"
+            value="09-01-2013"
+          />
+        </div>
+        <div id="item10">
+          <label for="datetime1">Start Time</label><br />
+          <input
+          type="text"
+          id="time1"
+          data-format="HH:mm"
+          data-template="HH : mm"
+          name="datetime1"
+          />
+        </div>
+        <div id="item11">
+          <label for="datetime2">End Time</label><br />
+          <input
+            type="text"
+            id="time2"
+            data-format="HH:mm"
+            data-template="HH : mm"
+            name="datetime2"
+          />
+        </div>
+      </div>
+
+      <h2 id="rubrik2">Card Information</h2>
+      <div id="form2">
+        <div id="item12">
+          <label for="name">Name</label><br />
+          <input type="text" name="name" id="name" />
+        </div>
+        <div id="item13">
+          <label for="cnumber">Card Number</label><br />
+          <input type="text" name="cnumber" id="cnumber" />
+        </div>
+        <div id="item14">
+          <label for="cveri">Card Verification (CVV)</label><br />
+          <input type="text" name="cveri" id="cveri" />
+        </div>
+        <div id="item15">
+          <input type="checkbox" name="invoice" id="invoice" />
+          <label for="invoice">Invoice</label>
+        </div>
+        <div id="item16">
+          <input type="submit" name="order" id="order" value="Order" />
+        </div>
+      </div>
+      <p id="text0">
+        Your booking form will be sent to our email. <br />
+        To ensure your date, time, and character(s) are available please book at
+        least 1 month in advance. <br />
+        Response to bookings can be instant but typically range from 24 - 72
+        business hours.
+      </p>
+    </main>
+
+    <footer id="footer">
+      <div class="socialMed">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter-square"></i>
+      </div>
+      <p>&copy; 2018 All Rights Reserved | SUPERHERO 4 HIRE</p>
+    </footer>
+    <div class="scrollTop hidden">
+      <a href="#">
+        <i class="fas fa-angle-up"></i>
+      </a>
+    </div>
+  </body>
+</html>
